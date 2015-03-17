@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum PlayerPosition{Left,Center,Right};
+public enum PlayerMovementStatus {MovingLeft, NotMoving, MovingRight};
+
 public class EndlessCharacterController : MonoBehaviour {
-
-	public enum PlayerPosition{	Left,Center,Right};
-	public enum PlayerMovementStatus {MovingLeft, NotMoving, MovingRight};
-
-	public PlayerPosition position = playerPosition.Center;
-	public PlayerMovementStatus movementStatus = playerMovementStatus.NotMoving;
+	
+	public PlayerPosition position = PlayerPosition.Center;
+	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
 
 	public float verticalForce = 5000.0f;
 
@@ -23,6 +23,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	public static float TOUCH_WIDTH_TOTAL_MOVEMENT_PERCENTAGE = 0.75f; //TODO Rename
 
 	public static float RUNNING_DISTANCE_FROM_CENTER = 2.5f;
+
 	public float sideRunningTime = 1.0f;
 	public float movementTime = 0.5f;
 	public float movementCounter = 0.0f;
@@ -40,14 +41,6 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	void Update () 
 	{
-		if(movingLeft || movingRight)
-		{
-			movePlayer();
-		}
-		else
-		{
-			recenterPlayer();
-		}
 
 		if(!canJump && Time.time > nextJumpTime)
 		{
@@ -99,7 +92,7 @@ public class EndlessCharacterController : MonoBehaviour {
 				if(vertical > DEADZONE_VERTICAL || vertical < -DEADZONE_VERTICAL)
 				{
 					Debug.Log("Jumping " + Time.time);
-					//rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f));
+					rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f));
 					nextJumpTime = Time.time + jumpDelay;
 					canJump = false;
 				}
@@ -125,34 +118,40 @@ public class EndlessCharacterController : MonoBehaviour {
 
 		movePlayer();
 
-		//Apply movement
-		//transform.position = new Vector3(positionX, positionY, transform.position.z);
 	}
 
 	void movePlayer ()
 	{
-
-
-
-		float targetX = movingLeft ? -RUNNING_DISTANCE_FROM_CENTER : RUNNING_DISTANCE_FROM_CENTER; 
-		float counter = movingLeft ? moveLeftT : moveRightT;
-		
-		Vector3 targetPosition = new Vector3(targetX, transform.position.y, transform.position.z);
-		transform.position = Vector3.Lerp(transform.position, targetPosition, counter);
-
-		if (counter >= 1){
-			movingLeft = false;
-			movingRight = false;
-			return;
-		}
-
-		if(movingLeft)
+		if(movementStatus == PlayerMovementStatus.MovingLeft)
 		{
-			moveLeftT += movementTime * Time.deltaTime;
+			if(position == PlayerPosition.Center)
+			{
+
+			}
+			else if (position == PlayerPosition.Right)
+			{
+
+			}
+			else
+			{
+				movementStatus = PlayerMovementStatus.NotMoving;
+			}
 		}
-		else
+		else if(movementStatus == PlayerMovementStatus.MovingRight)
 		{
-			moveRightT += movementTime * Time.deltaTime;
+
+			if(position == PlayerPosition.Center)
+			{
+
+			}
+			else if (position == PlayerPosition.Left)
+			{
+
+			}
+			else
+			{
+				movementStatus = PlayerMovementStatus.NotMoving;
+			}
 		}
 	}
 
