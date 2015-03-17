@@ -48,10 +48,6 @@ public class EndlessCharacterController : MonoBehaviour {
 			canJump = true;
 		}
 
-		Vector3 oldPosition = transform.position;
-		float positionX = transform.position.x;
-		float positionY = transform.position.y;
-
 		//Check for touch input
 		if(Input.touchCount > 0)
 		{
@@ -120,7 +116,7 @@ public class EndlessCharacterController : MonoBehaviour {
 			}
 		}
 
-		if(movementStatus != PlayerMovementStatus.NotMoving){
+		if(movementStatus != PlayerMovementStatus.NotMoving && movementCounter <= 1){
 			
 			float goalX = 0.0f; 
 			
@@ -158,17 +154,14 @@ public class EndlessCharacterController : MonoBehaviour {
 			Vector3 finalPosition = new Vector3(goalX, transform.position.y, transform.position.z);
 			transform.position = Vector3.Lerp(startMovePosition, finalPosition, movementCounter);
 			movementCounter += Time.deltaTime / moveSpeed;
+		}
 
-			if (movementCounter >= 1.0f)
+		if (movementCounter >= 1.0f)
+		{
+			//TODO build helper method for these ifs
+			if(movementStatus == PlayerMovementStatus.MovingLeft)
 			{
-				movementStatus = PlayerMovementStatus.NotMoving;
-				movementCounter = 0.0f;
-
-				if(goalX > 0.0f)
-				{
-					position = PlayerPosition.Right;
-				}
-				else if (goalX < 0.0f)
+				if(position == PlayerPosition.Center)
 				{
 					position = PlayerPosition.Left;
 				}
@@ -177,10 +170,23 @@ public class EndlessCharacterController : MonoBehaviour {
 					position = PlayerPosition.Center;
 				}
 			}
+			else if (movementStatus == PlayerMovementStatus.MovingRight)
+			{
+				if(position == PlayerPosition.Center)
+				{
+					position = PlayerPosition.Right;
+				}
+				else
+				{
+					position = PlayerPosition.Center;
+				}
+			}
+
+			movementStatus = PlayerMovementStatus.NotMoving;
+			movementCounter = 0.0f;
 		}
-
 	}
-
+	
 	void recenterPlayer ()
 	{
 		if(transform.position.x <= 0.1f || transform.position.x >= -0.1f){
