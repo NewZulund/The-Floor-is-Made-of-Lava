@@ -8,6 +8,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	
 	public PlayerPosition position = PlayerPosition.Center;
 	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
+	private Vector3 startMovePosition;
 
 	public float verticalForce = 5000.0f;
 
@@ -16,8 +17,8 @@ public class EndlessCharacterController : MonoBehaviour {
 	public static float DEADZONE_HORIZONTAL = 0.05f;
 	public static float DEADZONE_VERTICAL = 0.1f;
 
-	public static float TOUCH_DEADZONE_HORIZONTAL = 1.0f;
-	public static float TOUCH_DEADZONE_VERTICAL_PERCENTAGE = 0.1f;
+	public static float TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE = 0.05f;
+	public static float TOUCH_DEADZONE_VERTICAL_PERCENTAGE = 0.05f;
 
 	public static float TOUCH_VERTICAL_JUMP_LENGTH = 1.0f;
 	public static float TOUCH_WIDTH_TOTAL_MOVEMENT_PERCENTAGE = 0.75f; //TODO Rename
@@ -25,7 +26,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	public static float RUNNING_DISTANCE_FROM_CENTER = 2.5f;
 
 	public float sideRunningTime = 1.0f;
-	public float movementTime = 0.5f;
+	public float moveSpeed = 0.5f;
 	public float movementCounter = 0.0f;
 	public float movementInitialX = 0.0f;
 
@@ -60,26 +61,28 @@ public class EndlessCharacterController : MonoBehaviour {
 
 				if(canJump)
 				{
-					if(Mathf.Abs(touch.deltaPosition.y / Screen.height) > TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
+					if(touch.deltaPosition.y / Screen.height > TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
 					{
-						//rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f));
+						rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f), ForceMode.Impulse);
 						nextJumpTime = Time.time + jumpDelay;
 						canJump = false;
 					}
 				}
 
-				if(touch.deltaPosition.x > TOUCH_DEADZONE_HORIZONTAL)
+				if(touch.deltaPosition.x / Screen.width  > TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE)
 				{
-					if(position != PlayerPosition.Left && movementStatus == PlayerMovementStatus.NotMoving)//Can move left
-					{
-						movementStatus = PlayerMovementStatus.MovingLeft;
-					}
-				}
-				else if (touch.deltaPosition.x < -TOUCH_DEADZONE_HORIZONTAL)
-				{
-					if(position != PlayerPosition.Right && movementStatus == PlayerMovementStatus.NotMoving)
+					if(position != PlayerPosition.Right && movementStatus == PlayerMovementStatus.NotMoving)//Can move left
 					{
 						movementStatus = PlayerMovementStatus.MovingRight;
+						startMovePosition = transform.position;
+					}
+				}
+				else if (touch.deltaPosition.x / Screen.width < -TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE)
+				{
+					if(position != PlayerPosition.Left && movementStatus == PlayerMovementStatus.NotMoving)
+					{
+						movementStatus = PlayerMovementStatus.MovingLeft;
+						startMovePosition = transform.position;
 					}
 				}
 			}
@@ -92,7 +95,7 @@ public class EndlessCharacterController : MonoBehaviour {
 				if(vertical > DEADZONE_VERTICAL || vertical < -DEADZONE_VERTICAL)
 				{
 					Debug.Log("Jumping " + Time.time);
-					rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f));
+					rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f),ForceMode.Impulse);
 					nextJumpTime = Time.time + jumpDelay;
 					canJump = false;
 				}
@@ -101,58 +104,81 @@ public class EndlessCharacterController : MonoBehaviour {
 			float horizontal = Input.GetAxis("Horizontal");
 			if( horizontal > DEADZONE_HORIZONTAL)
 			{
-				if(position != PlayerPosition.Left && movementStatus == PlayerMovementStatus.NotMoving)//Can move left
+				if(position != PlayerPosition.Right && movementStatus == PlayerMovementStatus.NotMoving)//Can move left
 				{
-					movementStatus = PlayerMovementStatus.MovingLeft;
+					movementStatus = PlayerMovementStatus.MovingRight;
+					startMovePosition = transform.position;
 				}
 			}
 			else if(horizontal < -DEADZONE_HORIZONTAL)
 			{
-				if(position != PlayerPosition.Right && movementStatus == PlayerMovementStatus.NotMoving)
+				if(position != PlayerPosition.Left && movementStatus == PlayerMovementStatus.NotMoving)
 				{
-					movementStatus = PlayerMovementStatus.MovingRight;
+					movementStatus = PlayerMovementStatus.MovingLeft;
+					startMovePosition = transform.position;
+				}
+			}
+		}
+
+		if(movementStatus != PlayerMovementStatus.NotMoving){
+			
+			float goalX = 0.0f; 
+			
+			if(movementStatus == PlayerMovementStatus.MovingLeft)
+			{
+				if(position == PlayerPosition.Center)
+				{
+					goalX = -RUNNING_DISTANCE_FROM_CENTER;
+				}
+				else if (position == PlayerPosition.Right)
+				{
+					goalX = 0.0f;
+				}
+				else
+				{
+					movementStatus = PlayerMovementStatus.NotMoving;
+				}
+			}
+			else if(movementStatus == PlayerMovementStatus.MovingRight)
+			{
+				if(position == PlayerPosition.Center)
+				{
+					goalX = RUNNING_DISTANCE_FROM_CENTER;
+				}
+				else if (position == PlayerPosition.Left)
+				{
+					goalX = 0.0f; 
+				}
+				else
+				{
+					movementStatus = PlayerMovementStatus.NotMoving;
 				}
 			}
 
-		}
+			Vector3 finalPosition = new Vector3(goalX, transform.position.y, transform.position.z);
+			transform.position = Vector3.Lerp(startMovePosition, finalPosition, movementCounter);
+			movementCounter += Time.deltaTime / moveSpeed;
 
-		movePlayer();
-
-	}
-
-	void movePlayer ()
-	{
-		if(movementStatus == PlayerMovementStatus.MovingLeft)
-		{
-			if(position == PlayerPosition.Center)
-			{
-
-			}
-			else if (position == PlayerPosition.Right)
-			{
-
-			}
-			else
+			if (movementCounter >= 1.0f)
 			{
 				movementStatus = PlayerMovementStatus.NotMoving;
+				movementCounter = 0.0f;
+
+				if(goalX > 0.0f)
+				{
+					position = PlayerPosition.Right;
+				}
+				else if (goalX < 0.0f)
+				{
+					position = PlayerPosition.Left;
+				}
+				else
+				{
+					position = PlayerPosition.Center;
+				}
 			}
 		}
-		else if(movementStatus == PlayerMovementStatus.MovingRight)
-		{
 
-			if(position == PlayerPosition.Center)
-			{
-
-			}
-			else if (position == PlayerPosition.Left)
-			{
-
-			}
-			else
-			{
-				movementStatus = PlayerMovementStatus.NotMoving;
-			}
-		}
 	}
 
 	void recenterPlayer ()
