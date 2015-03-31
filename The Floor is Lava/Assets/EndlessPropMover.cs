@@ -4,7 +4,7 @@ using System.Collections;
 public class EndlessPropMover : MonoBehaviour {
 
 	EndlessController controller; 
-	// Use this for initialization
+
 	void Start () {
 		controller = EndlessController.controller;
 
