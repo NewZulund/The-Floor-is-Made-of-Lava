@@ -1,56 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum PlayerPosition{Left,Center,Right};
 public enum PlayerMovementStatus {MovingLeft, NotMoving, MovingRight};
 
 public class EndlessCharacterController : MonoBehaviour {
-	
-	public PlayerPosition position = PlayerPosition.Center;
-	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
+
+	//Horizontal Movement Variables
+	public float moveSpeed = 0.5f;
+	public float movementCounter = 0.0f;
 	private Vector3 startMovePosition;
+	public RunningRail currentRail; 
+	private RunningRail targetRail;
 
-	//Movement Variables
-	public float verticalForce = 5000.0f;
-
-	//TODO replace with rails
-	public float maxMovement_Horizontal = 3.0f;
-
+	//Player Variables
+	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
 
 	//Controller variables
 	public static float DEADZONE_HORIZONTAL = 0.05f;
 	public static float DEADZONE_VERTICAL = 0.1f;
-
 	public static float TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE = 0.05f;
 	public static float TOUCH_DEADZONE_VERTICAL_PERCENTAGE = 0.05f;
-
 	public static float TOUCH_VERTICAL_JUMP_LENGTH = 1.0f;
 	public static float TOUCH_WIDTH_TOTAL_MOVEMENT_PERCENTAGE = 0.75f; //TODO Rename
 
-	public static float RUNNING_DISTANCE_FROM_CENTER = 2.5f;
-
-	public float sideRunningTime = 1.0f;
-	public float moveSpeed = 0.5f;
-	public float movementCounter = 0.0f;
-	public float movementInitialX = 0.0f;
-
-	public bool canJump = true;
+	//Jump Variables
+	//TODO not use forces. 
+	public float verticalForce = 5000.0f;
 	public float jumpDelay = 1.0f; 
+	public bool canJump;
 	private float nextJumpTime;
 
 	private Rigidbody rigidbody;
 
-	void Awake(){
+	void Awake()
+	{
 		rigidbody = GetComponent<Rigidbody>();
 	}
 
 	void Update () 
 	{
+		//TODO Raycast to check if the player can jump
 
-		if(!canJump && Time.time > nextJumpTime)
-		{
-			canJump = true;
-		}
+		//Movement booleans
+		bool moveRight = false;
+		bool moveLeft = false;
+		bool jump = false;
 
 		//Check for touch input
 		if(Input.touchCount > 0)
@@ -59,145 +53,104 @@ public class EndlessCharacterController : MonoBehaviour {
 			{
 				Touch touch = Input.GetTouch(i);
 
-				if(canJump)
+				if(touch.deltaPosition.y / Screen.height > TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
 				{
-					if(touch.deltaPosition.y / Screen.height > TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
-					{
-						rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f), ForceMode.Impulse);
-						nextJumpTime = Time.time + jumpDelay;
-						canJump = false;
-					}
+					jump = true;
 				}
 
 				if(touch.deltaPosition.x / Screen.width  > TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE)
 				{
-					if(position != PlayerPosition.Right && movementStatus == PlayerMovementStatus.NotMoving)//Can move left
-					{
-						movementStatus = PlayerMovementStatus.MovingRight;
-						startMovePosition = transform.position;
-					}
+					moveRight = true; 
 				}
 				else if (touch.deltaPosition.x / Screen.width < -TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE)
 				{
-					if(position != PlayerPosition.Left && movementStatus == PlayerMovementStatus.NotMoving)
-					{
-						movementStatus = PlayerMovementStatus.MovingLeft;
-						startMovePosition = transform.position;
-					}
+					moveLeft = true;
 				}
 			}
 		}
 		else // PC Keyboard or Controller Input
 		{
-			if(canJump)
+			float vertical = Input.GetAxis("Vertical");
+			if(vertical > DEADZONE_VERTICAL)
 			{
-				float vertical = Input.GetAxis("Vertical");
-				if(vertical > DEADZONE_VERTICAL || vertical < -DEADZONE_VERTICAL)
-				{
-					Debug.Log("Jumping " + Time.time);
-					rigidbody.AddForce(new Vector3(0.0f,verticalForce,0.0f),ForceMode.Impulse);
-					nextJumpTime = Time.time + jumpDelay;
-					canJump = false;
-				}
+				jump = true;
 			}
 
 			float horizontal = Input.GetAxis("Horizontal");
 			if( horizontal > DEADZONE_HORIZONTAL)
 			{
-				if(position != PlayerPosition.Right && movementStatus == PlayerMovementStatus.NotMoving)//Can move left
-				{
-					movementStatus = PlayerMovementStatus.MovingRight;
-					startMovePosition = transform.position;
-				}
+				moveRight = true;
 			}
 			else if(horizontal < -DEADZONE_HORIZONTAL)
 			{
-				if(position != PlayerPosition.Left && movementStatus == PlayerMovementStatus.NotMoving)
-				{
-					movementStatus = PlayerMovementStatus.MovingLeft;
-					startMovePosition = transform.position;
-				}
+				moveLeft = true; 
 			}
 		}
 
-		if(movementStatus != PlayerMovementStatus.NotMoving && movementCounter <= 1){
-			
-			float goalX = 0.0f; 
-			
-			if(movementStatus == PlayerMovementStatus.MovingLeft)
-			{
-				if(position == PlayerPosition.Center)
-				{
-					goalX = -RUNNING_DISTANCE_FROM_CENTER;
-				}
-				else if (position == PlayerPosition.Right)
-				{
-					goalX = 0.0f;
-				}
-				else
-				{
-					movementStatus = PlayerMovementStatus.NotMoving;
-				}
-			}
-			else if(movementStatus == PlayerMovementStatus.MovingRight)
-			{
-				if(position == PlayerPosition.Center)
-				{
-					goalX = RUNNING_DISTANCE_FROM_CENTER;
-				}
-				else if (position == PlayerPosition.Left)
-				{
-					goalX = 0.0f; 
-				}
-				else
-				{
-					movementStatus = PlayerMovementStatus.NotMoving;
-				}
-			}
 
-			Vector3 finalPosition = new Vector3(goalX, transform.position.y, transform.position.z);
-			transform.position = Vector3.Lerp(startMovePosition, finalPosition, movementCounter);
+		//Generate movemement target
+		Vector3 targetPosition = currentRail.position;
+
+		//If both or neither directions are activated. Do nothing
+		if(moveLeft && !moveRight){
+			//Swyped Left 
+			if(movementStatus == PlayerMovementStatus.NotMoving)
+			{
+				//Start movememt
+				targetRail = currentRail.leftRail;
+				movementStatus = PlayerMovementStatus.MovingLeft;
+				startMovePosition = transform.position;
+				movementCounter = 0;
+			}
+		}
+		else if(moveRight && !moveLeft){
+			//Swyped Right
+			if(movementStatus == PlayerMovementStatus.NotMoving)
+			{
+				//Start movement
+				targetRail = currentRail.rightRail;
+				movementStatus = PlayerMovementStatus.MovingRight;
+				startMovePosition = transform.position;
+				movementCounter = 0;
+			}
+		}
+
+		if(targetRail != null){
+			targetPosition = targetRail.transform.position;
+		}
+		else{
+			CancelMovement();
+		}
+
+
+		//Apply movememnt
+		if(movementStatus != PlayerMovementStatus.NotMoving)
+		{
+			//Ignore y/z movement
+			targetPosition = new Vector3(targetPosition.x, transform.position.y, transform.position.z);
+			transform.position = Vector3.Lerp(startMovePosition, targetPosition, movementCounter);
 			movementCounter += Time.deltaTime / moveSpeed;
 		}
 
-		if (movementCounter >= 1.0f)
+		//Movement is complete. The player will be in the target position
+		if(movementCounter >= 1)
 		{
-			//TODO build helper method for these ifs
-			if(movementStatus == PlayerMovementStatus.MovingLeft)
-			{
-				if(position == PlayerPosition.Center)
-				{
-					position = PlayerPosition.Left;
-				}
-				else
-				{
-					position = PlayerPosition.Center;
-				}
-			}
-			else if (movementStatus == PlayerMovementStatus.MovingRight)
-			{
-				if(position == PlayerPosition.Center)
-				{
-					position = PlayerPosition.Right;
-				}
-				else
-				{
-					position = PlayerPosition.Center;
-				}
-			}
-
 			movementStatus = PlayerMovementStatus.NotMoving;
-			movementCounter = 0.0f;
+			movementCounter = 0;
+			currentRail = targetRail;
+		}
+
+
+		//TODO limit with raycast result
+		if(jump){
+			rigidbody.AddForce(Vector3.up * verticalForce);
 		}
 	}
-	
-	void recenterPlayer ()
-	{
-		if(transform.position.x <= 0.1f || transform.position.x >= -0.1f){
-			Vector3 targetPosition = new Vector3(0.0f, transform.position.y, transform.position.z);
-			transform.position = Vector3.Lerp(transform.position, targetPosition, movementCounter);
-			movementCounter = targetPosition.x - transform.position.x;
-		}
+
+	public void CancelMovement(){
+		targetRail = currentRail;
+		movementCounter = 0;
+		movementStatus = PlayerMovementStatus.NotMoving;
 	}
 }
  
