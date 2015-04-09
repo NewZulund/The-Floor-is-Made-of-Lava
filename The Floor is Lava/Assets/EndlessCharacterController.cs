@@ -10,10 +10,14 @@ public class EndlessCharacterController : MonoBehaviour {
 	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
 	private Vector3 startMovePosition;
 
+	//Movement Variables
 	public float verticalForce = 5000.0f;
 
+	//TODO replace with rails
 	public float maxMovement_Horizontal = 3.0f;
 
+
+	//Controller variables
 	public static float DEADZONE_HORIZONTAL = 0.05f;
 	public static float DEADZONE_VERTICAL = 0.1f;
 
