@@ -24,8 +24,9 @@ public class EndlessCharacterFailController : MonoBehaviour {
 		{
 			happyMouth.SetActive(false);
 			sadMouth.SetActive(true);
-			rigidBody.velocity = Vector3.zero; 
-			rigidBody.drag = deathFallDrag;
+			rigidBody.velocity = -rigidBody.velocity;
+			//rigidBody.velocity = Vector3.zero; 
+			//rigidBody.drag = deathFallDrag;
 			//Instantiate(fireEffects, transform.position, Quaternion.identity);
 		}
 	}
