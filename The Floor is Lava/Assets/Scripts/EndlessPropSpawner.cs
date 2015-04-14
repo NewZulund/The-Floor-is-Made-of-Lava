@@ -30,6 +30,15 @@ public class EndlessPropSpawner : MonoBehaviour {
 
 	public void Despawn (Collider other)
 	{
-		throw new System.NotImplementedException ();
+		if(other.tag == "Platform")
+		{
+			EndlessPlatform platform = (EndlessPlatform) other.gameObject.GetComponentInParent<EndlessPlatform>();
+
+			if(platform)
+			{
+				platform.Despawn();
+
+			}
+		}
 	}
 }

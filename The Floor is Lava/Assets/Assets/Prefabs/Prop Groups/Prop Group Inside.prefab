@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefabs:
-  - {fileID: 155750, guid: d0a0bc1fc8d4fcf4c8b975b5ca2b231d, type: 2}
+  - {fileID: 11434830, guid: b9886aff07da285478791d416b3b401a, type: 2}
   inactivePlatforms: []
   activePlatforms:
   - {fileID: 0}

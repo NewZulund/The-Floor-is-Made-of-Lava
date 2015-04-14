@@ -3,14 +3,11 @@ using System.Collections;
 
 public class EndlessAssetDespawner : MonoBehaviour {
 
-	EndlessPropSpawner propSpawner;
-
+	public EndlessPropSpawner propSpawner;
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.tag == "Platform")
-		{
-			propSpawner.Despawn(other);
-		}
+		Debug.Log("Despawn!");
+		propSpawner.Despawn(other);
 	}
 }

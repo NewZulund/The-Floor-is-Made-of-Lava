@@ -6,11 +6,11 @@ public class PropGroup : MonoBehaviour
 {
 
 	//Prefab Variables
-	public GameObject[] platformPrefabs;
+	public EndlessPlatform[] platformPrefabs;
 
 	//Instantiated Variables
-	public List<GameObject> inactivePlatforms = new List<GameObject>(); //Instantiated but not in use
-	public List<GameObject> activePlatforms = new List<GameObject>(); //In use
+	public Queue<EndlessPlatform> inactivePlatforms = new Queue<EndlessPlatform>(); //Instantiated but not in use
+	public List<EndlessPlatform> activePlatforms = new List<EndlessPlatform>(); //In use
 	public float platformSeperation = 2.5f;
 
 
@@ -18,18 +18,20 @@ public class PropGroup : MonoBehaviour
 	public int INSTANTIATED_PLATFORM_COUNT = 20;
 	public Vector3 storagePosition;
 
-	void Awake()
+	void Start()
 	{
 
 		//TODO instantiate various prefabs
 
 		//Spawn even amounts of prefabs.
 		for(int i = 0; i < INSTANTIATED_PLATFORM_COUNT; i++){
-			inactivePlatforms.Add(Instantiate(platformPrefabs[0], storagePosition, Quaternion.identity) as GameObject);
+			EndlessPlatform platform = Instantiate(platformPrefabs[0], storagePosition, Quaternion.identity) as EndlessPlatform;
+			inactivePlatforms.Enqueue(platform);
+			platform.Spawn(storagePosition, Quaternion.identity, this);
 		}
 	}
 	
-	private GameObject getPlatformOfIndex (int index)
+	private EndlessPlatform getPlatformOfIndex (int index)
 	{
 		if(index >= platformPrefabs.Length)
 		{
@@ -38,21 +40,23 @@ public class PropGroup : MonoBehaviour
 		}
 
 		//Get platform from pool or instantiate new if pool is empty
-		GameObject platform;
+		EndlessPlatform platform;
 		if(inactivePlatforms.Count == 0)
 		{
-			platform = Instantiate(platformPrefabs[index], storagePosition, Quaternion.identity) as GameObject;
+			Debug.Log("Needs more platforms!");
+			platform = Instantiate(platformPrefabs[0], storagePosition, Quaternion.identity) as EndlessPlatform;
+			platform.Spawn(storagePosition, Quaternion.identity, this);
 		}
 		else
 		{
-			platform = inactivePlatforms[0];
-			inactivePlatforms.RemoveAt(0);
+			platform = inactivePlatforms.Dequeue();
 		}
 
 		activePlatforms.Add(platform);
 		return platform;
 	}
 
+	
 	public void spawnPlatformSet (RunningRail selectedRail)
 	{
 
@@ -60,12 +64,24 @@ public class PropGroup : MonoBehaviour
 		for(int i = 0; i < 5; i++)
 		{
 			//TODO use more than one platform asset if possible
-			GameObject platform = getPlatformOfIndex(0);
+			EndlessPlatform platform = getPlatformOfIndex(0);
 
 			//Offset by platform count
-			platform.transform.position = selectedRail.position + (Vector3.back * platformSeperation * i);
+			platform.MoveModelTo(selectedRail.position + (Vector3.back * platform.length * i));
+
+			//Start moving
+			platform.Enable();
 
 		}
+	}
+
+	public void despawn (EndlessPlatform endlessPlatform)
+	{
+		Debug.Log("Despawned");
+		endlessPlatform.Disable();
+		endlessPlatform.MoveModelTo(storagePosition);
+		activePlatforms.Remove(endlessPlatform);
+		inactivePlatforms.Enqueue(endlessPlatform);
 	}
 }
 
