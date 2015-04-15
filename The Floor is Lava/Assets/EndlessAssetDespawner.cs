@@ -7,7 +7,6 @@ public class EndlessAssetDespawner : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("Despawn!");
 		propSpawner.Despawn(other);
 	}
 }

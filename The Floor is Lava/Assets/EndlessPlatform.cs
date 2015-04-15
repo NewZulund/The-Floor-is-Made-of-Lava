@@ -12,7 +12,6 @@ public class EndlessPlatform : MonoBehaviour {
 	void Start()
 	{
 		moverController = GetComponent<EndlessPropMover>();
-		Disable();
 	}
 
 	public void Spawn(Vector3 position, Quaternion rotation, PropGroup group)
@@ -24,7 +23,15 @@ public class EndlessPlatform : MonoBehaviour {
 
 	public void Despawn ()
 	{
-		propGroup.despawn(this);
+		if(propGroup)
+		{
+			propGroup.despawn(this);
+		}
+		else
+		{
+			Destroy(this);
+		}
+
 	}
 
 	public void MoveToPool ()
