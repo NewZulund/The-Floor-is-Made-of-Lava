@@ -11,11 +11,6 @@ public class LavaDespawner : MonoBehaviour {
 		{
 			spawner.RemoveLava(other);
 		}
-		else if (other.tag == "Platform")
-		{
-			//TODO randomly generate platforms
-			spawner.RemoveLava(other);
-		}
 
 	}
 }

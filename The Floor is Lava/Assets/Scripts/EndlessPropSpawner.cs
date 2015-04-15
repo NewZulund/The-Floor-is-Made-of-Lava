@@ -10,8 +10,8 @@ public class EndlessPropSpawner : MonoBehaviour {
 	public RunningRail[] rails;
 	
 	//Spawn Wave Variables
-	public float spawnMin = 1f;
-	public float spawnMax = 3f;
+	public float spawnMin = 3f;
+	public float spawnMax = 6f;
 
 	void Start()
 	{
@@ -24,9 +24,21 @@ public class EndlessPropSpawner : MonoBehaviour {
 		PropGroup selectedPropGroup = propGroups[Random.Range(0,propGroups.Length)];
 		RunningRail selectedRail = rails[Random.Range(0,rails.Length)];	
 
-		GameObject objectToSpawn = selectedPropGroup.getRandomAsset();
-		Instantiate(objectToSpawn, selectedRail.startPosition.position, Quaternion.identity);
+		selectedPropGroup.spawnPlatformSet(selectedRail);
 		Invoke("Spawn", Random.Range(spawnMin, spawnMax));
 	}
 
+	public void Despawn (Collider other)
+	{
+		if(other.tag == "Platform")
+		{
+			EndlessPlatform platform = (EndlessPlatform) other.gameObject.GetComponentInParent<EndlessPlatform>();
+
+			if(platform)
+			{
+				platform.Despawn();
+
+			}
+		}
+	}
 }
