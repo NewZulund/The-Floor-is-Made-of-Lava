@@ -28,6 +28,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	public float verticalForce = 5000.0f;
 	public float jumpDelay = 1.0f; 
 	public bool canJump;
+	public bool canMove = true;
 	private float nextJumpTime;
 
 	private Rigidbody rigidbody;
@@ -94,24 +95,26 @@ public class EndlessCharacterController : MonoBehaviour {
 		//If both or neither directions are activated. Do nothing
 		if(moveLeft && !moveRight){
 			//Swyped Left 
-			if(movementStatus == PlayerMovementStatus.NotMoving)
+			if(movementStatus == PlayerMovementStatus.NotMoving && canMove)
 			{
 				//Start movememt
 				targetRail = currentRail.leftRail;
 				movementStatus = PlayerMovementStatus.MovingLeft;
 				startMovePosition = transform.position;
 				movementCounter = 0;
+				canMove = false;
 			}
 		}
 		else if(moveRight && !moveLeft){
 			//Swyped Right
-			if(movementStatus == PlayerMovementStatus.NotMoving)
+			if(movementStatus == PlayerMovementStatus.NotMoving && canMove)
 			{
 				//Start movement
 				targetRail = currentRail.rightRail;
 				movementStatus = PlayerMovementStatus.MovingRight;
 				startMovePosition = transform.position;
 				movementCounter = 0;
+				canMove = false;
 			}
 		}
 
@@ -120,6 +123,7 @@ public class EndlessCharacterController : MonoBehaviour {
 		}
 		else{
 			CancelMovement();
+			canMove = true;
 		}
 
 
@@ -138,6 +142,7 @@ public class EndlessCharacterController : MonoBehaviour {
 			movementStatus = PlayerMovementStatus.NotMoving;
 			movementCounter = 0;
 			currentRail = targetRail;
+			canMove = true;
 		}
 
 

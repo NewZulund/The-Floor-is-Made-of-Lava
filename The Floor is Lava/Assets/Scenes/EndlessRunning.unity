@@ -1644,6 +1644,7 @@ MonoBehaviour:
   verticalForce: 5000
   jumpDelay: 1
   canJump: 0
+  canMove: 1
 --- !u!114 &1397648771
 MonoBehaviour:
   m_ObjectHideFlags: 0
