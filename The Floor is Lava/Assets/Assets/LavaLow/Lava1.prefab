@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 488350}
   - 33: {fileID: 3333146}
   - 23: {fileID: 2304024}
-  - 95: {fileID: 9571002}
   - 114: {fileID: 11473106}
   - 64: {fileID: 6422170}
   m_Layer: 0
@@ -42,7 +41,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 815bc19ca6c0e499db8b5157385390b8, type: 2}
+  - {fileID: 2100000, guid: b6dea61487ede7d4dbdfc39ac6aecc11, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -62,7 +61,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104580}
-  m_Mesh: {fileID: 4300000, guid: 126e4839f2db92b4c94e638a98143688, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ef06c3c015c32cf4497b3f894f01e61c, type: 3}
 --- !u!64 &6422170
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -74,24 +73,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 126e4839f2db92b4c94e638a98143688, type: 3}
---- !u!95 &9571002
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104580}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 126e4839f2db92b4c94e638a98143688, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_Mesh: {fileID: 4300000, guid: ef06c3c015c32cf4497b3f894f01e61c, type: 3}
 --- !u!114 &11473106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,7 +82,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 104580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc69a31dcb5e6f4f89b8ad6cfe87790, type: 3}
+  m_Script: {fileID: 11500000, guid: 80b102e08feff4046ae27d0f58525d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &100100000
