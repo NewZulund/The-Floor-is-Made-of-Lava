@@ -8,6 +8,8 @@ public class EndlessCharacterFailController : MonoBehaviour {
 	public GameObject fireEffects;
 	public Rigidbody rigidBody;
 
+	public float bounceVelocity = 10.0f;
+
 	public float deathFallDrag = 10.0f;
 
 	void Awake()
@@ -24,10 +26,7 @@ public class EndlessCharacterFailController : MonoBehaviour {
 		{
 			happyMouth.SetActive(false);
 			sadMouth.SetActive(true);
-			rigidBody.velocity = -rigidBody.velocity;
-			//rigidBody.velocity = Vector3.zero; 
-			//rigidBody.drag = deathFallDrag;
-			//Instantiate(fireEffects, transform.position, Quaternion.identity);
+			rigidBody.velocity = Vector3.up * bounceVelocity;
 		}
 	}
 }
