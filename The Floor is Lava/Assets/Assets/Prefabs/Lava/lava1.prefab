@@ -8,11 +8,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468952}
-  - 64: {fileID: 6492968}
   - 114: {fileID: 11492464}
   m_Layer: 0
   m_Name: lava1
-  m_TagString: Lava
+  m_TagString: LavaCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,8 +41,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.140000001, y: -2.16000009, z: -60.7700005}
-  m_LocalScale: {x: 1, y: .640016377, z: 1}
+  m_LocalPosition: {x: .200000003, y: -1.20689666, z: .300000012}
+  m_LocalScale: {x: 1, y: .517241418, z: 1}
   m_Children:
   - {fileID: 478796}
   m_Father: {fileID: 0}
@@ -70,7 +69,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 313843271ca747e4c9e14b92f5ba1914, type: 2}
+  - {fileID: 2100000, guid: 948c04b5ea131304a94e33899d40213a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -90,19 +89,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140572}
-  m_Mesh: {fileID: 4300000, guid: d827b607c7df4a84db48f735837a5051, type: 3}
---- !u!64 &6492968
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109112}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 2eeac6fc07364434d82aa71b8d4a66c6, type: 3}
 --- !u!64 &6494272
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -114,7 +101,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: d827b607c7df4a84db48f735837a5051, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2eeac6fc07364434d82aa71b8d4a66c6, type: 3}
 --- !u!114 &11492464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 109112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc69a31dcb5e6f4f89b8ad6cfe87790, type: 3}
+  m_Script: {fileID: 11500000, guid: 80b102e08feff4046ae27d0f58525d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &100100000
