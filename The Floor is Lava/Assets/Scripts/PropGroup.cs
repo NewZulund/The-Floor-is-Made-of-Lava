@@ -68,7 +68,7 @@ public class PropGroup : MonoBehaviour
 			EndlessPlatform platform = getPlatformOfIndex(0);
 
 			//Offset by platform count
-			platform.MoveModelTo(selectedRail.position + (Vector3.back * platform.length * i));
+			platform.MoveModelTo(selectedRail.startPosition.position + (Vector3.back * platform.length * i));
 
 			//Start moving
 			platform.Enable();

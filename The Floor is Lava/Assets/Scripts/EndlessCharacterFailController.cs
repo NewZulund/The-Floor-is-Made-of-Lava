@@ -8,7 +8,9 @@ public class EndlessCharacterFailController : MonoBehaviour {
 	public GameObject fireEffects;
 	public Rigidbody rigidBody;
 
-	public float deathFallDrag = 10.0f;
+	//Lava hit variables
+	public float hurtBounceSpeed = 10.0f;
+	public float hurtModelRevertTime = 1.0f;
 
 	void Awake()
 	{
@@ -17,17 +19,22 @@ public class EndlessCharacterFailController : MonoBehaviour {
 		rigidBody =  GetComponent<Rigidbody>();
 	}
 
-
 	void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == "LavaCollider")
 		{
 			happyMouth.SetActive(false);
 			sadMouth.SetActive(true);
-			rigidBody.velocity = -rigidBody.velocity;
-			//rigidBody.velocity = Vector3.zero; 
-			//rigidBody.drag = deathFallDrag;
-			//Instantiate(fireEffects, transform.position, Quaternion.identity);
+			rigidBody.velocity = Vector3.up * hurtBounceSpeed;
+
+			//Flip hurt model back
+			Invoke("RevertHurtModel", hurtModelRevertTime);
 		}
+	}
+
+	void RevertHurtModel()
+	{
+		sadMouth.SetActive(false);
+		happyMouth.SetActive(true);
 	}
 }
