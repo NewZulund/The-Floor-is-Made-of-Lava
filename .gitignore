@@ -3,6 +3,7 @@
 # =============== #
 [Tt]emp/
 [Oo]bj/
+<<<<<<< HEAD
 [Bb]uild
 [Ll]ibrary/
 sysinfo.txt
@@ -30,3 +31,7 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+=======
+[Bb]uild/
+
+>>>>>>> origin/levelSpawning-Isaac
