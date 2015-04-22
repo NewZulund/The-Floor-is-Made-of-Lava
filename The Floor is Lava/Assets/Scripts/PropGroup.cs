@@ -22,12 +22,18 @@ public class PropGroup : MonoBehaviour
 	{
 
 		//TODO instantiate various prefabs
+		int numberOfEachPlatform = INSTANTIATED_PLATFORM_COUNT / platformPrefabs.Length;
 
 		//Spawn even amounts of prefabs.
-		for(int i = 0; i < INSTANTIATED_PLATFORM_COUNT; i++){
-			EndlessPlatform platform = Instantiate(platformPrefabs[0], storagePosition, Quaternion.identity) as EndlessPlatform;
-			inactivePlatforms.Enqueue(platform);
-			platform.Spawn(storagePosition, Quaternion.identity, this);
+		for(int i = 0; i < numberOfEachPlatform; i++)
+		{
+			for(int j = 0; j < platformPrefabs.Length; j++)
+			{
+				EndlessPlatform platform = Instantiate(platformPrefabs[j], storagePosition, Quaternion.identity) as EndlessPlatform;
+				inactivePlatforms.Enqueue(platform);
+				platform.Spawn(storagePosition, Quaternion.identity, this);
+
+			}
 		}
 	}
 	
@@ -36,7 +42,7 @@ public class PropGroup : MonoBehaviour
 		if(index >= platformPrefabs.Length)
 		{
 			index = 0;
-			//Debug.Log("Platform doesn't exist at that index!");
+			Debug.Log("Platform doesn't exist at that index!");
 		}
 
 		//Get platform from pool or instantiate new if pool is empty
@@ -44,7 +50,7 @@ public class PropGroup : MonoBehaviour
 		if(inactivePlatforms.Count == 0)
 		{
 			//Debug.Log("Needs more platforms!");
-			platform = Instantiate(platformPrefabs[0], storagePosition, Quaternion.identity) as EndlessPlatform;
+			platform = Instantiate(platformPrefabs[index], storagePosition, Quaternion.identity) as EndlessPlatform;
 			platform.Spawn(storagePosition, Quaternion.identity, this);
 		}
 		else
@@ -65,7 +71,7 @@ public class PropGroup : MonoBehaviour
 		for(int i = 0; i < 5; i++)
 		{
 			//TODO use more than one platform asset if possible
-			EndlessPlatform platform = getPlatformOfIndex(0);
+			EndlessPlatform platform = getPlatformOfIndex(Random.Range(0, platformPrefabs.Length));
 
 			//Offset by platform count
 			platform.MoveModelTo(selectedRail.startPosition.position + (Vector3.back * platform.length * i));

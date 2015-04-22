@@ -13,9 +13,18 @@ public class EndlessPropSpawner : MonoBehaviour {
 	public float spawnMin = 3f;
 	public float spawnMax = 6f;
 
+	public RailRunnerSpawner runningRailPrefab;
+
+	//Runner mode variables
+	public bool useRunnerMode = true;
+	public bool hasInitialised = false;
+	
 	void Start()
 	{
-		Spawn();
+		if(!useRunnerMode)
+		{
+			Spawn();
+		}
 	}
 
 	void Spawn()
@@ -39,6 +48,17 @@ public class EndlessPropSpawner : MonoBehaviour {
 				platform.Despawn();
 
 			}
+		}
+	}
+
+	public void Update()
+	{
+		if(useRunnerMode && !hasInitialised)
+		{
+			RailRunnerSpawner runner = Instantiate(runningRailPrefab) as RailRunnerSpawner;
+			runner.ActiveRail = rails[rails.Length / 2]; 
+			runner.InitPlatforms();
+			hasInitialised = true;
 		}
 	}
 }

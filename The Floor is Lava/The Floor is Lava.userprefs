@@ -1,21 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EndlessAssetDespawner.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EndlessController.cs">
     <Files>
-      <File FileName="Assets\Scripts\PropGroup.cs" Line="77" Column="3" />
-      <File FileName="..\..\Hastilude\Hastilude\Assets\PlayerHitNotification.cs" Line="1" Column="1" />
-      <File FileName="Assets\EndlessPlatform.cs" Line="46" Column="2" />
-      <File FileName="Assets\EndlessAssetDespawner.cs" Line="13" Column="1" />
-      <File FileName="Assets\Scripts\EndlessPropSpawner.cs" Line="39" Column="24" />
-      <File FileName="Assets\Scripts\LavaDespawner.cs" Line="6" Column="27" />
-      <File FileName="Assets\Scripts\EndlessLavaSpawner.cs" Line="13" Column="42" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EndlessCharacterFailController.cs">
-    <Files>
-      <File FileName="Assets\Scripts\EndlessCharacterFailController.cs" Line="24" Column="3" />
-      <File FileName="Assets\EndlessPlatform.cs" Line="63" Column="1" />
->>>>>>> origin/levelSpawning-Isaac
+      <File FileName="Assets\Scripts\EndlessPropSpawner.cs" Line="57" Column="4" />
+      <File FileName="Assets\Scripts\Platform Spawning\RailRunnerSpawner.cs" Line="55" Column="36" />
+      <File FileName="Assets\Scripts\RunningRail.cs" Line="25" Column="7" />
+      <File FileName="Assets\Scripts\EndlessController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

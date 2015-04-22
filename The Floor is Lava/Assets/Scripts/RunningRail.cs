@@ -16,4 +16,15 @@ public class RunningRail : MonoBehaviour {
 	//Model Spawner Variables
 	public Transform startPosition;
 
+	public RunningRail GetRandomLinkedRail ()
+	{
+		if(rightRail != null && leftRail != null)
+		{
+			return Random.value > 0.5f ? leftRail : rightRail;
+		}
+		else
+		{
+			return leftRail != null ? leftRail : rightRail;
+		}
+	}
 }
