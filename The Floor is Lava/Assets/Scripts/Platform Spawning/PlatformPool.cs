@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PlatformPool : MonoBehaviour {
 
 	public float instantiatedNumber = 0;
-	float numberToInstantiate = 35;
+	public float numberToInstantiate = 35;
 
 	public EndlessPlatform[] platformPrefabs;
 	public Queue<EndlessPlatform> queue = new Queue<EndlessPlatform>();

@@ -6,7 +6,7 @@ public class RailRunnerSpawner : MonoBehaviour
 	
 
 	EndlessController controller; 
-	public float initialSpawnDistance = 30;
+	public float initialSpawnDistance = 10;
 
 	//Platform positions
 	public float currentZPosition = 0;
@@ -14,6 +14,7 @@ public class RailRunnerSpawner : MonoBehaviour
 	public float timeTillNextSpawn = 0f;
 
 	public RunningRail ActiveRail {get; set;}
+	private RunningRail lastRail;
 
 	//Rail change limiting //TODO determine by game difficulty 
 	public float minimumRailChangeTime = 0.5f;
@@ -47,8 +48,7 @@ public class RailRunnerSpawner : MonoBehaviour
 		}
 
 		lastSpawnedTime = Time.time;
-		//TODO use actual controller speed
-		timeTillNextSpawn = platform.length / 10.0f;
+		timeTillNextSpawn = platform.length / controller.currentRunSpeed;
 		completedInit = true;
 	}
 
@@ -63,6 +63,7 @@ public class RailRunnerSpawner : MonoBehaviour
 		{
 			if((Random.value <= CHANGE_RAIL_PROBABILITY &&  miniumRailChangeWaitTime < Time.time) || Time.time > maximumRailChangeWaitTime)
 			{
+				lastRail = ActiveRail;
 				ActiveRail = ActiveRail.GetRandomLinkedRail();
 				railChanged = true;
 				miniumRailChangeWaitTime = Time.time + minimumRailChangeTime;
@@ -83,7 +84,8 @@ public class RailRunnerSpawner : MonoBehaviour
 		//Give the player some notification that the rail is changing
 		if(railChanged)
 		{
-
+			lastRail.icon.SetActive(false);
+			ActiveRail.icon.SetActive(true);
 
 		}
 	}

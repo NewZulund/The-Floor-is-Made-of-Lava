@@ -13,6 +13,8 @@ public class RunningRail : MonoBehaviour {
 		set{this.transform.position = value;}
 	}
 
+	public GameObject icon;
+
 	//Model Spawner Variables
 	public Transform startPosition;
 
