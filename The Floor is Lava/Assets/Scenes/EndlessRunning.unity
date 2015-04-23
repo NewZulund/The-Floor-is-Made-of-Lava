@@ -308,6 +308,14 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.72413802
       objectReference: {fileID: 0}
+    - target: {fileID: 11407430, guid: 388449a5b4972c24c8922363b063f147, type: 2}
+      propertyPath: minimumRailChangeTime
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407430, guid: 388449a5b4972c24c8922363b063f147, type: 2}
+      propertyPath: maximimRailChangeTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 388449a5b4972c24c8922363b063f147, type: 2}
   m_IsPrefabParent: 0

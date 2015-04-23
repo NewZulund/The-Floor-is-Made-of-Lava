@@ -3,15 +3,23 @@ using System.Collections;
 
 public class RailRunnerSpawner : MonoBehaviour 
 {
+	
 
-	//Spawning variables
-	public RunningRail ActiveRail {get; set;}
 	EndlessController controller; 
 	public float initialSpawnDistance = 30;
 
+	//Platform positions
 	public float currentZPosition = 0;
 	public float lastSpawnedTime = 0;
 	public float timeTillNextSpawn = 0f;
+
+	public RunningRail ActiveRail {get; set;}
+
+	//Rail change limiting //TODO determine by game difficulty 
+	public float minimumRailChangeTime = 0.5f;
+	public float maximimRailChangeTime = 1f;
+	public float miniumRailChangeWaitTime; 
+	public float maximumRailChangeWaitTime;
 
 	public bool completedInit = false;
 
@@ -53,10 +61,12 @@ public class RailRunnerSpawner : MonoBehaviour
 
 		if(completedInit)
 		{
-			if(Random.value <= CHANGE_RAIL_PROBABILITY)
+			if((Random.value <= CHANGE_RAIL_PROBABILITY &&  miniumRailChangeWaitTime < Time.time) || Time.time > maximumRailChangeWaitTime)
 			{
 				ActiveRail = ActiveRail.GetRandomLinkedRail();
 				railChanged = true;
+				miniumRailChangeWaitTime = Time.time + minimumRailChangeTime;
+				maximumRailChangeWaitTime = Time.time + maximumRailChangeWaitTime;
 			}
 
 			//The last platform has moved far enough away that another can be spawned
@@ -66,6 +76,13 @@ public class RailRunnerSpawner : MonoBehaviour
 				platform.MoveModelTo(Vector3.back * (currentZPosition) + ActiveRail.position);
 				timeTillNextSpawn = platform.length / controller.runSpeed;
 			}
+
+
+		}
+
+		//Give the player some notification that the rail is changing
+		if(railChanged)
+		{
 
 
 		}
