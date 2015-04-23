@@ -18,13 +18,8 @@ public class RailRunnerSpawner : MonoBehaviour
 	//Lane switching variables
 	public float CHANGE_RAIL_PROBABILITY = 0.01f;	
 
-	//TODO make pool
-	public GameObject table; 
-	public EndlessPlatform platform;
-
-
-
-
+	public PlatformPool pool;
+	
 	void Start () 
 	{
 		controller = EndlessController.controller;
@@ -32,17 +27,14 @@ public class RailRunnerSpawner : MonoBehaviour
 	
 	public void InitPlatforms()
 	{
-		table = Instantiate(table);
-		platform = table.GetComponent<EndlessPlatform>();
-
 		currentZPosition = 0;
+		EndlessPlatform platform = new EndlessPlatform();
 
-		//Spawn platforms up to spawn distance
-		//TODO use more prefabs
 		while(currentZPosition < initialSpawnDistance)
 		{
+			platform = pool.GetPlatform();
 			currentZPosition += (platform.length / 2);
-			Instantiate(table, Vector3.back * currentZPosition + ActiveRail.position, Quaternion.identity);
+			platform.MoveModelTo(Vector3.back * currentZPosition + ActiveRail.position);
 			currentZPosition += (platform.length / 2);
 		}
 
@@ -70,7 +62,8 @@ public class RailRunnerSpawner : MonoBehaviour
 			//The last platform has moved far enough away that another can be spawned
 			if(timeTillNextSpawn <= 0)
 			{
-				Instantiate(table, Vector3.back * (currentZPosition + platform.length / 2) + ActiveRail.position , Quaternion.identity);
+				EndlessPlatform platform = pool.GetPlatform();
+				platform.MoveModelTo(Vector3.back * (currentZPosition) + ActiveRail.position);
 				timeTillNextSpawn = platform.length / controller.runSpeed;
 			}
 

@@ -46,18 +46,19 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\EndlessAssetDespawner.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterController.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterFailController.cs" />
      <Compile Include="Assets\Scripts\EndlessController.cs" />
-     <Compile Include="Assets\Scripts\EndlessLavaSpawner.cs" />
-     <Compile Include="Assets\Scripts\EndlessPlatform.cs" />
-     <Compile Include="Assets\Scripts\EndlessPropMover.cs" />
-     <Compile Include="Assets\Scripts\EndlessPropSpawner.cs" />
-     <Compile Include="Assets\Scripts\LavaDespawner.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\EndlessAssetDespawner.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\EndlessLavaSpawner.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\EndlessPlatform.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\EndlessPropMover.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\EndlessPropSpawner.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\LavaDespawner.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\PlatformPool.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\PropGroup.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\RailRunnerSpawner.cs" />
-     <Compile Include="Assets\Scripts\PropGroup.cs" />
-     <Compile Include="Assets\Scripts\RunningRail.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\RunningRail.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

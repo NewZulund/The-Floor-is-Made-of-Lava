@@ -31,7 +31,7 @@ public class PropGroup : MonoBehaviour
 			{
 				EndlessPlatform platform = Instantiate(platformPrefabs[j], storagePosition, Quaternion.identity) as EndlessPlatform;
 				inactivePlatforms.Enqueue(platform);
-				platform.Spawn(storagePosition, Quaternion.identity, this);
+				//platform.Spawn(storagePosition, Quaternion.identity, this);
 
 			}
 		}
@@ -51,7 +51,7 @@ public class PropGroup : MonoBehaviour
 		{
 			//Debug.Log("Needs more platforms!");
 			platform = Instantiate(platformPrefabs[index], storagePosition, Quaternion.identity) as EndlessPlatform;
-			platform.Spawn(storagePosition, Quaternion.identity, this);
+			//platform.Spawn(storagePosition, Quaternion.identity, this);
 		}
 		else
 		{

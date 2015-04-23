@@ -6,37 +6,30 @@ public class EndlessPlatform : MonoBehaviour {
 	public float length = 2.8f;
 	public GameObject model;
 	public EndlessPropMover moverController; 
-	public PropGroup propGroup;
-	public Vector3 poolPosition = Vector3.zero;
+	public PlatformPool pool;
 
 	void Start()
 	{
 		moverController = GetComponent<EndlessPropMover>();
 	}
 
-	public void Spawn(Vector3 position, Quaternion rotation, PropGroup group)
+	public void Spawn(Vector3 position, Quaternion rotation, PlatformPool pool)
 	{
-		propGroup = group;
+		this.pool = pool;
 		model.transform.position = position;
 		model.transform.rotation = rotation;
 	}
 
 	public void Despawn ()
 	{
-		if(propGroup)
+		if(pool)
 		{
-			propGroup.despawn(this);
+			pool.Despawn(this);
 		}
 		else
 		{
-			Destroy(this);
+			Destroy(this.gameObject);
 		}
-
-	}
-
-	public void MoveToPool ()
-	{
-		model.transform.position = poolPosition;
 	}
 
 	public void MoveModelTo(Vector3 position)
