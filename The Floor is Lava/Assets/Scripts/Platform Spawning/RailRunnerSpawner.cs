@@ -27,6 +27,7 @@ public class RailRunnerSpawner : MonoBehaviour
 	//Lane switching variables
 	public float CHANGE_RAIL_PROBABILITY = 0.01f;	
 
+
 	public PlatformPool pool;
 	
 	void Start () 

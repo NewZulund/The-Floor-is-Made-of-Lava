@@ -19,7 +19,8 @@ public class EndlessPropMover : MonoBehaviour {
 		//Move object by run speed forward
 		if(controller)
 		{
-			transform.position = transform.position + (Vector3.forward * controller.currentRunSpeed * Time.deltaTime);
+			//transform.position = transform.position + (Vector3.forward * controller.currentRunSpeed * Time.deltaTime);
+			transform.Translate(Vector3.forward * controller.currentRunSpeed * Time.deltaTime);
 		}
 	}
 }
