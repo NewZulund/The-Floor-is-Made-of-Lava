@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 1b5f538987d2ce14eb239a294f09862f
-timeCreated: 1429704366
+guid: ea092da4bcea8bc4f87157713331d841
+timeCreated: 1430617644
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: default
-    400000: //RootNode
-    400002: default
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: Coin
+    100002: //RootNode
+    400000: Coin
+    400002: //RootNode
+    2300000: Coin
+    3300000: Coin
+    4300000: Coin
   materials:
     importMaterials: 1
     materialName: 0
