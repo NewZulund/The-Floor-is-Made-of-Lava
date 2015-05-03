@@ -40,6 +40,10 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	void Update () 
 	{
+		if(Input.GetKeyDown(KeyCode.R)){
+			Application.LoadLevel(0);
+		}
+
 		//TODO Raycast to check if the player can jump
 
 		//Movement booleans
