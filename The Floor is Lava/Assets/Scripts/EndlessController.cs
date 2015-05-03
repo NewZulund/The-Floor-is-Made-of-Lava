@@ -25,5 +25,6 @@ public class EndlessController : MonoBehaviour {
 	void Update () {
 		//TODO acceleration/deceleration
 		currentRunSpeed = runSpeed;
+		ScoreManager.score += (int) currentRunSpeed;
 	}
 }
