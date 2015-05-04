@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Collectable.cs" />
+     <Compile Include="Assets\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterController.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterFailController.cs" />
      <Compile Include="Assets\Scripts\EndlessController.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets\Scripts\Platform Spawning\PropGroup.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\RailRunnerSpawner.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\RunningRail.cs" />
+     <Compile Include="Assets\UIManagerScript.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

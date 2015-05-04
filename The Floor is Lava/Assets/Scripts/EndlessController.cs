@@ -13,7 +13,6 @@ public class EndlessController : MonoBehaviour {
 	public float earnRate = 1;
 
 	public float speedIncreaseRate = 0.2f;
-	public Text speedText;
 
 	void Awake () 
 	{
@@ -38,7 +37,6 @@ public class EndlessController : MonoBehaviour {
 		score += currentRunSpeed * earnRate * Time.deltaTime; 
 		scoreText.text = score.ToString("0");
 
-		speedText.text = currentRunSpeed.ToString("0");
 	}
 
 	public void SlowPlayer(float percentageDecrease)

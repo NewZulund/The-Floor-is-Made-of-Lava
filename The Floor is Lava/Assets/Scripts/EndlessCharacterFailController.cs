@@ -19,14 +19,14 @@ public class EndlessCharacterFailController : MonoBehaviour {
 		rigidBody =  GetComponent<Rigidbody>();
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnCollisionEnter(Collision collision)
 	{
-		if(other.tag == "LavaCollider")
+		if(collision.gameObject.tag == "LavaCollider")
 		{
 			happyMouth.SetActive(false);
 			sadMouth.SetActive(true);
 			rigidBody.velocity = Vector3.up * hurtBounceSpeed;
-
+			print("hurt");
 			//Flip hurt model back
 			Invoke("RevertHurtModel", hurtModelRevertTime);
 		}

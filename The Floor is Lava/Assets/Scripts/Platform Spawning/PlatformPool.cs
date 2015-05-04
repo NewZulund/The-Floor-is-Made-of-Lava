@@ -58,6 +58,5 @@ public class PlatformPool : MonoBehaviour {
 		endlessPlatform.MoveModelTo(poolPosition);
 		queue.Enqueue(endlessPlatform);
 		endlessPlatform.Disable();
-		Debug.Log("Despawn! ");
 	}
 }
