@@ -934,7 +934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38f0b0b963981c49af8647b02441ed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layoutFileName: Assets/layout_files/layouts.csv
   layouts: []
   assetPrefabs:
   - {fileID: 155492, guid: b9886aff07da285478791d416b3b401a, type: 2}

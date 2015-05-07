@@ -4,7 +4,7 @@ using System.IO;
 using System.Text; 
 
 public class LayoutLoader : MonoBehaviour {
-
+	
 	public List<PlatformLayout> Load(string fileName)
 	{
 
@@ -13,7 +13,21 @@ public class LayoutLoader : MonoBehaviour {
 		try
 		{
 			string line; 
-			StreamReader reader = new StreamReader(fileName, Encoding.Default);
+			//StreamReader reader = new StreamReader(Application.dataPath + "/Resources/layouts.csv");
+			TextAsset testAsset = Resources.Load("layouts") as TextAsset; 
+			StringReader reader = new StringReader(testAsset.text);
+
+			switch (Application.platform)
+			{ 
+				case RuntimePlatform.WindowsEditor:
+					break;
+				case RuntimePlatform.Android:
+					break;
+				case RuntimePlatform.WindowsPlayer:
+					break;
+				case RuntimePlatform.WebGLPlayer:
+					break;
+			}
 
 			using(reader)
 			{
@@ -102,5 +116,4 @@ public class LayoutLoader : MonoBehaviour {
 
 		return platformLayouts;
 	}
-
 }

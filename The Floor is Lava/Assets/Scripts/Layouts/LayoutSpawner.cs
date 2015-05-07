@@ -4,7 +4,7 @@ using System.Collections;
 
 public class LayoutSpawner : MonoBehaviour {
 
-	public string layoutFileName = "Assets/layout_files/layouts.csv";
+	private string layoutFileName = "Assets/Resources/layouts.csv";
 	public static float PLATFORM_ITEM_LENGTH = 3.0f;
 	public static float PLATFORM_ITEM_WIDTH = 1.75f;
 	public static int START_LAYOUTS = 5;

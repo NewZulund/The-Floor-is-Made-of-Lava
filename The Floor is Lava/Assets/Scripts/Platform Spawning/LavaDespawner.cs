@@ -7,7 +7,6 @@ public class LavaDespawner : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		print("hit");
 		if(other.tag == "Lava" || other.tag == "LavaCollider")
 		{
 			spawner.RemoveLava(other);
