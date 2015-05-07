@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Collectable.cs" />
+     <Compile Include="Assets\LayoutSpawner.cs" />
      <Compile Include="Assets\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterController.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterFailController.cs" />
@@ -57,6 +58,8 @@
      <Compile Include="Assets\Scripts\Platform Spawning\EndlessPropMover.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\EndlessPropSpawner.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\LavaDespawner.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\LayoutLoader.cs" />
+     <Compile Include="Assets\Scripts\Platform Spawning\PlatformLayout.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\PlatformPool.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\PropGroup.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\RailRunnerSpawner.cs" />
