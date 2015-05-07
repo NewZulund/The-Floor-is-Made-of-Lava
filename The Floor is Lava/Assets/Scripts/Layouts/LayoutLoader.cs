@@ -78,11 +78,11 @@ public class LayoutLoader : MonoBehaviour {
 					{
 						line = reader.ReadLine();
 						lineSplit = line.Split(','); 
-						platformLayout.platformArray[y] = new int[width];
+						platformLayout.notificationArray[y] = new int[width];
 						
 						for(int x = 0; x < width; x++)
 						{
-							platformLayout.platformArray[y][x] = int.Parse(lineSplit[x]);
+							platformLayout.notificationArray[y][x] = int.Parse(lineSplit[x]);
 						}
 					}
 

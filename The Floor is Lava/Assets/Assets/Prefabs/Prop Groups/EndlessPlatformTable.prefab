@@ -92,7 +92,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 495228}
   - 114: {fileID: 11434830}
-  - 114: {fileID: 11448092}
   m_Layer: 0
   m_Name: EndlessPlatformTable
   m_TagString: Platform
@@ -231,7 +230,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.1177721, y: -33.0999107, z: -28.6093903}
+  m_LocalPosition: {x: -11.3308067, y: -1.77396297, z: -7.78456306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 477530}
@@ -434,20 +433,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 2.79999995
   model: {fileID: 177826}
-  moverController: {fileID: 11448092}
-  propGroup: {fileID: 11424182, guid: 6f9c75a9b8c2bb545a0dfac8d3f6e16f, type: 2}
-  poolPosition: {x: 0, y: 0, z: 0}
---- !u!114 &11448092
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc69a31dcb5e6f4f89b8ad6cfe87790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  moverController: {fileID: 0}
+  pool: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
