@@ -97,7 +97,7 @@ public class LayoutSpawner : MonoBehaviour {
 		
 		//Compound total distance to offset later layouts
 		totalDistance -= PLATFORM_ITEM_LENGTH * layout.length;
-		expectedPlayerRail = layout.endRails[0];
+		expectedPlayerRail = layout.endRails[Random.Range(0, layout.endRails.Length)];
 	}
 	
 	void Update()
@@ -108,8 +108,6 @@ public class LayoutSpawner : MonoBehaviour {
 			SpawnLayout ();
 		}
 	}
-	
-
 
 	/**
 	 * Builld a dictonary from incoming rails to layouts that can accept those rails. 
