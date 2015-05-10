@@ -18,7 +18,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	//Controller variables
 	public static float DEADZONE_HORIZONTAL = 0.05f;
 	public static float DEADZONE_VERTICAL = 0.1f;
-	public static float TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE = 0.05f;
+	public static float TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE = 0.02f;
 	public static float TOUCH_DEADZONE_VERTICAL_PERCENTAGE = 0.05f;
 	public static float TOUCH_VERTICAL_JUMP_LENGTH = 1.0f;
 	public static float TOUCH_WIDTH_TOTAL_MOVEMENT_PERCENTAGE = 0.75f; //TODO Rename
@@ -26,7 +26,8 @@ public class EndlessCharacterController : MonoBehaviour {
 	//Jump Variables
 	//TODO not use forces. 
 	public float verticalForce = 5000.0f;
-	public float jumpDelay = 1.0f; 
+	public float jumpSpeed = 5.0f;
+	public float jumpDelay = 0.6f; 
 	public bool canJump;
 	public bool canMove = true;
 	private float nextJumpTime;
@@ -43,6 +44,7 @@ public class EndlessCharacterController : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.R)){
 			Application.LoadLevel(0);
 		}
+	
 
 		//TODO Raycast to check if the player can jump
 
@@ -52,13 +54,15 @@ public class EndlessCharacterController : MonoBehaviour {
 		bool jump = false;
 
 		//Check for touch input
-		if(Input.touchCount > 0)
+		int numTouch = Input.touchCount;
+
+		if(numTouch > 0)
 		{
-			for(int i = 0; i < Input.touchCount; i++)
+			for (int i = 0; i < numTouch; i++)
 			{
 				Touch touch = Input.GetTouch(i);
 
-				if(touch.deltaPosition.y / Screen.height > TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
+				if (touch.deltaPosition.y / Screen.height > TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
 				{
 					jump = true;
 				}
