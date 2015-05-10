@@ -26,7 +26,6 @@ public class EndlessCharacterFailController : MonoBehaviour {
 			happyMouth.SetActive(false);
 			sadMouth.SetActive(true);
 			rigidBody.velocity = Vector3.up * hurtBounceSpeed;
-			print("hurt");
 			//Flip hurt model back
 			Invoke("RevertHurtModel", hurtModelRevertTime);
 		}

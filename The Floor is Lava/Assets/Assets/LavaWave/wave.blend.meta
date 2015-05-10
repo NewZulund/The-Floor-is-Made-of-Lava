@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: f30eb5c5c1786534296289b1be72a1f9
-timeCreated: 1430617644
+guid: 84711dd531b2e3840832a3cce1ddba07
+timeCreated: 1430725399
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: fridge
-    100002: //RootNode
-    100004: default
-    400000: fridge
-    400002: //RootNode
-    400004: default
-    2300000: fridge
-    2300002: default
-    3300000: fridge
-    3300002: default
-    4300000: fridge
-    4300002: default
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Wave
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -52,9 +47,9 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
@@ -70,7 +65,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
   assetBundleName: 
