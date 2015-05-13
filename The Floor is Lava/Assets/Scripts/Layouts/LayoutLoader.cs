@@ -52,7 +52,9 @@ public class LayoutLoader : MonoBehaviour {
 					//Parse rail-start line
 					line = reader.ReadLine();
 					lineSplit = line.Split(new char[] {','}, System.StringSplitOptions.RemoveEmptyEntries);
-					platformLayout.startRails = new int[lineSplit.Length];
+					int[] startRails = System.Array.ConvertAll(lineSplit, s => int.Parse(s));
+					platformLayout.startRails = startRails;
+					platformLayout.startRailsString = getRailString(startRails);
 
 					for(int i = 0; i < lineSplit.Length; i++)
 					{
@@ -77,8 +79,10 @@ public class LayoutLoader : MonoBehaviour {
 
 					//Parse line-end rails
 					line = reader.ReadLine();
-					lineSplit = lineSplit = line.Split(new char[] {','}, System.StringSplitOptions.RemoveEmptyEntries);
-					platformLayout.endRails = new int[lineSplit.Length];
+					lineSplit = line.Split(new char[] {','}, System.StringSplitOptions.RemoveEmptyEntries);
+					int[] endRails = System.Array.ConvertAll(lineSplit, s => int.Parse(s));
+					platformLayout.endRails = endRails;
+					platformLayout.endRailsString = getRailString(endRails);
 					
 					for(int i = 0; i < lineSplit.Length; i++)
 					{
@@ -115,5 +119,16 @@ public class LayoutLoader : MonoBehaviour {
 		}
 
 		return platformLayouts;
+	}
+
+	//Produce a string of the integers of either incoming or outgoing rails to be used in picking platforms
+	string getRailString (int[] rails)
+	{
+		string railName = ""; 
+		for(int i = 0; i < rails.Length; i++)
+		{
+			railName = railName + rails[i].ToString();
+		}
+		return railName;
 	}
 }
