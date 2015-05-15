@@ -19,7 +19,7 @@ public class LayoutSpawner : MonoBehaviour {
 	public Dictionary<string, List<PlatformLayout>> layoutByIncomingRail;
 
 	public GameObject[] assetPrefabs;
-	public GameObject[] notificationPrefabs;
+	public GameObject notificationPrefab;
 	
 	public EndlessController controller;
 	public float totalDistance = 0.0f;
@@ -97,12 +97,20 @@ public class LayoutSpawner : MonoBehaviour {
 
 				}
 
-				//Notifications
+				//Instantiate Notifications
 				itemIndex = layout.notificationArray[y][x];
-				if(itemIndex < notificationPrefabs.Length && itemIndex >= 0)
+
+				//Ignore empty/invalid CSV notifcation values
+				if(itemIndex >= 0)
 				{
-					GameObject notification = Instantiate(notificationPrefabs[itemIndex], transform.position + offset + (Vector3.up * NOTIFCATION_HEIGHT), Quaternion.identity) as GameObject;
+					GameObject notification = Instantiate(notificationPrefab, transform.position + offset + (Vector3.up * NOTIFCATION_HEIGHT), Quaternion.identity) as GameObject;
 					notification.transform.parent = parent.transform;
+					
+					MoveNotification moveNotification = notification.GetComponent<MoveNotification>();
+					if(moveNotification)
+					{
+						moveNotification.moveType = itemIndex;
+					}
 				}
 			}
 			
