@@ -8,5 +8,6 @@ public class PlatformLayout : System.Object {
 	public int number, width, length;
 	public int[][] platformArray, notificationArray;
 	public int[] startRails, endRails;
+	public string startRailsString, endRailsString;
 
 }

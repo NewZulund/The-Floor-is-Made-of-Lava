@@ -939,9 +939,13 @@ MonoBehaviour:
   - {fileID: 155492, guid: b9886aff07da285478791d416b3b401a, type: 2}
   - {fileID: 165708, guid: 8592611bf486cc3428dfc8a5d92d3dda, type: 2}
   - {fileID: 108164, guid: 2b64235c10f047e4a9f157034df891f8, type: 2}
+  notificationPrefabs:
+  - {fileID: 167178, guid: 30d6726ecc9c8d441be9ff061ed0f596, type: 2}
+  - {fileID: 189778, guid: 472b490ae2fb916468e89b924d54ab99, type: 2}
+  - {fileID: 156518, guid: e959170281af30d49bd592f8688edb5d, type: 2}
   controller: {fileID: 0}
   totalDistance: 0
-  expectedPlayerRail: 1
+  expectedPlayerRails: 1
 --- !u!1 &727593212
 GameObject:
   m_ObjectHideFlags: 0
