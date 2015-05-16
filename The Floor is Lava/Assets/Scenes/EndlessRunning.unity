@@ -888,6 +888,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: dc9c8e0cd79854a4ca610f5dc881ba01, type: 2}
+    - target: {fileID: 2300002, guid: 31c020196fb49214fb39ad59902b985a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc9c8e0cd79854a4ca610f5dc881ba01, type: 2}
+    - target: {fileID: 2300004, guid: 31c020196fb49214fb39ad59902b985a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc9c8e0cd79854a4ca610f5dc881ba01, type: 2}
+    - target: {fileID: 2300006, guid: 31c020196fb49214fb39ad59902b985a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc9c8e0cd79854a4ca610f5dc881ba01, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31c020196fb49214fb39ad59902b985a, type: 3}
   m_IsPrefabParent: 0
@@ -1219,7 +1231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &671281576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1447,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 377f48106ea11214a906f7752b713ba6, type: 2}
+  - {fileID: 2100000, guid: dc9c8e0cd79854a4ca610f5dc881ba01, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
