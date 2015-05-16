@@ -11,6 +11,7 @@ TagManager:
   - PauseMenu
   - BackgroundMask
   - Notification
+  - LavaSurrounds
   layers:
   - Default
   - TransparentFX
