@@ -19,7 +19,8 @@ public class MonstarController : MonoBehaviour {
 			transform.Translate(0.0f, 0.0f, startingZ - transform.position.z);
 		}
 		if (transform.position.z < 0) {
-			//gameover
+			PauseManagerScript pause = GameObject.Find ("PauseManager").GetComponent<PauseManagerScript> ();
+			pause.RestartGame();
 		}
 	}
 }
