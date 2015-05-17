@@ -10,6 +10,8 @@ TagManager:
   - Collectable
   - PauseMenu
   - BackgroundMask
+  - Notification
+  - LavaSurrounds
   layers:
   - Default
   - TransparentFX
