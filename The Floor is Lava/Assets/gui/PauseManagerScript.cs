@@ -5,10 +5,17 @@ using System.Collections;
 public class PauseManagerScript : MonoBehaviour {
 
 	public GameObject pauseMenu;
+	public GameObject gameOverMenu;
 	public GameObject backgroundMask;//The mask that greys out the background
 	public GameObject countdown;//A ui text object that is used as a countdown
+	public GameObject gameController;
+	public Text gameOverScore;
 
 	private float targetTime = 0;//used for countdown after continuing from the pause menu
+
+	void Awake(){
+		Time.timeScale = 1;
+	}
 
 	void Update(){
 		float time = targetTime - Time.realtimeSinceStartup;
@@ -29,19 +36,44 @@ public class PauseManagerScript : MonoBehaviour {
 		StartCoroutine ("Continue");
 	}
 
+
+	public void RestartGame(){
+		Application.LoadLevel ("EndlessRunning");
+		Resume ();
+	}
+
+	public void QuitGame(){
+		Application.LoadLevel ("Home");
+		Resume ();
+	}
+	
+
+	public void GameOver(){
+		Time.timeScale = 0;
+		string score = gameController.GetComponent<EndlessController> ().score.ToString ("0");
+		gameOverMenu.SetActive(true);
+		backgroundMask.SetActive (true);
+		gameOverScore.text = score;
+	}
+
+	private void Resume(){
+		backgroundMask.SetActive (false);
+		Time.timeScale = 1;
+	}
+
 	IEnumerator Continue(){
 		pauseMenu.SetActive (false);
 		countdown.SetActive (true);
 		targetTime = Time.realtimeSinceStartup + 3.5f;
-
+		
 		yield return StartCoroutine (CoroutineUtil.WaitForRealSeconds (3));
-
-		resume ();
-
+		
+		Resume ();
+		
 		yield return new WaitForSeconds (1);
 		countdown.SetActive (false);
 	}
-
+	
 	public static class CoroutineUtil{
 		public static IEnumerator WaitForRealSeconds(float time){
 			float start = Time.realtimeSinceStartup;
@@ -49,21 +81,6 @@ public class PauseManagerScript : MonoBehaviour {
 				yield return null;
 			}
 		}
-	}
-
-	public void RestartGame(){
-		Application.LoadLevel ("EndlessRunning");
-		resume ();
-	}
-
-	public void QuitGame(){
-		Application.LoadLevel ("Home");
-		resume ();
-	}
-
-	private void resume(){
-		backgroundMask.SetActive (false);
-		Time.timeScale = 1;
 	}
 
 }
