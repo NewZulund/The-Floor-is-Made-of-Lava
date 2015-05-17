@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: SquareMan.ma
-//Last modified: Sun, May 17, 2015 06:38:55 PM
+//Last modified: Sun, May 17, 2015 06:59:30 PM
 //Codeset: 1252
 requires maya "2015";
 currentUnit -l centimeter -a degree -t film;
