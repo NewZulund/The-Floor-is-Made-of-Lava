@@ -35,7 +35,7 @@ public class EndlessController : MonoBehaviour {
 			currentRunSpeed += currentRunSpeed * speedIncreaseRate * Time.deltaTime;
 		}
 		score += currentRunSpeed * earnRate * Time.deltaTime; 
-		scoreText.text = score.ToString("0");
+		scoreText.text = string.Format ("{0:n0}", score);//'n' formats the number to have a comma after every three digits. 0 tells it not to have decimal numbers
 
 	}
 
