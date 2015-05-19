@@ -6,157 +6,137 @@ public enum PlayerMovementStatus {MovingLeft, NotMoving, MovingRight};
 public class EndlessCharacterController : MonoBehaviour {
 
 	//Horizontal Movement Variables
-	public float moveSpeed = 0.5f;
-	public float movementCounter = 0.0f;
-	private Vector3 startMovePosition;
 	public RunningRail currentRail; 
 	private RunningRail targetRail;
+	public float moveSpeed = 0.5f;
+	public float movementCounter = 0.0f;
+	private float startMoveX;
+	public float xPosition; 
 
-	//Player Variables
+	//Vertical Movement Variables
+	public float fallVelocity = -9.8f;
+	public float jumpVelocity = 300.0f;
+	public float yVelocity = 0.0f;
+	public bool isJumping = false;
+	public float jumpRaycastLength = 1.0f;
+	public float distanceToGround = 0.0f;
+	public float lavaHitYVelocity = 40.0f;
+
+	//Oncoming hit 
+	public float frontHitDistance = 1.0f;
+	public float frontHitVelocity = 10.0f;
+	
 	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
+	public Animator animator;
 
-	//Controller variables
-	public static float DEADZONE_HORIZONTAL = 0.05f;
-	public static float DEADZONE_VERTICAL = 0.1f;
-	public static float TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE = 0.02f;
-	public static float TOUCH_DEADZONE_VERTICAL_PERCENTAGE = 0.05f;
-	public static float TOUCH_VERTICAL_JUMP_LENGTH = 1.0f;
-	public static float TOUCH_WIDTH_TOTAL_MOVEMENT_PERCENTAGE = 0.75f; //TODO Rename
-
-	//Jump Variables
-	//TODO not use forces. 
-	public float verticalForce = 5000.0f;
-	public float jumpSpeed = 5.0f;
-	public float jumpDelay = 0.6f; 
-	public bool canJump;
-	public bool canMove = true;
-	private float nextJumpTime;
-
-	private Rigidbody rigidbody;
-
-	void Awake()
+	void Start()
 	{
-		rigidbody = GetComponent<Rigidbody>();
+		distanceToGround = GetComponent<CapsuleCollider>().bounds.extents.y;
 	}
 
 	void Update () 
 	{
-		if(Input.GetKeyDown(KeyCode.R)){
-			Application.LoadLevel(0);
-		}
-	
 
-		//TODO Raycast to check if the player can jump
-
-		//Movement booleans
-		bool moveRight = false;
-		bool moveLeft = false;
-		bool jump = false;
-
-		//Check for touch input
-		int numTouch = Input.touchCount;
-
-		if(numTouch > 0)
+		//Calculate Horiztonal Movement
+		if(movementCounter != 0 || movementStatus != PlayerMovementStatus.NotMoving)
 		{
-			for (int i = 0; i < numTouch; i++)
-			{
-				Touch touch = Input.GetTouch(i);
-
-				if (touch.deltaPosition.y / Screen.height > TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
-				{
-					jump = true;
-				}
-
-				if(touch.deltaPosition.x / Screen.width  > TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE)
-				{
-					moveRight = true; 
-				}
-				else if (touch.deltaPosition.x / Screen.width < -TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE)
-				{
-					moveLeft = true;
-				}
+			float targetPosition = currentRail.position.x;
+			
+			if(targetRail != null){
+				targetPosition = targetRail.transform.position.x;
 			}
+			else{
+				CancelMovement();
+			}
+
+			xPosition = Mathf.Lerp(startMoveX, targetPosition, movementCounter);
+			movementCounter += Time.deltaTime / moveSpeed;
+
+			if(movementCounter >= 1)
+			{
+				movementStatus = PlayerMovementStatus.NotMoving;
+				movementCounter = 0;
+				currentRail = targetRail;
+			}
+
 		}
-		else // PC Keyboard or Controller Input
+
+		//Calculate Vertical Movement
+		if(!isGrounded())
 		{
-			float vertical = Input.GetAxis("Vertical");
-			if(vertical > DEADZONE_VERTICAL)
+			yVelocity += fallVelocity * Time.deltaTime;
+		}
+		else
+		{
+			//Bounce off lava if grounded on lava
+			if(IsGroundedLava() )
 			{
-				jump = true;
+				//Don't stack the velocity increases if it is already positive. 
+				if(yVelocity <= 0)
+				{
+					yVelocity += lavaHitYVelocity;
+				}
+			}
+			else
+			{
+				yVelocity = 0;
+				AdjustStandingHeight(); 
 			}
 
-			float horizontal = Input.GetAxis("Horizontal");
-			if( horizontal > DEADZONE_HORIZONTAL)
+			if(isJumping)
 			{
-				moveRight = true;
+				animator.SetBool("IsJumping", false);
+				isJumping = false;
 			}
-			else if(horizontal < -DEADZONE_HORIZONTAL)
-			{
-				moveLeft = true; 
-			}
+
 		}
 
-
-		//Generate movemement target
-		Vector3 targetPosition = currentRail.position;
-
-		//If both or neither directions are activated. Do nothing
-		if(moveLeft && !moveRight){
-			//Swyped Left 
-			if(movementStatus == PlayerMovementStatus.NotMoving && canMove)
+		//Override vertical if the player is going to hit something
+		if(FrontHit())
+		{
+			if(yVelocity <= 0)
 			{
-				//Start movememt
-				targetRail = currentRail.leftRail;
-				movementStatus = PlayerMovementStatus.MovingLeft;
-				startMovePosition = transform.position;
-				movementCounter = 0;
-				canMove = false;
+				yVelocity = frontHitVelocity;
 			}
 		}
-		else if(moveRight && !moveLeft){
-			//Swyped Right
-			if(movementStatus == PlayerMovementStatus.NotMoving && canMove)
-			{
-				//Start movement
-				targetRail = currentRail.rightRail;
-				movementStatus = PlayerMovementStatus.MovingRight;
-				startMovePosition = transform.position;
-				movementCounter = 0;
-				canMove = false;
-			}
-		}
-
-		if(targetRail != null){
-			targetPosition = targetRail.transform.position;
-		}
-		else{
-			CancelMovement();
-			canMove = true;
-		}
-
 
 		//Apply movememnt
-		if(movementStatus != PlayerMovementStatus.NotMoving)
-		{
-			//Ignore y/z movement
-			targetPosition = new Vector3(targetPosition.x, transform.position.y, transform.position.z);
-			transform.position = Vector3.Lerp(startMovePosition, targetPosition, movementCounter);
-			movementCounter += Time.deltaTime / moveSpeed;
-		}
+		float xMovement = xPosition - transform.position.x;
+		transform.Translate(xMovement, yVelocity * Time.deltaTime,0);
 
-		//Movement is complete. The player will be in the target position
-		if(movementCounter >= 1)
+	}
+
+	public void MoveLeft()
+	{
+		if(movementStatus == PlayerMovementStatus.NotMoving)
 		{
-			movementStatus = PlayerMovementStatus.NotMoving;
+			//Start movememt
+			targetRail = currentRail.leftRail;
+			movementStatus = PlayerMovementStatus.MovingLeft;
+			startMoveX = xPosition;
 			movementCounter = 0;
-			currentRail = targetRail;
-			canMove = true;
 		}
+	}
 
+	public void MoveRight()
+	{
+		if(movementStatus == PlayerMovementStatus.NotMoving)
+		{
+			//Start movement
+			targetRail = currentRail.rightRail;
+			movementStatus = PlayerMovementStatus.MovingRight;
+			startMoveX = xPosition;
+			movementCounter = 0;
+		}
+	}
 
-		//TODO limit with raycast result
-		if(jump){
-			rigidbody.AddForce(Vector3.up * verticalForce);
+	public void Jump()
+	{
+		if(isGrounded() && yVelocity <= 0)
+		{
+			yVelocity += jumpVelocity;
+			animator.SetBool("IsJumping", true);
+			isJumping = true;
 		}
 	}
 
@@ -164,6 +144,62 @@ public class EndlessCharacterController : MonoBehaviour {
 		targetRail = currentRail;
 		movementCounter = 0;
 		movementStatus = PlayerMovementStatus.NotMoving;
+	}
+	
+	public void PlayerSideHit ()
+	{
+		targetRail = currentRail;
+		movementCounter = 0;
+		startMoveX = xPosition;
+
+		if(movementStatus == PlayerMovementStatus.MovingLeft)
+		{
+			movementStatus = PlayerMovementStatus.MovingRight;
+		}
+		else
+		{
+			movementStatus = PlayerMovementStatus.MovingLeft;
+		}
+	}
+
+	public bool isGrounded()
+	{
+		return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
+	}
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.blue;
+		Gizmos.DrawLine(transform.position, transform.position + Vector3.down * distanceToGround);
+		Gizmos.DrawLine(transform.position + (-transform.up * distanceToGround * 0.80f), transform.position + (-transform.up * distanceToGround * 0.80f) + -Vector3.forward * frontHitDistance);
+	}
+
+	bool IsGroundedLava ()
+	{
+		RaycastHit hit;
+		if(Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGround + 0.1f)){
+			if(hit.transform.tag == "Lava" || hit.transform.tag == "LavaCollider")
+			{
+				return true;
+			}
+		}
+		return false; 
+	}
+
+	bool FrontHit()
+	{
+		return (Physics.Raycast(transform.position + (-transform.up * distanceToGround * 0.80f), -transform.forward, frontHitDistance));
+	}
+
+	void AdjustStandingHeight ()
+	{
+		RaycastHit hit;
+		if(Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGround + 0.1f)){
+			if(hit.transform.tag != "Lava" && hit.transform.tag != "LavaCollider")
+			{
+				transform.Translate(transform.position.x + distanceToGround - hit.distance ,0,0);
+			}
+		}
 	}
 }
  

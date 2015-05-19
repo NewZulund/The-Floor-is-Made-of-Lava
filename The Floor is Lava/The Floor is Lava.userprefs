@@ -1,23 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MonstarController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EndlessCharacterController.cs">
     <Files>
-      <File FileName="Assets\Scripts\MonstarController.cs" Line="27" Column="1" />
-      <File FileName="Assets\Scripts\NotificationConverter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EndlessCharacterController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EndlessCharacterFailController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EndlessController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\EndlessAssetDespawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\EndlessLavaSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\EndlessPlatform.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\EndlessPropMover.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\EndlessPropSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\LavaDespawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\PlatformPool.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\PropGroup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\RailRunnerSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Platform Spawning\RunningRail.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Collectable.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EndlessCharacterController.cs" Line="183" Column="3" />
+      <File FileName="Assets\TouchControls.cs" Line="18" Column="2" />
+      <File FileName="Assets\KeyboardControls.cs" Line="14" Column="47" />
+      <File FileName="Assets\Scripts\EndlessCharacterFailController.cs" Line="9" Column="49" />
+      <File FileName="Assets\Scripts\EndlessController.cs" Line="24" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
