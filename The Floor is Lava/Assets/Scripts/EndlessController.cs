@@ -43,4 +43,12 @@ public class EndlessController : MonoBehaviour {
 		currentRunSpeed -= currentRunSpeed * percentageDecrease;
 	}
 
+	public void PickUp (Collectable collectable)
+	{
+		if(collectable.type == Collectable.CollectableType.Coin)
+		{
+			//TODO add some UI element here. 
+			score += collectable.value;
+		}
+	}
 }
