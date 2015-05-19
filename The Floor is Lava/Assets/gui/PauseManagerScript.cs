@@ -5,7 +5,26 @@ using System.Collections;
 public class PauseManagerScript : MonoBehaviour {
 
 	public GameObject pauseMenu;
-	public GameObject backgroundMask;
+	public GameObject gameOverMenu;
+	public GameObject backgroundMask;//The mask that greys out the background
+	public GameObject countdown;//A ui text object that is used as a countdown
+	public GameObject gameController;
+	public Text gameOverScore;
+
+	private float targetTime = 0;//used for countdown after continuing from the pause menu
+
+	void Awake(){
+		Time.timeScale = 1;
+	}
+
+	void Update(){
+		float time = targetTime - Time.realtimeSinceStartup;
+		string txt = time.ToString ("0");
+		if (txt.Equals ("0")) {
+			txt = "Go!";
+		}
+		countdown.GetComponent<Text> ().text = txt;
+	}
 
 	public void PauseGame(){
 		pauseMenu.SetActive(true);
@@ -14,23 +33,54 @@ public class PauseManagerScript : MonoBehaviour {
 	}
 
 	public void ContinueGame(){
-		pauseMenu.SetActive (false);
-		resume ();
+		StartCoroutine ("Continue");
 	}
+
 
 	public void RestartGame(){
 		Application.LoadLevel ("EndlessRunning");
-		resume ();
+		Resume ();
 	}
 
 	public void QuitGame(){
 		Application.LoadLevel ("Home");
-		resume ();
+		Resume ();
+	}
+	
+
+	public void GameOver(){
+		Time.timeScale = 0;
+		string score = gameController.GetComponent<EndlessController> ().score.ToString ("0");
+		gameOverMenu.SetActive(true);
+		backgroundMask.SetActive (true);
+		gameOverScore.text = score;
 	}
 
-	private void resume(){
+	private void Resume(){
 		backgroundMask.SetActive (false);
 		Time.timeScale = 1;
+	}
+
+	IEnumerator Continue(){
+		pauseMenu.SetActive (false);
+		countdown.SetActive (true);
+		targetTime = Time.realtimeSinceStartup + 3.5f;
+		
+		yield return StartCoroutine (CoroutineUtil.WaitForRealSeconds (3));
+		
+		Resume ();
+		
+		yield return new WaitForSeconds (1);
+		countdown.SetActive (false);
+	}
+	
+	public static class CoroutineUtil{
+		public static IEnumerator WaitForRealSeconds(float time){
+			float start = Time.realtimeSinceStartup;
+			while(Time.realtimeSinceStartup < start+time){
+				yield return null;
+			}
+		}
 	}
 
 }
