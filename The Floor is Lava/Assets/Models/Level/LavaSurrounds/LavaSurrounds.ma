@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: LavaSurrounds.ma
-//Last modified: Sun, May 17, 2015 09:46:16 AM
+//Last modified: Tue, May 19, 2015 07:44:24 PM
 //Codeset: 1252
 requires maya "2015";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -14,15 +14,15 @@ fileInfo "osv" "Microsoft Windows 8 Business Edition, 64-bit  (Build 9200)\n";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 89.488545444439396 83.450916305559076 123.25193016237564 ;
-	setAttr ".r" -type "double3" -388.20000355637103 -6451.1999999999289 -1.8147497639219788e-015 ;
+	setAttr ".t" -type "double3" -10.77070300604823 20.560525893303396 -38.37650250055119 ;
+	setAttr ".r" -type "double3" -379.8000035575019 -6992.8000000020984 0 ;
 	setAttr ".rp" -type "double3" 1.1102230246251565e-016 0 0 ;
 	setAttr ".rpt" -type "double3" -1.0754126055906672e-016 7.9953420324031305e-016 
 		1.1308793134767026e-016 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 164.53250518109249;
+	setAttr ".coi" 36.101562700878958;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -877,7 +877,7 @@ createNode mesh -n "lavaGroundShape" -p "lavaGround";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.38585391640663147 0.89553090929985046 ;
+	setAttr ".pv" -type "double2" 0.52702063322067261 0.82398086786270142 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -1118,7 +1118,7 @@ createNode mesh -n "grass2Shape" -p "grass2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.14260458946228027 0.11819174885749817 ;
+	setAttr ".pv" -type "double2" 0.30729469656944275 0.18283753097057343 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -1126,15 +1126,26 @@ createNode mesh -n "grass2Shape" -p "grass2";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".sdt" 0;
 	setAttr ".ugsdt" no;
-	setAttr -s 8 ".pt";
+	setAttr -s 19 ".pt";
+	setAttr ".pt[2]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[4]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[8]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
 	setAttr ".pt[14]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[15]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[17]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[22]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[23]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[26]" -type "float3" 0 2.1991413 -2.3841858e-007 ;
 	setAttr ".pt[27]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[34]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[35]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[36]" -type "float3" 0 2.4102402 0 ;
+	setAttr ".pt[40]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[50]" -type "float3" 0 3.2801337 0 ;
 	setAttr ".pt[56]" -type "float3" 0 1.6194867 0 ;
 	setAttr ".pt[61]" -type "float3" 0 1.6606468 0 ;
+	setAttr ".pt[63]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[64]" -type "float3" -0.62953842 -0.72687531 0 ;
 createNode mesh -n "polySurfaceShape2" -p "grass2";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -1935,6 +1946,7 @@ createNode mesh -n "grass3Shape" -p "grass3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.13060992956161499 0.13670169934630394 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 69 ".uvst[0].uvsp[0:68]" -type "float2" 0.11152002 0.10851746
 		 0.11152005 0.094425313 0.13060993 0.10851746 0.14015487 0.094425343 0.11152002 0.12260958
@@ -1960,6 +1972,28 @@ createNode mesh -n "grass3Shape" -p "grass3";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".sdt" 0;
 	setAttr ".ugsdt" no;
+	setAttr -s 21 ".pt";
+	setAttr ".pt[1]" -type "float3" 0 -2.1609991 0 ;
+	setAttr ".pt[2]" -type "float3" -0.93098855 -2.5835726 0.045481931 ;
+	setAttr ".pt[6]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[9]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[10]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[13]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[15]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[16]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[31]" -type "float3" 0 -2.1609991 0 ;
+	setAttr ".pt[34]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[43]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[48]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[56]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[57]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[58]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[59]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[60]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[61]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[66]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[67]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
+	setAttr ".pt[68]" -type "float3" -0.93098855 -0.42257345 0.045481931 ;
 	setAttr -s 69 ".vt[0:68]"  -10.85109711 0.5382176 -11.82400894 -18.99084282 -0.63417131 -11.85128784
 		 -21.70409966 0.29918009 -11.8603878 -10.86342239 -0.70786244 -7.8257122 -10.87575912 0.93979627 -3.82742214
 		 -16.28993225 1.22408414 -7.84390545 -21.72877884 -0.70643455 -3.86379528 -10.88809776 -0.79571122 0.17087343
@@ -3359,6 +3393,7 @@ createNode mesh -n "rockShape8" -p "rock8";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.19854619354009628 0.84631669521331787 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 53 ".uvst[0].uvsp[0:52]" -type "float2" 0.139559 0.71832168
 		 0.16355808 0.71832168 0.17955743 0.71832168 0.20355651 0.71832168 0.139559 0.73965424
@@ -3380,17 +3415,17 @@ createNode mesh -n "rockShape8" -p "rock8";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".sdt" 0;
 	setAttr ".ugsdt" no;
-	setAttr -s 31 ".pt[0:30]" -type "float3"  0.32053375 11.217702 -4.2502785 
-		-1.8665314 10.850732 -9.5178452 -1.8210602 11.181891 -9.4581642 -0.1029892 1.6558828 
+	setAttr -s 31 ".pt[0:30]" -type "float3"  0.32053626 9.8440752 -4.2502785 
+		-1.8665278 9.4771051 -9.5178452 -1.8210566 9.8082647 -9.4581642 -0.1029892 1.6558828 
 		-3.4730949 -4.197464 -3.0259352 -12.578217 -2.6253281 4.1559181 -10.094761 -1.8024902 
 		-10.697278 -5.2900925 -2.7158966 -11.940973 -7.2597466 -4.7905197 -9.340435 -12.834648 
 		-2.0324097 -13.212955 -5.323864 2.2773666 -13.351834 5.2282257 -0.1102829 -16.21401 
 		-0.039226532 4.3622818 -13.221045 10.329931 1.9833298 -11.15132 4.1292381 5.0512314 
 		-3.7207012 10.194324 2.8059311 -4.4603953 4.8866253 6.1617813 -2.5244837 12.695618 
 		4.5762253 7.9659815 6.8495369 5.3345947 2.5577488 9.6887016 2.5806808 6.0577497 2.3252411 
-		5.6348953 6.5653028 9.6834297 4.0916443 11.804605 4.8858376 0.4143219 9.1766138 -3.5695 
-		-0.97237396 10.233073 -7.2128601 -1.1176682 0.14666939 -5.6161842 -0.36077118 13.134805 
-		-6.230751 2.4533081 10.281571 1.1564369 -3.0524139 -0.89907455 -10.18 -0.76212311 
+		5.6348953 6.5653028 9.6834297 4.0916457 10.430978 4.8858376 0.4143219 9.1766138 -3.5695 
+		-0.97237396 10.233073 -7.2128601 -1.1176682 0.14666939 -5.6161842 -0.36076993 11.761178 
+		-6.230751 2.4533093 8.9079447 1.1564369 -3.0524139 -0.89907455 -10.18 -0.76212311 
 		-6.1575079 -3.5534554 0.521698 -13.846264 1.0000267 3.8395309 -10.474535 8.5129051;
 	setAttr -s 31 ".vt[0:30]"  -3.014947414 -5.45009232 4.97234392 1.4197793 -5.49802208 5.8546629
 		 3.028186321 -5.98463631 4.98671246 -3.17411757 -0.65196228 4.49423885 4.6896739 1.28378296 5.87817574
@@ -3749,20 +3784,21 @@ createNode mesh -n "waterGround2Shape" -p "waterGround2";
 	setAttr ".ugsdt" no;
 	setAttr -s 55 ".pt[0:54]" -type "float3"  0 -0.4393281 13.920694 0 
 		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
-		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
+		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 
+		-1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 -1.1662033 
+		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 -1.1662033 13.920694 
+		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 
+		-1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
+		-0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 
+		-1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
+		0 -0.4393281 13.920694 -0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 -0.62953842 
+		0.1058943 13.920694 -0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
+		13.920694 0 0.83276951 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 0 
+		0.83276951 13.920694 -0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 -0.62953842 
+		-1.1662033 13.920694 -0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
 		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
-		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
-		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
-		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
-		13.920694 0 -0.4393281 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 0.83276951 13.920694 0 0.83276951 13.920694 
-		0 -0.4393281 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
-		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
-		0 -0.4393281 13.920694 0 0.83276951 13.920694 0 0.83276951 13.920694 0 -0.4393281 
-		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694;
+		-0.4393281 13.920694 0 0.83276951 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 
+		0 -0.4393281 13.920694 0 -0.4393281 13.920694;
 	setAttr -s 55 ".vt[0:54]"  17.018386841 -0.090856671 -11.92952919 8.87864017 -1.26324558 -11.95680618
 		 6.16538477 -0.32989419 -11.965909 17.006061554 -1.33693671 -7.93123293 16.99372482 0.31072199 -3.93294215
 		 11.5795517 0.59500992 -7.94942617 6.14070368 0.77907979 -3.96931529 16.98138618 -1.42478549 0.065353744
@@ -5428,7 +5464,7 @@ createNode mesh -n "grass28Shape" -p "grass28";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.12459015846252441 0.12471920251846313 ;
+	setAttr ".pv" -type "double2" 0.18710213899612427 0.11122135445475578 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
@@ -5436,21 +5472,39 @@ createNode mesh -n "grass28Shape" -p "grass28";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".sdt" 0;
 	setAttr ".ugsdt" no;
-	setAttr -s 14 ".pt";
+	setAttr -s 32 ".pt";
+	setAttr ".pt[2]" -type "float3" 0 -1.3666717 0 ;
 	setAttr ".pt[9]" -type "float3" 0 -1.195747 0 ;
 	setAttr ".pt[10]" -type "float3" 0 -1.195747 0 ;
 	setAttr ".pt[11]" -type "float3" 0 -1.3640207 0 ;
 	setAttr ".pt[12]" -type "float3" 0 -1.3640207 0 ;
 	setAttr ".pt[13]" -type "float3" 0 -1.3640207 0 ;
+	setAttr ".pt[15]" -type "float3" 0 -1.3666717 0 ;
+	setAttr ".pt[18]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[19]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[24]" -type "float3" 0 -1.6266102 0 ;
+	setAttr ".pt[27]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[28]" -type "float3" 0 -1.3640207 0 ;
 	setAttr ".pt[29]" -type "float3" 0 -1.3640207 0 ;
 	setAttr ".pt[30]" -type "float3" 0 -1.3640207 0 ;
 	setAttr ".pt[31]" -type "float3" 0 -1.3640207 0 ;
+	setAttr ".pt[34]" -type "float3" 0 -1.3666717 0 ;
+	setAttr ".pt[35]" -type "float3" 0 -1.3666717 0 ;
+	setAttr ".pt[36]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[37]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[38]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[40]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[41]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[42]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[45]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[46]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[51]" -type "float3" 0 -1.3640207 0 ;
 	setAttr ".pt[52]" -type "float3" 0 -1.3640207 0 ;
 	setAttr ".pt[53]" -type "float3" 0 -1.3640207 0 ;
+	setAttr ".pt[55]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[58]" -type "float3" 0 -1.3640207 0 ;
+	setAttr ".pt[59]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[65]" -type "float3" -0.62953842 -0.72687531 0 ;
 createNode mesh -n "polySurfaceShape2" -p "grass28";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -6423,28 +6477,28 @@ createNode mesh -n "grass29Shape" -p "grass29";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".sdt" 0;
 	setAttr ".ugsdt" no;
-	setAttr -s 69 ".pt[0:68]" -type "float3"  0.98046827 -0.79086208 20.100031 
-		0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 -0.79086208 
-		20.100031 0.98046827 -2.1554322 20.100031 0.98046827 0.62907428 20.100031 0.98046827 
-		0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 2.7495072 20.100031 
-		0.98046827 0.62907428 20.100031 0.98046827 11.889883 20.100031 0.98046827 0.62907428 
+	setAttr -s 69 ".pt[0:68]" -type "float3"  1.9124793 -1.2134354 20.100031 
+		0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 1.9124793 -1.2134354 
+		20.100031 1.9124793 -2.5780058 20.100031 0.98046827 0.62907428 20.100031 0.98046827 
+		0.62907428 20.100031 1.9124793 0.2065008 20.100031 0.98046827 2.7495072 20.100031 
+		0.98046827 0.62907428 20.100031 0.98046827 11.889883 20.100031 1.9124793 0.2065008 
+		20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 1.9124793 
+		0.2065008 20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 
+		0.98046827 0.62907428 20.100031 1.9124793 -1.2134354 20.100031 0.98046827 0.62907428 
 		20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 
 		0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 
-		0.98046827 0.62907428 20.100031 0.98046827 -0.79086208 20.100031 0.98046827 0.62907428 
-		20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 
-		0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 
-		0.98046827 0.62907428 20.100031 0.98046827 -1.1099062 20.100031 0.98046827 2.7495072 
+		0.98046827 0.62907428 20.100031 1.9124793 -1.5324795 20.100031 0.98046827 2.7495072 
 		20.100031 0.98046827 2.7495072 20.100031 0.98046827 2.7495072 20.100031 0.98046827 
 		0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 
 		0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 2.7495072 
-		20.100031 0.98046827 2.7495072 20.100031 0.98046827 2.7495072 20.100031 0.98046827 
-		-0.5417701 20.100031 0.98046827 2.7495072 20.100031 0.98046827 2.7495072 20.100031 
+		20.100031 0.98046827 2.7495072 20.100031 0.98046827 2.7495072 20.100031 1.9124793 
+		-0.96434337 20.100031 0.98046827 2.7495072 20.100031 0.98046827 2.7495072 20.100031 
 		0.98046827 2.7495072 20.100031 0.98046827 9.3011093 20.100031 0.98046827 9.3011093 
 		20.100031 0.98046827 7.4496145 20.100031 0.98046827 6.93787 20.100031 0.98046827 
 		2.7495072 20.100031 0.98046827 6.93787 20.100031 0.98046827 9.2605963 20.100031 0.98046827 
 		6.93787 20.100031 0.98046827 2.7495072 20.100031 0.98046827 0.62907428 20.100031 
-		0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 
-		20.100031 0.98046827 0.62907428 20.100031 0.98046827 9.2605963 20.100031 0.98046827 
+		1.9124793 0.2065008 20.100031 1.9124793 0.2065008 20.100031 0.98046827 0.62907428 
+		20.100031 1.9124793 0.2065008 20.100031 0.98046827 9.2605963 20.100031 0.98046827 
 		9.2605963 20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 
 		0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 
 		20.100031 0.98046827 0.62907428 20.100031 0.98046827 0.62907428 20.100031 0.98046827 
@@ -6858,19 +6912,20 @@ createNode mesh -n "waterGround4Shape" -p "waterGround4";
 	setAttr -s 55 ".pt[0:54]" -type "float3"  0 -0.4393281 13.920694 0 
 		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
 		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
+		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 -1.1662033 13.920694 
+		0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 -1.1662033 13.920694 0 
+		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 -1.1662033 
+		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 
+		-1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 -0.62953842 -1.1662033 
 		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
-		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
+		-0.4393281 13.920694 -0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 0 0.83276951 
+		13.920694 -0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
+		0 0.83276951 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 0 0.83276951 
+		13.920694 -0.62953842 -1.1662033 13.920694 -0.62953842 -1.1662033 13.920694 -0.62953842 
+		-1.1662033 13.920694 -0.62953842 -1.1662033 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
 		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
-		0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
-		13.920694 0 -0.4393281 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 0.83276951 13.920694 0 0.83276951 13.920694 
-		0 -0.4393281 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 0 -0.4393281 
-		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 
-		-0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694 
-		0 -0.4393281 13.920694 0 0.83276951 13.920694 0 0.83276951 13.920694 0 -0.4393281 
-		13.920694 0 -0.4393281 13.920694 0 -0.4393281 13.920694;
+		-0.4393281 13.920694 0 0.83276951 13.920694 0 0.83276951 13.920694 0 -0.4393281 13.920694 
+		0 -0.4393281 13.920694 0 -0.4393281 13.920694;
 	setAttr -s 55 ".vt[0:54]"  17.018386841 -0.090856671 -11.92952919 8.87864017 -1.26324558 -11.95680618
 		 6.16538477 -0.32989419 -11.965909 17.006061554 -1.33693671 -7.93123293 16.99372482 0.31072199 -3.93294215
 		 11.5795517 0.59500992 -7.94942617 6.14070368 0.77907979 -3.96931529 16.98138618 -1.42478549 0.065353744
@@ -9731,6 +9786,7 @@ createNode mesh -n "ground16Shape" -p "ground16";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ugsdt" no;
+	setAttr ".pt[10]" -type "float3"  -5.364418e-007 -0.2627466 0;
 	setAttr -s 53 ".vt[0:52]"  -1.9086051 0.83506435 -11.92952919 -10.048351288 -0.33732456 -11.95680618
 		 -12.76160812 0.59602684 -11.965909 -1.92093015 -0.41101569 -7.93123293 -1.93326771 1.23664308 -3.93294215
 		 -7.34744072 0.55887628 -7.94942617 -12.78628731 -0.55275351 -4.093235016 -1.94560599 -0.49886447 0.065353744
@@ -10984,7 +11040,7 @@ createNode mesh -n "polySurfaceShape29" -p "lavaGround3";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode transform -n "grass30";
-	setAttr ".t" -type "double3" 0 0 -23.652655216378236 ;
+	setAttr ".t" -type "double3" 0 0 -26.099464423498915 ;
 	setAttr ".s" -type "double3" 1.6866028620616316 1 1.6183792361622369 ;
 	setAttr ".rp" -type "double3" -27.516267573216204 -0.71613928121090287 0.24710462766414309 ;
 	setAttr ".sp" -type "double3" -16.314609794733475 -0.71613928121090287 0.15268647925199388 ;
@@ -10993,6 +11049,7 @@ createNode mesh -n "grass30Shape" -p "grass30";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.11152002215385437 0.10851746052503586 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 69 ".uvst[0].uvsp[0:68]" -type "float2" 0.11152002 0.10851746
 		 0.11152005 0.094425313 0.13060993 0.10851746 0.14015487 0.094425343 0.11152002 0.12260958
@@ -11017,6 +11074,31 @@ createNode mesh -n "grass30Shape" -p "grass30";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ugsdt" no;
+	setAttr -s 26 ".pt";
+	setAttr ".pt[0]" -type "float3" 0 -1.5196352 -0.9452579 ;
+	setAttr ".pt[3]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[4]" -type "float3" 0.93201095 -1.8026545 0 ;
+	setAttr ".pt[7]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[14]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[17]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[18]" -type "float3" 0 -1.5196352 -0.9452579 ;
+	setAttr ".pt[19]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[20]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[24]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[25]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[26]" -type "float3" 0.93201095 -1.8026545 0 ;
+	setAttr ".pt[27]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[29]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[36]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[37]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[38]" -type "float3" 0.93201095 -1.8026545 0 ;
+	setAttr ".pt[39]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[41]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[50]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[51]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[52]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[53]" -type "float3" 0.93201095 -0.42257345 0 ;
+	setAttr ".pt[54]" -type "float3" 0.93201095 -0.42257345 0 ;
 	setAttr -s 69 ".vt[0:68]"  -10.85109711 0.5382176 -11.82400894 -18.99084282 -0.63417131 -11.85128784
 		 -21.70409966 0.29918009 -11.8603878 -10.86342239 -0.70786244 -7.8257122 -10.87575912 0.93979627 -3.82742214
 		 -16.28993225 1.22408414 -7.84390545 -21.72877884 -0.70643455 -3.86379528 -10.88809776 -0.79571122 0.17087343
@@ -11324,7 +11406,7 @@ createNode mesh -n "grass31Shape" -p "grass31";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.1548018604516983 0.10797867923974991 ;
+	setAttr ".pv" -type "double2" 0.17651075124740601 0.13199302181601524 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 66 ".uvst[0].uvsp[0:65]" -type "float2" 0.11980411 0.099412404
 		 0.15882611 0.096685164 0.18558341 0.09768682 0.12016124 0.10531812 0.18558341 0.13885432
@@ -11349,11 +11431,22 @@ createNode mesh -n "grass31Shape" -p "grass31";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ugsdt" no;
-	setAttr -s 4 ".pt";
+	setAttr -s 15 ".pt";
+	setAttr ".pt[4]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[8]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
 	setAttr ".pt[14]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[15]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[17]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[20]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[22]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[23]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[26]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
 	setAttr ".pt[27]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[34]" -type "float3" -0.62953842 -2.2317145 -0.98528296 ;
+	setAttr ".pt[35]" -type "float3" -0.62953842 -1.5638486 0 ;
+	setAttr ".pt[40]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[63]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[64]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr -s 66 ".vt[0:65]"  22.11358643 -0.17781837 -10.32524204 17.1178112 -0.70525479 -11.13662624
 		 13.6896286 -0.098668158 -10.85626698 22.062540054 -0.69780397 -8.60466385 13.65261078 -0.66642499 1.13861942
 		 23.11506844 -1.6539638 12.16575909 12.83036232 -3.32646608 11.60179329 20.80836296 0.023813054 -9.48850918
@@ -12303,7 +12396,7 @@ createNode mesh -n "grass32Shape" -p "grass32";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.17807340621948242 0.12792155146598816 ;
+	setAttr ".pv" -type "double2" 0.17651075124740601 0.11122135445475578 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 66 ".uvst[0].uvsp[0:65]" -type "float2" 0.11980411 0.099412404
 		 0.15882611 0.096685164 0.18558341 0.09768682 0.12016124 0.10531812 0.18558341 0.13885432
@@ -12328,22 +12421,37 @@ createNode mesh -n "grass32Shape" -p "grass32";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ugsdt" no;
-	setAttr -s 18 ".pt";
+	setAttr -s 30 ".pt";
+	setAttr ".pt[2]" -type "float3" -0.62953842 -2.3880446 0 ;
+	setAttr ".pt[4]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[8]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
 	setAttr ".pt[9]" -type "float3" 0 2.5745971 0 ;
 	setAttr ".pt[14]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[15]" -type "float3" -0.62953842 -2.3880446 0 ;
+	setAttr ".pt[18]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[22]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[23]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[25]" -type "float3" 5.1409006e-007 2.4466548 -1.4901161e-008 ;
-	setAttr ".pt[26]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
-	setAttr ".pt[27]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[26]" -type "float3" 0 -1.6611692 -2.3841858e-007 ;
+	setAttr ".pt[27]" -type "float3" 0 -1.6611692 -2.3841858e-007 ;
 	setAttr ".pt[29]" -type "float3" 0 2.4895368 0 ;
 	setAttr ".pt[30]" -type "float3" 0 2.4895368 0 ;
 	setAttr ".pt[31]" -type "float3" 0 1.1522014 0 ;
 	setAttr ".pt[33]" -type "float3" 0 1.1522018 0 ;
+	setAttr ".pt[34]" -type "float3" -0.62953842 -2.3880446 0 ;
+	setAttr ".pt[35]" -type "float3" -0.62953842 -2.3880446 0 ;
+	setAttr ".pt[36]" -type "float3" 0 -1.6611689 0 ;
+	setAttr ".pt[37]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[40]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[41]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[43]" -type "float3" 0 1.1522018 0 ;
 	setAttr ".pt[44]" -type "float3" 0 1.1522018 0 ;
 	setAttr ".pt[52]" -type "float3" 0 1.3291253 0 ;
 	setAttr ".pt[53]" -type "float3" 0 1.1522014 0 ;
 	setAttr ".pt[54]" -type "float3" 0 1.1522018 0 ;
+	setAttr ".pt[55]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[63]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[64]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr -s 66 ".vt[0:65]"  22.11358643 -0.17781837 -10.32524204 17.1178112 -0.70525479 -11.13662624
 		 13.6896286 -0.098668158 -10.85626698 22.062540054 -0.69780397 -8.60466385 13.65261078 -0.66642499 1.13861942
 		 23.11506844 -1.6539638 12.16575909 12.83036232 -3.32646608 11.60179329 20.80836296 0.023813054 -9.48850918
@@ -13293,7 +13401,7 @@ createNode mesh -n "grass33Shape" -p "grass33";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.1548018604516983 0.10797867923974991 ;
+	setAttr ".pv" -type "double2" 0.18710213899612427 0.11327403411269188 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 66 ".uvst[0].uvsp[0:65]" -type "float2" 0.11980411 0.099412404
 		 0.15882611 0.096685164 0.18558341 0.09768682 0.12016124 0.10531812 0.18558341 0.13885432
@@ -13318,11 +13426,25 @@ createNode mesh -n "grass33Shape" -p "grass33";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ugsdt" no;
-	setAttr -s 4 ".pt";
+	setAttr -s 18 ".pt";
+	setAttr ".pt[2]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[4]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[8]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
 	setAttr ".pt[14]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[15]" -type "float3" -0.62953746 -1.9563481 -1.4901161e-008 ;
+	setAttr ".pt[18]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[22]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[23]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr ".pt[26]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
 	setAttr ".pt[27]" -type "float3" 0 -2.3841858e-007 -2.3841858e-007 ;
+	setAttr ".pt[34]" -type "float3" -0.62953746 -1.9563481 -1.4901161e-008 ;
+	setAttr ".pt[35]" -type "float3" -0.62953746 -1.9563481 -1.4901161e-008 ;
+	setAttr ".pt[37]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[40]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[41]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[55]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[63]" -type "float3" -0.62953842 -0.72687531 0 ;
+	setAttr ".pt[64]" -type "float3" -0.62953842 -0.72687531 0 ;
 	setAttr -s 66 ".vt[0:65]"  22.11358643 -0.17781837 -10.32524204 17.1178112 -0.70525479 -11.13662624
 		 13.6896286 -0.098668158 -10.85626698 22.062540054 -0.69780397 -8.60466385 13.65261078 -0.66642499 1.13861942
 		 23.11506844 -1.6539638 12.16575909 12.83036232 -3.32646608 11.60179329 20.80836296 0.023813054 -9.48850918
@@ -14482,9 +14604,9 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n"
 		+ "                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n"
 		+ "                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"hyperShadePanel\" -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n"
-		+ "\t\t}\n\t}\n\tif ($useSceneConfig) {\n\t\tscriptedPanel -e -to $panelName;\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"visorPanel\" -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n"
-		+ "                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -defaultPinnedState 0\n                -ignoreAssets 1\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -keyReleaseCommand \"nodeEdKeyReleaseCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                $editorName;;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n"
-		+ "                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -defaultPinnedState 0\n                -ignoreAssets 1\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -keyReleaseCommand \"nodeEdKeyReleaseCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                $editorName;;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
+		+ "\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"visorPanel\" -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n"
+		+ "                -defaultPinnedState 0\n                -ignoreAssets 1\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -keyReleaseCommand \"nodeEdKeyReleaseCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                $editorName;;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n"
+		+ "                -autoSizeNodes 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -defaultPinnedState 0\n                -ignoreAssets 1\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -keyReleaseCommand \"nodeEdKeyReleaseCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                $editorName;;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n"
 		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"createNodePanel\" -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Texture Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"polyTexturePlacementPanel\" -l (localizedPanelLabel(\"UV Texture Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Texture Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\tif ($useSceneConfig) {\n\t\tscriptedPanel -e -to $panelName;\n\t}\n\n"
 		+ "\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"renderWindowPanel\" -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"blendShapePanel\" (localizedPanelLabel(\"Blend Shape\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\tblendShapePanel -unParent -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels ;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tblendShapePanel -edit -l (localizedPanelLabel(\"Blend Shape\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n"
 		+ "\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"dynRelEdPanel\" -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" == $panelName) {\n\t\tif ($useSceneConfig) {\n\t\t\t$panelName = `scriptedPanel -unParent  -type \"relationshipPanel\" -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels `;\n\t\t}\n\t} else {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n"
@@ -14511,7 +14633,7 @@ createNode container -n "asset1";
 	setAttr ".cdat" -type "string" "2015/05/16 17:57:03";
 createNode hyperLayout -n "hyperLayout1";
 	setAttr ".ihi" 0;
-	setAttr -s 5 ".hyp";
+	setAttr -s 3 ".hyp";
 createNode shadingEngine -n "lambert3SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
@@ -20450,9 +20572,9 @@ connectAttr "polyTweakUV5.out" "lavaGroundShape.i";
 connectAttr "polyTweakUV5.uvtk[0]" "lavaGroundShape.uvst[0].uvtw";
 connectAttr "polyTweakUV2.out" "grass2Shape.i";
 connectAttr "polyTweakUV2.uvtk[0]" "grass2Shape.uvst[0].uvtw";
+connectAttr "ground8_translateZ.o" "ground8.tz";
 connectAttr "ground8_translateX.o" "ground8.tx";
 connectAttr "ground8_translateY.o" "ground8.ty";
-connectAttr "ground8_translateZ.o" "ground8.tz";
 connectAttr "ground8_visibility.o" "ground8.v";
 connectAttr "ground8_rotateX.o" "ground8.rx";
 connectAttr "ground8_rotateY.o" "ground8.ry";
@@ -20619,9 +20741,9 @@ connectAttr "ground8Shape_pnts_51__pntz.o" "ground8Shape.pt[51].pz";
 connectAttr "ground8Shape_pnts_52__pntx.o" "ground8Shape.pt[52].px";
 connectAttr "ground8Shape_pnts_52__pnty.o" "ground8Shape.pt[52].py";
 connectAttr "ground8Shape_pnts_52__pntz.o" "ground8Shape.pt[52].pz";
+connectAttr "ground10_translateZ.o" "ground10.tz";
 connectAttr "ground10_translateX.o" "ground10.tx";
 connectAttr "ground10_translateY.o" "ground10.ty";
-connectAttr "ground10_translateZ.o" "ground10.tz";
 connectAttr "ground10_visibility.o" "ground10.v";
 connectAttr "ground10_rotateX.o" "ground10.rx";
 connectAttr "ground10_rotateY.o" "ground10.ry";
@@ -20959,9 +21081,9 @@ connectAttr "ground11Shape_pnts_52__pnty.o" "ground11Shape.pt[52].py";
 connectAttr "ground11Shape_pnts_52__pntz.o" "ground11Shape.pt[52].pz";
 connectAttr "polyTweakUV6.out" "lavaGround1Shape.i";
 connectAttr "polyTweakUV6.uvtk[0]" "lavaGround1Shape.uvst[0].uvtw";
+connectAttr "ground12_translateZ.o" "ground12.tz";
 connectAttr "ground12_translateX.o" "ground12.tx";
 connectAttr "ground12_translateY.o" "ground12.ty";
-connectAttr "ground12_translateZ.o" "ground12.tz";
 connectAttr "ground12_visibility.o" "ground12.v";
 connectAttr "ground12_rotateX.o" "ground12.rx";
 connectAttr "ground12_rotateY.o" "ground12.ry";
@@ -22140,6 +22262,6 @@ connectAttr "pasted__file8.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file6.oc" ":lambert1.c";
 connectAttr "file6.msg" ":initialMaterialInfo.t" -na;
 dataStructure -fmt "raw" -as "name=externalContentTable:string=node:string=key:string=upath:uint32=upathcrc:string=rpath:string=roles";
-applyMetadata -fmt "raw" -v "channel\nname externalContentTable\nstream\nname v1.0\nindexType numeric\nstructure externalContentTable\n0\n\"file1\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/mountBigUV.psd\" 1166353850 \"\" \"sourceImages\"\n1\n\"file2\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/lavaUV.PSD\" 1489454127 \"\" \"sourceImages\"\n2\n\"file3\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/RockUV.psd\" 3769831357 \"\" \"sourceImages\"\n3\n\"file4\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/cloudUV.psd\" 3440311352 \"\" \"sourceImages\"\n4\n\"file5\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/BIGmount.psd\" 2878725855 \"\" \"sourceImages\"\n5\n\"file6\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/ground.PSD\" 1884507961 \"\" \"sourceImages\"\n6\n\"file7\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/groundWater.psd\" 3807377396 \"\" \"sourceImages\"\n7\n\"file8\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Materials/LavaColours2.psd\" 1243038156 \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Materials/LavaColours2.psd\" \"sourceImages\"\n8\n\"pasted__file8\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Materials/LavaColours2.psd\" 1243038156 \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Materials/LavaColours2.psd\" \"sourceImages\"\nendStream\nendChannel\nendAssociations\n" 
+applyMetadata -fmt "raw" -v "channel\nname externalContentTable\nstream\nname v1.0\nindexType numeric\nstructure externalContentTable\n0\n\"file1\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/mountBigUV.psd\" 1166353850 \"\" \"sourceImages\"\n1\n\"file2\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/lavaUV.PSD\" 1489454127 \"\" \"sourceImages\"\n2\n\"file3\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/RockUV.psd\" 3769831357 \"\" \"sourceImages\"\n3\n\"file4\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/cloudUV.psd\" 3440311352 \"\" \"sourceImages\"\n4\n\"file5\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/BIGmount.psd\" 2878725855 \"\" \"sourceImages\"\n5\n\"file6\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/ground.PSD\" 1884507961 \"\" \"sourceImages\"\n6\n\"file7\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Models/Level/LavaTerrain/images/groundWater.psd\" 3807377396 \"\" \"sourceImages\"\n7\n\"file8\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Materials/LavaColours2.psd\" 1243038156 \"\" \"sourceImages\"\n8\n\"pasted__file8\" \"fileTextureName\" \"D:/Git/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/Materials/LavaColours2.psd\" 1243038156 \"\" \"sourceImages\"\nendStream\nendChannel\nendAssociations\n" 
 		-scn;
 // End of LavaSurrounds.ma

@@ -152,9 +152,6 @@ public class LayoutSpawner : MonoBehaviour {
 			}
 		}
 
-		//DEBUG
-		List<string> keys = new List<string>(layoutDictionary.Keys);
-
 		return layoutDictionary;
 	}
 }

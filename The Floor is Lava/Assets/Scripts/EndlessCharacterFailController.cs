@@ -3,22 +3,15 @@ using System.Collections;
 
 public class EndlessCharacterFailController : MonoBehaviour {
 
-	public GameObject happyMouth;
-	public GameObject sadMouth;
 	public GameObject fireEffects;
 	public Rigidbody rigidBody;
-
-	//Lava hit variables
-	public float hurtBounceSpeed = 10.0f;
-	public float hurtModelRevertTime = 1.0f;
-
 	private EndlessController controller;
+	EndlessCharacterController characterController;
 
 	void Awake()
 	{
-		controller = GameObject.Find ("EndlessController").GetComponent<EndlessController> ();
-		sadMouth.SetActive(false);
-		happyMouth.SetActive(true);
+		controller = EndlessController.controller;
+		characterController = GetComponent<EndlessCharacterController>();
 		rigidBody =  GetComponent<Rigidbody>();
 	}
 
@@ -27,17 +20,6 @@ public class EndlessCharacterFailController : MonoBehaviour {
 		if(collision.gameObject.tag == "LavaCollider")
 		{
 			controller.SlowPlayer(0.4f);
-			happyMouth.SetActive(false);
-			sadMouth.SetActive(true);
-			rigidBody.velocity = Vector3.up * hurtBounceSpeed;
-			//Flip hurt model back
-			Invoke("RevertHurtModel", hurtModelRevertTime);
 		}
-	}
-
-	void RevertHurtModel()
-	{
-		sadMouth.SetActive(false);
-		happyMouth.SetActive(true);
 	}
 }

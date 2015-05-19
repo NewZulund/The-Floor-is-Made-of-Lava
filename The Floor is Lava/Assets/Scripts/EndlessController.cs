@@ -22,7 +22,6 @@ public class EndlessController : MonoBehaviour {
 		}
 		else
 		{
-			Debug.Log("Controller Established");
 			controller = this;
 		}
 	}
