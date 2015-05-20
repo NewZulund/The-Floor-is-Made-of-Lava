@@ -75,6 +75,7 @@ public class EndlessCharacterController : MonoBehaviour {
 				if(yVelocity <= 0)
 				{
 					yVelocity += lavaHitYVelocity;
+					EndlessController.controller.SlowPlayer(0.4f);
 				}
 			}
 			else
@@ -116,6 +117,7 @@ public class EndlessCharacterController : MonoBehaviour {
 			startMoveX = xPosition;
 			movementCounter = 0;
 		}
+		CheckFail ();
 	}
 
 	public void MoveRight()
@@ -128,6 +130,7 @@ public class EndlessCharacterController : MonoBehaviour {
 			startMoveX = xPosition;
 			movementCounter = 0;
 		}
+		CheckFail ();
 	}
 
 	public void Jump()
@@ -137,6 +140,12 @@ public class EndlessCharacterController : MonoBehaviour {
 			yVelocity += jumpVelocity;
 			animator.SetBool("IsJumping", true);
 			isJumping = true;
+		}
+	}
+
+	public void CheckFail (){
+		if (!isGrounded ()) {
+			yVelocity += fallVelocity * Time.deltaTime;
 		}
 	}
 
@@ -178,6 +187,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	{
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGround + 0.1f)){
+			Debug.Log(hit.transform.tag);
 			if(hit.transform.tag == "Lava" || hit.transform.tag == "LavaCollider")
 			{
 				return true;
