@@ -1,32 +1,15 @@
 fileFormatVersion: 2
-guid: 7ad9054f7b8d1ba43a33b52c5f69e411
-timeCreated: 1431844769
+guid: 641f369a2ff537345a997d18a4777158
+timeCreated: 1432036203
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: squareman_obj:pCube1
-    100004: squareman_obj:pSphere1
-    100006: squareman_obj:pSphere3
-    100008: squareman_obj:pSphere4
     400000: //RootNode
-    400002: squareman_obj:pCube1
-    400004: squareman_obj:pSphere1
-    400006: squareman_obj:pSphere3
-    400008: squareman_obj:pSphere4
-    2300000: squareman_obj:pCube1
-    2300002: squareman_obj:pSphere1
-    2300004: squareman_obj:pSphere3
-    2300006: squareman_obj:pSphere4
-    3300000: squareman_obj:pCube1
-    3300002: squareman_obj:pSphere1
-    3300004: squareman_obj:pSphere3
-    3300006: squareman_obj:pSphere4
-    4300000: squareman_obj:pCube1
-    4300002: squareman_obj:pSphere1
-    4300004: squareman_obj:pSphere3
-    4300006: squareman_obj:pSphere4
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: coin
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -63,9 +46,9 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 0
+    normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
