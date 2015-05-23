@@ -74,7 +74,7 @@ public class EndlessCharacterController : MonoBehaviour {
 				//Don't stack the velocity increases if it is already positive. 
 				if(yVelocity <= 0)
 				{
-					yVelocity += lavaHitYVelocity;
+					yVelocity += lavaHitYVelocity * 1.5f;
 					EndlessController.controller.SlowPlayer(0.4f);
 				}
 			}
