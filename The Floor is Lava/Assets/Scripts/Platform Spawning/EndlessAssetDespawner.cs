@@ -5,7 +5,7 @@ public class EndlessAssetDespawner : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if(other.tag != "Lava" && other.tag != "LavaCollider" && tag != "LavaSurrounds")
+		if(other.tag != "Lava" && other.tag != "LavaCollider" && other.tag != "LavaSurrounds" && other.tag != "" && other.tag != "Untagged")
 		{
 			Destroy(other.gameObject);
 		}
