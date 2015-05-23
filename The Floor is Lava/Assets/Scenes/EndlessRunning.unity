@@ -596,6 +596,7 @@ Transform:
   - {fileID: 1712702994}
   - {fileID: 723766136}
   - {fileID: 1282271079}
+  - {fileID: 1536904641}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1001 &38877530
@@ -1220,7 +1221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &113262295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6271,6 +6272,7 @@ GameObject:
   - 4: {fileID: 723766136}
   - 114: {fileID: 723766135}
   - 114: {fileID: 723766137}
+  - 114: {fileID: 723766138}
   m_Layer: 0
   m_Name: LayoutLoader
   m_TagString: Untagged
@@ -6321,6 +6323,32 @@ MonoBehaviour:
   controller: {fileID: 0}
   totalDistance: 0
   expectedPlayerRails: 1
+--- !u!114 &723766138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723766134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -568171104, guid: 8b701c814d4d4ef4e963629b54896ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bIsDisabled: 0
+  _V_CW_X_Bend_Size_GLOBAL: -.939999998
+  _V_CW_Y_Bend_Size_GLOBAL: .839999974
+  _V_CW_Z_Bend_Size_GLOBAL: 1.19000006
+  _V_CW_Z_Bend_Bias_GLOBAL: 0
+  _V_CW_Camera_Bend_Offset_GLOBAL: 24.3600006
+  enableIBL: 0
+  _V_CW_IBL_Intensity_GLOBAL: 1
+  _V_CW_IBL_Contrast_GLOBAL: 1
+  _V_CW_IBL_Cube_GLOBAL: {fileID: 0}
+  enableFog: 0
+  _V_CW_Fog_Color_GLOBAL: {r: 1, g: 1, b: 1, a: 1}
+  _V_CW_Fog_Density_GLOBAL: 1
+  _V_CW_Fog_Start_GLOBAL: 0
+  _V_CW_Fog_End_GLOBAL: 100
 --- !u!1 &725090684
 GameObject:
   m_ObjectHideFlags: 0
@@ -10800,6 +10828,8 @@ GameObject:
   - 136: {fileID: 1397648767}
   - 114: {fileID: 1397648773}
   - 114: {fileID: 1397648772}
+  - 114: {fileID: 1397648775}
+  - 65: {fileID: 1397648774}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -10907,6 +10937,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5b4df63748ca244abe87cda0bbde09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1397648774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397648766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.16999996, y: 1.64999998, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1397648775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397648766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa641e86a5773840bfc11c652149786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1401392311
@@ -12262,6 +12315,55 @@ MeshFilter:
 GameObject:
   m_PrefabParentObject: {fileID: 168808, guid: 93975a0cf1a084544924d8d3bd7fea2d, type: 2}
   m_PrefabInternal: {fileID: 374977292}
+--- !u!1 &1536904640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1536904641}
+  - 114: {fileID: 1536904642}
+  m_Layer: 0
+  m_Name: Collectable Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1536904641
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1536904640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1.72413802, z: 1}
+  m_Children: []
+  m_Father: {fileID: 31948023}
+  m_RootOrder: 7
+--- !u!114 &1536904642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1536904640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5295bb3a3c8368d4d85410be457fd9a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minimumDelay: 2
+  maximumDelay: 5
+  coinLayoutPrefabs:
+  - {fileID: 146056, guid: c456963ab844fd4439920825ed098e7f, type: 2}
+  - {fileID: 163442, guid: 42201cdd1b3fc0541909fa0e38566192, type: 2}
+  - {fileID: 118724, guid: 791b74fd6f9205f4ba958f7858786371, type: 2}
+  - {fileID: 133630, guid: b50d8d7d5c5184d41a13b3fa73036662, type: 2}
+  yOffset: 2.75
+  zOffset: -30
+  startZOffset: -30
 --- !u!1 &1555161969
 GameObject:
   m_ObjectHideFlags: 0

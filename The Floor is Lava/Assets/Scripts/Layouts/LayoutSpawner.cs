@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class LayoutSpawner : MonoBehaviour {
 
+	public static LayoutSpawner spawner;
+
 	private string layoutFileName = "Assets/Resources/layouts.csv";
 	public static float PLATFORM_ITEM_LENGTH = 3.0f;
 	public static float PLATFORM_ITEM_WIDTH = 1.75f;
@@ -29,6 +31,16 @@ public class LayoutSpawner : MonoBehaviour {
 	
 	void Awake () 
 	{
+		if(spawner == null)
+		{
+			spawner = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+
+
 		loader = GetComponent<LayoutLoader>();
 		layouts = loader.Load(layoutFileName);
 		layoutByIncomingRail = buildIncomingRailDictionary();
@@ -91,10 +103,8 @@ public class LayoutSpawner : MonoBehaviour {
 				int itemIndex = layout.platformArray[y][x];
 				if(itemIndex < assetPrefabs.Length && itemIndex >= 0)
 				{
-
 					platform = Instantiate(assetPrefabs[itemIndex], transform.position + offset, Quaternion.identity) as GameObject;
 					platform.transform.parent = parent.transform;
-
 				}
 
 				//Instantiate Notifications

@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: coinUV
-  m_Shader: {fileID: 4800000, guid: 45ca59f9a307b6145bc1a9574660049e, type: 3}
+  m_Name: LavaColours3
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 1e49757604f43aa4a97442dd9b12dfee, type: 3}
+          m_Texture: {fileID: 2800000, guid: d0d5b79db28b31644a622bc5ef7cfe87, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -77,20 +77,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Cube
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _V_CW_IBL_Cube
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -144,70 +130,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: V_CW_TAG
-        second: 0
-      data:
-        first:
-          name: V_CW_D_OPTIONS
-        second: 0
-      data:
-        first:
-          name: V_CW_W_OPTIONS
-        second: 0
-      data:
-        first:
-          name: _V_CW_Z_Bend_Size
-        second: 0
-      data:
-        first:
-          name: _V_CW_Z_Bend_Bias
-        second: 0
-      data:
-        first:
-          name: _V_CW_Y_Bend_Size
-        second: 0
-      data:
-        first:
-          name: _V_CW_X_Bend_Size
-        second: 0
-      data:
-        first:
-          name: _V_CW_Camera_Bend_Offset
-        second: 0
-      data:
-        first:
-          name: _V_CW_Rim_Bias
-        second: .200000003
-      data:
-        first:
-          name: _V_CW_Fog_Density
-        second: 1
-      data:
-        first:
-          name: _V_CW_Fog_Start
-        second: 0
-      data:
-        first:
-          name: _V_CW_Fog_End
-        second: 100
-      data:
-        first:
-          name: _V_CW_IBL_Intensity
-        second: 1
-      data:
-        first:
-          name: _V_CW_IBL_Contrast
-        second: 1
-      data:
-        first:
-          name: _V_CW_Emission_Strength
-        second: 1
-      data:
-        first:
-          name: V_CW_MV_MAT
-        second: 1
     m_Colors:
       data:
         first:
@@ -220,20 +142,4 @@ Material:
       data:
         first:
           name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _ReflectColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _V_CW_Rim_Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _V_CW_Fog_Color
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _V_CW_Emission_Color
         second: {r: 1, g: 1, b: 1, a: 1}

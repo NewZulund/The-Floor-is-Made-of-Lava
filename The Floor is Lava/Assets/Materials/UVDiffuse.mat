@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: UVDiffuse
-  m_Shader: {fileID: 4800000, guid: 5d674850bc933694994cf2c3f6dbb7b7, type: 3}
+  m_Shader: {fileID: 4800000, guid: 45ca59f9a307b6145bc1a9574660049e, type: 3}
   m_ShaderKeywords: V_CW_FOG_OFF V_CW_IBL_OFF V_CW_LIGHT_PER_VERTEX V_CW_RIM_OFF V_CW_SELF_ILLUMINATED_OFF
     V_CW_UNITY_VERTEXLIGHT_OFF V_CW_VERTEX_COLOR_OFF
   m_LightmapFlags: 5
@@ -172,7 +172,7 @@ Material:
       data:
         first:
           name: _V_CW_X_Bend_Size
-        second: -1.47000003
+        second: -1.63
       data:
         first:
           name: _V_CW_Camera_Bend_Offset

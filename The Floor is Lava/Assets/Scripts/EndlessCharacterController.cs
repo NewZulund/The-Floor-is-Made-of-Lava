@@ -187,7 +187,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	{
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGround + 0.1f)){
-			Debug.Log(hit.transform.tag);
+			//Debug.Log(hit.transform.tag);
 			if(hit.transform.tag == "Lava" || hit.transform.tag == "LavaCollider")
 			{
 				return true;
