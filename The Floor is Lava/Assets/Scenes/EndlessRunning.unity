@@ -1220,7 +1220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &113262295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5549,7 +5549,7 @@ GameObject:
   - 65: {fileID: 628608563}
   m_Layer: 0
   m_Name: LavaSurrounds 1
-  m_TagString: LavaSurrounds
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7834,7 +7834,7 @@ GameObject:
   - 65: {fileID: 1012814947}
   m_Layer: 0
   m_Name: LavaSurrounds 4
-  m_TagString: LavaSurrounds
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10495,7 +10495,7 @@ GameObject:
   - 65: {fileID: 1347035885}
   m_Layer: 0
   m_Name: LavaSurrounds 2
-  m_TagString: LavaSurrounds
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13424,7 +13424,7 @@ GameObject:
   - 65: {fileID: 1741783200}
   m_Layer: 0
   m_Name: LavaSurrounds 3
-  m_TagString: LavaSurrounds
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14442,7 +14442,7 @@ GameObject:
   - 4: {fileID: 1901280745}
   m_Layer: 0
   m_Name: Lava Surrounds
-  m_TagString: LavaSurrounds
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14477,7 +14477,7 @@ GameObject:
   - 65: {fileID: 1902336797}
   m_Layer: 0
   m_Name: LavaSurrounds
-  m_TagString: LavaSurrounds
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

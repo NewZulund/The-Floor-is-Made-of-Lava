@@ -168,11 +168,11 @@ Material:
       data:
         first:
           name: _V_CW_Y_Bend_Size
-        second: .519999981
+        second: 2.50999999
       data:
         first:
           name: _V_CW_X_Bend_Size
-        second: -1.39999998
+        second: -1.47000003
       data:
         first:
           name: _V_CW_Camera_Bend_Offset
