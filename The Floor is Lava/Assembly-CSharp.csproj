@@ -46,8 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CollectableSpawner.cs" />
      <Compile Include="Assets\KeyboardControls.cs" />
+     <Compile Include="Assets\PlayerCollection.cs" />
      <Compile Include="Assets\PlayerMoveHit.cs" />
+     <Compile Include="Assets\RailOffsetter.cs" />
      <Compile Include="Assets\Scripts\Collectable.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterController.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterFailController.cs" />
