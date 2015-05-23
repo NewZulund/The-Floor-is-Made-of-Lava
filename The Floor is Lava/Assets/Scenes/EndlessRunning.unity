@@ -3463,7 +3463,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22414388, guid: 93975a0cf1a084544924d8d3bd7fea2d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 22414388, guid: 93975a0cf1a084544924d8d3bd7fea2d, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -4315,7 +4315,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400144, guid: 8e539a5043c341c46b5f48224144d6d6, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2300138, guid: 8e539a5043c341c46b5f48224144d6d6, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5732,7 +5732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!1 &667806566
 GameObject:
   m_ObjectHideFlags: 0
@@ -6327,6 +6327,9 @@ MonoBehaviour:
   - {fileID: 155492, guid: b9886aff07da285478791d416b3b401a, type: 2}
   - {fileID: 165708, guid: 8592611bf486cc3428dfc8a5d92d3dda, type: 2}
   - {fileID: 108164, guid: 2b64235c10f047e4a9f157034df891f8, type: 2}
+  - {fileID: 191168, guid: 33ccf3a1ac76ae94581ac1c2028243f2, type: 2}
+  - {fileID: 141556, guid: 869f4a206c15e484784300f3644541a1, type: 2}
+  - {fileID: 104568, guid: 30eb67be6467a844a9afdbd3857c24a7, type: 2}
   notificationPrefab: {fileID: 167178, guid: 30d6726ecc9c8d441be9ff061ed0f596, type: 2}
   controller: {fileID: 0}
   totalDistance: 0
