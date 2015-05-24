@@ -1,0 +1,729 @@
+fileFormatVersion: 2
+guid: 12838aee63fc9d74c95c660f676013fa
+timeCreated: 1431776626
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: cloud
+    100002: cloud1
+    100004: cloud2
+    100006: cloud4
+    100008: grass
+    100010: grass1
+    100012: grass10
+    100014: grass11
+    100016: grass12
+    100018: grass13
+    100020: grass14
+    100022: grass15
+    100024: grass16
+    100026: grass17
+    100028: grass18
+    100030: grass19
+    100032: grass2
+    100034: grass20
+    100036: grass21
+    100038: grass22
+    100040: grass23
+    100042: grass24
+    100044: grass25
+    100046: grass26
+    100048: grass27
+    100050: grass28
+    100052: grass29
+    100054: grass3
+    100056: grass30
+    100058: grass31
+    100060: grass32
+    100062: grass4
+    100064: grass5
+    100066: grass6
+    100068: grass7
+    100070: grass8
+    100072: grass9
+    100074: ground10
+    100076: ground11
+    100078: ground12
+    100080: ground13
+    100082: ground14
+    100084: ground8
+    100086: lavaFlow
+    100088: lavaFlow1
+    100090: lavaGround
+    100092: lavaGround1
+    100094: lavaGround2
+    100096: mountBig
+    100098: mountBig1
+    100100: mountBig2
+    100102: mountMid
+    100104: mountMid1
+    100106: moutain
+    100108: mtLava
+    100110: mtLava2
+    100112: mtLava3
+    100114: mtLava4
+    100116: rock1
+    100118: rock10
+    100120: rock11
+    100122: rock12
+    100124: rock13
+    100126: rock14
+    100128: rock2
+    100130: rock3
+    100132: rock4
+    100134: rock5
+    100136: rock6
+    100138: rock7
+    100140: rock8
+    100142: rock9
+    100144: //RootNode
+    100146: waterGround
+    100148: waterGround1
+    100150: waterGround2
+    100152: waterGround3
+    100154: waterGround4
+    100156: waterGround5
+    100158: bubblept1
+    100160: cloud5
+    100162: flyingLava1
+    100164: flyingLava2
+    100166: flyingLava3
+    100168: flyingRock1
+    100170: flyingRock2
+    100172: lavaFlowLayer
+    100174: lavaFlowSlide
+    100176: left
+    100178: rock15
+    100180: rock16
+    100182: waterGround6
+    400000: cloud
+    400002: cloud1
+    400004: cloud2
+    400006: cloud4
+    400008: grass
+    400010: grass1
+    400012: grass10
+    400014: grass11
+    400016: grass12
+    400018: grass13
+    400020: grass14
+    400022: grass15
+    400024: grass16
+    400026: grass17
+    400028: grass18
+    400030: grass19
+    400032: grass2
+    400034: grass20
+    400036: grass21
+    400038: grass22
+    400040: grass23
+    400042: grass24
+    400044: grass25
+    400046: grass26
+    400048: grass27
+    400050: grass28
+    400052: grass29
+    400054: grass3
+    400056: grass30
+    400058: grass31
+    400060: grass32
+    400062: grass4
+    400064: grass5
+    400066: grass6
+    400068: grass7
+    400070: grass8
+    400072: grass9
+    400074: ground10
+    400076: ground11
+    400078: ground12
+    400080: ground13
+    400082: ground14
+    400084: ground8
+    400086: lavaFlow
+    400088: lavaFlow1
+    400090: lavaGround
+    400092: lavaGround1
+    400094: lavaGround2
+    400096: mountBig
+    400098: mountBig1
+    400100: mountBig2
+    400102: mountMid
+    400104: mountMid1
+    400106: moutain
+    400108: mtLava
+    400110: mtLava2
+    400112: mtLava3
+    400114: mtLava4
+    400116: rock1
+    400118: rock10
+    400120: rock11
+    400122: rock12
+    400124: rock13
+    400126: rock14
+    400128: rock2
+    400130: rock3
+    400132: rock4
+    400134: rock5
+    400136: rock6
+    400138: rock7
+    400140: rock8
+    400142: rock9
+    400144: //RootNode
+    400146: waterGround
+    400148: waterGround1
+    400150: waterGround2
+    400152: waterGround3
+    400154: waterGround4
+    400156: waterGround5
+    400158: bubblept1
+    400160: cloud5
+    400162: flyingLava1
+    400164: flyingLava2
+    400166: flyingLava3
+    400168: flyingRock1
+    400170: flyingRock2
+    400172: lavaFlowLayer
+    400174: lavaFlowSlide
+    400176: left
+    400178: rock15
+    400180: rock16
+    400182: waterGround6
+    2300000: cloud
+    2300002: cloud1
+    2300004: cloud2
+    2300006: cloud4
+    2300008: grass
+    2300010: grass1
+    2300012: grass10
+    2300014: grass11
+    2300016: grass12
+    2300018: grass13
+    2300020: grass14
+    2300022: grass15
+    2300024: grass16
+    2300026: grass17
+    2300028: grass18
+    2300030: grass19
+    2300032: grass2
+    2300034: grass20
+    2300036: grass21
+    2300038: grass22
+    2300040: grass23
+    2300042: grass24
+    2300044: grass25
+    2300046: grass26
+    2300048: grass27
+    2300050: grass28
+    2300052: grass29
+    2300054: grass3
+    2300056: grass30
+    2300058: grass31
+    2300060: grass32
+    2300062: grass4
+    2300064: grass5
+    2300066: grass6
+    2300068: grass7
+    2300070: grass8
+    2300072: grass9
+    2300074: ground10
+    2300076: ground11
+    2300078: ground12
+    2300080: ground13
+    2300082: ground14
+    2300084: ground8
+    2300086: lavaFlow
+    2300088: lavaFlow1
+    2300090: lavaGround
+    2300092: lavaGround1
+    2300094: lavaGround2
+    2300096: mountBig
+    2300098: mountBig1
+    2300100: mountBig2
+    2300102: mountMid
+    2300104: mountMid1
+    2300106: moutain
+    2300108: mtLava
+    2300110: mtLava2
+    2300112: mtLava3
+    2300114: mtLava4
+    2300116: rock1
+    2300118: rock10
+    2300120: rock11
+    2300122: rock12
+    2300124: rock13
+    2300126: rock14
+    2300128: rock2
+    2300130: rock3
+    2300132: rock4
+    2300134: rock5
+    2300136: rock6
+    2300138: rock7
+    2300140: rock8
+    2300142: rock9
+    2300144: waterGround
+    2300146: waterGround1
+    2300148: waterGround2
+    2300150: waterGround3
+    2300152: waterGround4
+    2300154: waterGround5
+    2300156: bubblept1
+    2300158: cloud5
+    2300160: flyingLava1
+    2300162: flyingLava2
+    2300164: flyingLava3
+    2300166: flyingRock1
+    2300168: flyingRock2
+    2300170: lavaFlowLayer
+    2300172: lavaFlowSlide
+    2300174: rock15
+    2300176: rock16
+    2300178: waterGround6
+    3300000: cloud
+    3300002: cloud1
+    3300004: cloud2
+    3300006: cloud4
+    3300008: grass
+    3300010: grass1
+    3300012: grass10
+    3300014: grass11
+    3300016: grass12
+    3300018: grass13
+    3300020: grass14
+    3300022: grass15
+    3300024: grass16
+    3300026: grass17
+    3300028: grass18
+    3300030: grass19
+    3300032: grass2
+    3300034: grass20
+    3300036: grass21
+    3300038: grass22
+    3300040: grass23
+    3300042: grass24
+    3300044: grass25
+    3300046: grass26
+    3300048: grass27
+    3300050: grass28
+    3300052: grass29
+    3300054: grass3
+    3300056: grass30
+    3300058: grass31
+    3300060: grass32
+    3300062: grass4
+    3300064: grass5
+    3300066: grass6
+    3300068: grass7
+    3300070: grass8
+    3300072: grass9
+    3300074: ground10
+    3300076: ground11
+    3300078: ground12
+    3300080: ground13
+    3300082: ground14
+    3300084: ground8
+    3300086: lavaFlow
+    3300088: lavaFlow1
+    3300090: lavaGround
+    3300092: lavaGround1
+    3300094: lavaGround2
+    3300096: mountBig
+    3300098: mountBig1
+    3300100: mountBig2
+    3300102: mountMid
+    3300104: mountMid1
+    3300106: moutain
+    3300108: mtLava
+    3300110: mtLava2
+    3300112: mtLava3
+    3300114: mtLava4
+    3300116: rock1
+    3300118: rock10
+    3300120: rock11
+    3300122: rock12
+    3300124: rock13
+    3300126: rock14
+    3300128: rock2
+    3300130: rock3
+    3300132: rock4
+    3300134: rock5
+    3300136: rock6
+    3300138: rock7
+    3300140: rock8
+    3300142: rock9
+    3300144: waterGround
+    3300146: waterGround1
+    3300148: waterGround2
+    3300150: waterGround3
+    3300152: waterGround4
+    3300154: waterGround5
+    3300156: bubblept1
+    3300158: cloud5
+    3300160: flyingLava1
+    3300162: flyingLava2
+    3300164: flyingLava3
+    3300166: flyingRock1
+    3300168: flyingRock2
+    3300170: lavaFlowLayer
+    3300172: lavaFlowSlide
+    3300174: rock15
+    3300176: rock16
+    3300178: waterGround6
+    4300000: mountMid
+    4300002: mountBig
+    4300004: moutain
+    4300006: waterGround1
+    4300008: mtLava
+    4300010: rock1
+    4300012: rock2
+    4300014: rock3
+    4300016: cloud
+    4300018: cloud1
+    4300020: mtLava2
+    4300022: mountMid1
+    4300024: rock4
+    4300026: waterGround
+    4300028: cloud2
+    4300030: lavaGround
+    4300032: grass1
+    4300034: grass
+    4300036: grass2
+    4300038: grass3
+    4300040: rock5
+    4300042: mtLava3
+    4300044: mtLava4
+    4300046: ground8
+    4300048: ground10
+    4300050: rock6
+    4300052: lavaFlow
+    4300054: rock7
+    4300056: grass4
+    4300058: grass5
+    4300060: grass6
+    4300062: grass7
+    4300064: grass8
+    4300066: grass9
+    4300068: grass10
+    4300070: grass11
+    4300072: grass12
+    4300074: grass13
+    4300076: grass14
+    4300078: grass15
+    4300080: grass16
+    4300082: grass17
+    4300084: mountBig1
+    4300086: rock8
+    4300088: rock9
+    4300090: lavaFlow1
+    4300092: rock10
+    4300094: mountBig2
+    4300096: rock11
+    4300098: rock12
+    4300100: grass18
+    4300102: grass19
+    4300104: grass20
+    4300106: grass21
+    4300108: grass22
+    4300110: grass23
+    4300112: grass24
+    4300114: grass25
+    4300116: grass26
+    4300118: waterGround2
+    4300120: waterGround3
+    4300122: ground11
+    4300124: lavaGround1
+    4300126: ground12
+    4300128: grass27
+    4300130: grass28
+    4300132: grass29
+    4300134: grass30
+    4300136: grass31
+    4300138: grass32
+    4300140: cloud4
+    4300142: rock13
+    4300144: waterGround4
+    4300146: waterGround5
+    4300148: ground13
+    4300150: rock14
+    4300152: lavaGround2
+    4300154: ground14
+    4300156: rock15
+    4300158: flyingRock1
+    4300160: flyingRock2
+    4300162: flyingLava1
+    4300164: cloud5
+    4300166: rock16
+    4300168: bubblept1
+    4300170: flyingLava2
+    4300172: waterGround6
+    4300174: lavaFlowSlide
+    4300176: lavaFlowLayer
+    4300178: flyingLava3
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 300
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bubblept1
+        weight: 1
+      - path: cloud
+        weight: 1
+      - path: cloud1
+        weight: 1
+      - path: cloud2
+        weight: 1
+      - path: cloud5
+        weight: 1
+      - path: flyingLava1
+        weight: 1
+      - path: flyingLava2
+        weight: 1
+      - path: flyingLava3
+        weight: 1
+      - path: flyingRock1
+        weight: 1
+      - path: flyingRock2
+        weight: 1
+      - path: grass
+        weight: 1
+      - path: grass1
+        weight: 1
+      - path: grass2
+        weight: 1
+      - path: grass3
+        weight: 1
+      - path: grass4
+        weight: 1
+      - path: grass5
+        weight: 1
+      - path: grass6
+        weight: 1
+      - path: grass7
+        weight: 1
+      - path: grass8
+        weight: 1
+      - path: grass9
+        weight: 1
+      - path: grass10
+        weight: 1
+      - path: grass11
+        weight: 1
+      - path: grass12
+        weight: 1
+      - path: grass13
+        weight: 1
+      - path: grass14
+        weight: 1
+      - path: grass15
+        weight: 1
+      - path: grass16
+        weight: 1
+      - path: grass17
+        weight: 1
+      - path: grass18
+        weight: 1
+      - path: grass19
+        weight: 1
+      - path: grass20
+        weight: 1
+      - path: grass21
+        weight: 1
+      - path: grass22
+        weight: 1
+      - path: grass23
+        weight: 1
+      - path: grass24
+        weight: 1
+      - path: grass25
+        weight: 1
+      - path: grass26
+        weight: 1
+      - path: grass27
+        weight: 1
+      - path: grass28
+        weight: 1
+      - path: grass29
+        weight: 1
+      - path: grass30
+        weight: 1
+      - path: grass31
+        weight: 1
+      - path: grass32
+        weight: 1
+      - path: ground8
+        weight: 1
+      - path: ground10
+        weight: 1
+      - path: ground11
+        weight: 1
+      - path: ground12
+        weight: 1
+      - path: ground13
+        weight: 1
+      - path: ground14
+        weight: 1
+      - path: lavaFlow
+        weight: 1
+      - path: lavaFlow1
+        weight: 1
+      - path: lavaFlowLayer
+        weight: 1
+      - path: lavaFlowSlide
+        weight: 1
+      - path: lavaGround
+        weight: 1
+      - path: lavaGround1
+        weight: 1
+      - path: lavaGround2
+        weight: 1
+      - path: left
+        weight: 1
+      - path: mountBig
+        weight: 1
+      - path: mountBig1
+        weight: 1
+      - path: mountBig2
+        weight: 1
+      - path: mountMid
+        weight: 1
+      - path: mountMid1
+        weight: 1
+      - path: moutain
+        weight: 1
+      - path: mtLava
+        weight: 1
+      - path: mtLava2
+        weight: 1
+      - path: mtLava3
+        weight: 1
+      - path: mtLava4
+        weight: 1
+      - path: rock1
+        weight: 1
+      - path: rock2
+        weight: 1
+      - path: rock3
+        weight: 1
+      - path: rock4
+        weight: 1
+      - path: rock5
+        weight: 1
+      - path: rock6
+        weight: 1
+      - path: rock7
+        weight: 1
+      - path: rock8
+        weight: 1
+      - path: rock9
+        weight: 1
+      - path: rock10
+        weight: 1
+      - path: rock11
+        weight: 1
+      - path: rock12
+        weight: 1
+      - path: rock13
+        weight: 1
+      - path: rock14
+        weight: 1
+      - path: rock15
+        weight: 1
+      - path: rock16
+        weight: 1
+      - path: waterGround
+        weight: 1
+      - path: waterGround1
+        weight: 1
+      - path: waterGround2
+        weight: 1
+      - path: waterGround3
+        weight: 1
+      - path: waterGround4
+        weight: 1
+      - path: waterGround5
+        weight: 1
+      - path: waterGround6
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
