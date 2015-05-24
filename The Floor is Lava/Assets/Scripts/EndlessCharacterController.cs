@@ -25,6 +25,11 @@ public class EndlessCharacterController : MonoBehaviour {
 	//Oncoming hit 
 	public float frontHitDistance = 1.0f;
 	public float frontHitVelocity = 10.0f;
+
+	//Sound
+	public AudioSource audio;
+	public AudioClip lavaburn;
+	public AudioClip jump;
 	
 	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
 	public Animator animator;
@@ -76,6 +81,7 @@ public class EndlessCharacterController : MonoBehaviour {
 				{
 					yVelocity += lavaHitYVelocity * 1.5f;
 					EndlessController.controller.SlowPlayer(0.4f);
+					audio.PlayOneShot(lavaburn);
 				}
 			}
 			else
@@ -135,11 +141,12 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public void Jump()
 	{
-		if(isGrounded() && yVelocity <= 0)
+		if(isGrounded())
 		{
 			yVelocity += jumpVelocity;
 			animator.SetBool("IsJumping", true);
 			isJumping = true;
+			audio.PlayOneShot(jump);
 		}
 	}
 
