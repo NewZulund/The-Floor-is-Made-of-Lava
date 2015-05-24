@@ -12,6 +12,7 @@ public class PauseManagerScript : MonoBehaviour {
 	public Text gameOverScore;
 
 	private float targetTime = 0;//used for countdown after continuing from the pause menu
+	private bool countingDown;
 
 	void Awake(){
 		Time.timeScale = 1;
@@ -19,14 +20,21 @@ public class PauseManagerScript : MonoBehaviour {
 
 	void Update(){
 		float time = targetTime - Time.realtimeSinceStartup;
-		string txt = time.ToString ("0");
-		if (txt.Equals ("0")) {
-			txt = "Go!";
+		if (countingDown) {
+			string txt = time.ToString ("0");
+			if (txt.Equals ("0")) {
+				txt = "Go!";
+			}
+			countdown.GetComponent<Text> ().text = txt;
+
+			if(time<0){
+				countingDown = false;//stopped counting down
+			}
 		}
-		countdown.GetComponent<Text> ().text = txt;
 	}
 
 	public void PauseGame(){
+		countdown.SetActive (false);//prevent the countdown text from showing when you pause the game whiole the word "Go!" is shown. Another idea could be to simply put the countdown text behind the pausemenu in the gui hierachy
 		pauseMenu.SetActive(true);
 		backgroundMask.SetActive (true);
 		Time.timeScale = 0;
@@ -64,7 +72,8 @@ public class PauseManagerScript : MonoBehaviour {
 	IEnumerator Continue(){
 		pauseMenu.SetActive (false);
 		countdown.SetActive (true);
-		targetTime = Time.realtimeSinceStartup + 3.5f;
+		countingDown = true;//we've started the countdown
+		targetTime = Time.realtimeSinceStartup + 3.5f;//add .5 seconds to take into account lag
 		
 		yield return StartCoroutine (CoroutineUtil.WaitForRealSeconds (3));
 		
