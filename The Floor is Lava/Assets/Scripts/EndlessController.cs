@@ -14,6 +14,9 @@ public class EndlessController : MonoBehaviour {
 
 	public float speedIncreaseRate = 0.2f;
 
+	public bool audioActive = true;
+	public AudioListener audioListener;
+
 	void Awake () 
 	{
 		if(controller != null)
@@ -49,6 +52,15 @@ public class EndlessController : MonoBehaviour {
 		{
 			//TODO add some UI element here. 
 			score += collectable.value;
+		}
+	}
+	
+	public void ToggleAudio()
+	{
+		if(audioListener)
+		{
+			audioActive = !audioActive;
+			audioListener.enabled = audioActive;
 		}
 	}
 }

@@ -34,14 +34,14 @@ public class NotificationConverter : MonoBehaviour {
 	void SetNotification(int index)
 	{
 		//Terminate existing invokes to ensure meeting notificationTime. 
-		CancelInvoke("DisableNotification");
+		//CancelInvoke("DisableNotification");
 
-		if(index >= 0 && index < notifications.Length)
-		{
-			notifications[index].SetActive(true);
-		}
+		//if(index >= 0 && index < notifications.Length)
+		//{
+			//notifications[index].SetActive(true);
+		//}
 
-		StartCoroutine ("DisableNotification", index);
+		//StartCoroutine ("DisableNotification", index);
 
 	}
 

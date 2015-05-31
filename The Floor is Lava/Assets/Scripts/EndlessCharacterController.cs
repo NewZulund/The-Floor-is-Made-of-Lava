@@ -30,6 +30,9 @@ public class EndlessCharacterController : MonoBehaviour {
 	public AudioSource audio;
 	public AudioClip lavaburn;
 	public AudioClip jump;
+	public AudioListener audioListener;
+
+	public bool musicActive = true;
 	
 	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
 	public Animator animator;
