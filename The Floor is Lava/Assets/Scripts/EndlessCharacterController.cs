@@ -82,7 +82,7 @@ public class EndlessCharacterController : MonoBehaviour {
 				//Don't stack the velocity increases if it is already positive. 
 				if(yVelocity <= 0)
 				{
-					yVelocity += lavaHitYVelocity * 1.5f;
+					yVelocity = lavaHitYVelocity;
 					EndlessController.controller.SlowPlayer(0.4f);
 					audio.PlayOneShot(lavaburn);
 				}
@@ -93,7 +93,7 @@ public class EndlessCharacterController : MonoBehaviour {
 				AdjustStandingHeight(); 
 			}
 
-			if(isJumping)
+			if(isJumping && isGrounded ())
 			{
 				animator.SetBool("IsJumping", false);
 				isJumping = false;
@@ -144,13 +144,18 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public void Jump()
 	{
-		if(isGrounded())
+		if(isGrounded() && !isJumping)
 		{
-			yVelocity += jumpVelocity;
+			yVelocity = jumpVelocity;
 			animator.SetBool("IsJumping", true);
 			isJumping = true;
 			audio.PlayOneShot(jump);
+			StartCoroutine (Pause());
 		}
+	}
+
+	IEnumerator Pause(){
+		yield return new WaitForSeconds (0.1f);
 	}
 
 	public void CheckFail (){
