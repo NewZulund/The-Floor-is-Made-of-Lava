@@ -25,6 +25,14 @@ public class EndlessCharacterController : MonoBehaviour {
 	//Oncoming hit 
 	public float frontHitDistance = 1.0f;
 	public float frontHitVelocity = 10.0f;
+
+	//Sound
+	public AudioSource audio;
+	public AudioClip lavaburn;
+	public AudioClip jump;
+	public AudioListener audioListener;
+
+	public bool musicActive = true;
 	
 	public PlayerMovementStatus movementStatus = PlayerMovementStatus.NotMoving;
 	public Animator animator;
@@ -74,8 +82,9 @@ public class EndlessCharacterController : MonoBehaviour {
 				//Don't stack the velocity increases if it is already positive. 
 				if(yVelocity <= 0)
 				{
-					yVelocity += lavaHitYVelocity;
+					yVelocity += lavaHitYVelocity * 1.5f;
 					EndlessController.controller.SlowPlayer(0.4f);
+					audio.PlayOneShot(lavaburn);
 				}
 			}
 			else
@@ -135,11 +144,12 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public void Jump()
 	{
-		if(isGrounded() && yVelocity <= 0)
+		if(isGrounded())
 		{
 			yVelocity += jumpVelocity;
 			animator.SetBool("IsJumping", true);
 			isJumping = true;
+			audio.PlayOneShot(jump);
 		}
 	}
 
@@ -187,7 +197,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	{
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGround + 0.1f)){
-			Debug.Log(hit.transform.tag);
+			//Debug.Log(hit.transform.tag);
 			if(hit.transform.tag == "Lava" || hit.transform.tag == "LavaCollider")
 			{
 				return true;
