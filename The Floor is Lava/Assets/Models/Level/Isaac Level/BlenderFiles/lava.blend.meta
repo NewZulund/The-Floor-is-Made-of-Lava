@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: abc83db00ad072749849a60f1c527616
+timeCreated: 1434667152
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: lava_runner
+    100004: lava_runner_rock
+    100006: lava_runner_rock_001
+    100008: lava_runner_rock_002
+    100010: lava_runner_rock_003
+    100012: lava_runner_rock_004
+    100014: lava_runner_rock_005
+    100016: lava_runner_rock_006
+    100018: lava_runner_rock_007
+    100020: lava_runner_rock_008
+    100022: lava_runner_rock_009
+    100024: lava_runner_rock_010
+    100026: lava_runner_rock_011
+    400000: //RootNode
+    400002: lava_runner
+    400004: lava_runner_rock
+    400006: lava_runner_rock_001
+    400008: lava_runner_rock_002
+    400010: lava_runner_rock_003
+    400012: lava_runner_rock_004
+    400014: lava_runner_rock_005
+    400016: lava_runner_rock_006
+    400018: lava_runner_rock_007
+    400020: lava_runner_rock_008
+    400022: lava_runner_rock_009
+    400024: lava_runner_rock_010
+    400026: lava_runner_rock_011
+    2300000: lava_runner
+    2300002: lava_runner_rock
+    2300004: lava_runner_rock_001
+    2300006: lava_runner_rock_002
+    2300008: lava_runner_rock_003
+    2300010: lava_runner_rock_004
+    2300012: lava_runner_rock_005
+    2300014: lava_runner_rock_006
+    2300016: lava_runner_rock_007
+    2300018: lava_runner_rock_008
+    2300020: lava_runner_rock_009
+    2300022: lava_runner_rock_010
+    2300024: lava_runner_rock_011
+    3300000: lava_runner
+    3300002: lava_runner_rock
+    3300004: lava_runner_rock_001
+    3300006: lava_runner_rock_002
+    3300008: lava_runner_rock_003
+    3300010: lava_runner_rock_004
+    3300012: lava_runner_rock_005
+    3300014: lava_runner_rock_006
+    3300016: lava_runner_rock_007
+    3300018: lava_runner_rock_008
+    3300020: lava_runner_rock_009
+    3300022: lava_runner_rock_010
+    3300024: lava_runner_rock_011
+    4300000: lava_runner_rock_011
+    4300002: lava_runner_rock_010
+    4300004: lava_runner_rock_009
+    4300006: lava_runner_rock_008
+    4300008: lava_runner_rock_007
+    4300010: lava_runner_rock_006
+    4300012: lava_runner_rock_005
+    4300014: lava_runner_rock_004
+    4300016: lava_runner_rock_003
+    4300018: lava_runner_rock_002
+    4300020: lava_runner_rock_001
+    4300022: lava_runner_rock
+    4300024: lava_runner
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
