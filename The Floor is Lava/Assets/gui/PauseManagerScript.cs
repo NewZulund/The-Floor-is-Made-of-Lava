@@ -10,9 +10,11 @@ public class PauseManagerScript : MonoBehaviour {
 	public GameObject countdown;//A ui text object that is used as a countdown
 	public GameObject gameController;
 	public Text gameOverScore;
+	public Text highscoreText;
 
 	private float targetTime = 0;//used for countdown after continuing from the pause menu
 	private bool countingDown;
+	private string highscoreKey = "highscore";//key used when accessing 'highscore' value in PlayerPrefs
 
 	void Awake(){
 		Time.timeScale = 1;
@@ -62,7 +64,20 @@ public class PauseManagerScript : MonoBehaviour {
 		gameOverMenu.SetActive(true);
 		backgroundMask.SetActive (true);
 		gameOverScore.text = string.Format("(0:n0)", score);//score.ToString("0");
+		SetHighscore (score);
+		highscoreText.text = string.Format ("(0:n0)", PlayerPrefs.GetInt (highscoreKey));
 	}
+
+	private void SetHighscore(int highscore){
+		if (PlayerPrefs.HasKey (highscoreKey)) {
+			if (PlayerPrefs.GetInt (highscoreKey) <= highscore) {
+				PlayerPrefs.SetInt (highscoreKey, highscore);
+			}
+		} else {
+			PlayerPrefs.SetInt (highscoreKey, highscore);
+		}
+	}
+
 
 	private void Resume(){
 		backgroundMask.SetActive (false);
