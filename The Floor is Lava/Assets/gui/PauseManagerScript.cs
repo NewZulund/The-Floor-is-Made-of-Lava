@@ -63,9 +63,9 @@ public class PauseManagerScript : MonoBehaviour {
 		int score = (int) gameController.GetComponent<EndlessController> ().score;
 		gameOverMenu.SetActive(true);
 		backgroundMask.SetActive (true);
-		gameOverScore.text = string.Format("(0:n0)", score);//score.ToString("0");
+		gameOverScore.text = string.Format("{0:n0}", score);//score.ToString("0");
 		SetHighscore (score);
-		highscoreText.text = string.Format ("(0:n0)", PlayerPrefs.GetInt (highscoreKey));
+		highscoreText.text = string.Format ("{0:n0}", PlayerPrefs.GetInt (highscoreKey));
 	}
 
 	private void SetHighscore(int highscore){
