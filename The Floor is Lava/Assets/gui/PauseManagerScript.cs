@@ -20,6 +20,10 @@ public class PauseManagerScript : MonoBehaviour {
 
 	void Awake(){
 		Time.timeScale = 1;
+
+		//Countdown at the beginning of the game
+		PauseGame ();
+		StartCoroutine ("Continue");
 	}
 
 	void Update(){
