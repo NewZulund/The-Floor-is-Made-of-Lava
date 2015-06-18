@@ -58,10 +58,10 @@ public class PauseManagerScript : MonoBehaviour {
 
 	public void GameOver(){
 		Time.timeScale = 0;
-		string score = gameController.GetComponent<EndlessController> ().score.ToString ("0");
+		int score = (int) gameController.GetComponent<EndlessController> ().score;
 		gameOverMenu.SetActive(true);
 		backgroundMask.SetActive (true);
-		gameOverScore.text = score;
+		gameOverScore.text = string.Format("(0:n0)", score);//score.ToString("0");
 	}
 
 	private void Resume(){
