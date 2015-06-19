@@ -14,7 +14,7 @@ public class MonstarController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate ((12 - controller.currentRunSpeed) * Vector3.back * Time.deltaTime);
+		transform.Translate ((15 - controller.currentRunSpeed) * Vector3.back * Time.deltaTime);
 		if (transform.position.z > startingZ) {
 			transform.Translate(0.0f, 0.0f, startingZ - transform.position.z);
 		}
