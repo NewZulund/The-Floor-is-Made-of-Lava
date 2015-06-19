@@ -72,6 +72,7 @@ ModelImporter:
     100128: mtYOLO33
     100130: side32
     100132: side33
+    100134: Lava
     400000: //RootNode
     400002: Leftside1
     400004: Leftside2
@@ -139,6 +140,7 @@ ModelImporter:
     400128: mtYOLO33
     400130: side32
     400132: side33
+    400134: Lava
     2300000: Leftside1
     2300002: Leftside2
     2300004: Leftside3
@@ -203,6 +205,7 @@ ModelImporter:
     2300122: mtYOLO33
     2300124: side32
     2300126: side33
+    2300128: Lava
     3300000: Leftside1
     3300002: Leftside2
     3300004: Leftside3
@@ -267,6 +270,7 @@ ModelImporter:
     3300122: mtYOLO33
     3300124: side32
     3300126: side33
+    3300128: Lava
     4300000: mtYOLO
     4300002: rocks
     4300004: rocks1
@@ -331,6 +335,7 @@ ModelImporter:
     4300122: side32
     4300124: side33
     4300126: mtYOLO33
+    4300128: Lava
     9500000: //RootNode
   materials:
     importMaterials: 1
