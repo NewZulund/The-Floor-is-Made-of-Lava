@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Platform Spawning\PropGroup.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\RailRunnerSpawner.cs" />
      <Compile Include="Assets\Scripts\Platform Spawning\RunningRail.cs" />
+     <Compile Include="Assets\SkyboxChanger.cs" />
      <Compile Include="Assets\TouchControls.cs" />
      <Compile Include="Assets\gui\PauseManagerScript.cs" />
      <Compile Include="Assets\gui\UIManagerScript.cs" />
