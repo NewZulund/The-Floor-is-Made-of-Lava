@@ -11,6 +11,8 @@ public class PauseManagerScript : MonoBehaviour {
 	public GameObject gameController;
 	public Text gameOverScore;
 	public Text highscoreText;
+	public GameObject highscoresPanel;
+	public GameObject highscoreEntryPrefab;
 
 	private float targetTime = 0;//used for countdown after continuing from the pause menu
 	private bool countingDown;
@@ -18,6 +20,10 @@ public class PauseManagerScript : MonoBehaviour {
 
 	void Awake(){
 		Time.timeScale = 1;
+
+		//Countdown at the beginning of the game
+		PauseGame ();
+		StartCoroutine ("Continue");
 	}
 
 	void Update(){
@@ -65,17 +71,45 @@ public class PauseManagerScript : MonoBehaviour {
 		backgroundMask.SetActive (true);
 		gameOverScore.text = string.Format("{0:n0}", score);//score.ToString("0");
 		SetHighscore (score);
-		highscoreText.text = string.Format ("{0:n0}", PlayerPrefs.GetInt (highscoreKey));
+		highscoreText.text = string.Format ("{0:n0}", PlayerPrefs.GetInt (highscoreKey+0));
 	}
 
 	private void SetHighscore(int highscore){
-		if (PlayerPrefs.HasKey (highscoreKey)) {
-			if (PlayerPrefs.GetInt (highscoreKey) <= highscore) {
-				PlayerPrefs.SetInt (highscoreKey, highscore);
+		for(int i = 0; i<10; i++){
+
+			string key = highscoreKey + i;
+
+			if (PlayerPrefs.HasKey (key)) {
+				if (PlayerPrefs.GetInt (key) <= highscore) {
+
+					//move every following scores down
+					int nextScore = PlayerPrefs.GetInt(key);
+					int currentScore = highscore;
+					PlayerPrefs.SetInt (key, currentScore);
+					i++;
+					key = highscoreKey+i;
+
+					while(i<10 && PlayerPrefs.HasKey(key)){
+						currentScore = nextScore;
+						nextScore = PlayerPrefs.GetInt(key);
+						PlayerPrefs.SetInt (key, currentScore);
+						i++;
+						key = highscoreKey+i;
+					}
+
+					return;
+				}
+			} else {
+				PlayerPrefs.SetInt (key, highscore);
+				return;
 			}
-		} else {
-			PlayerPrefs.SetInt (highscoreKey, highscore);
+
 		}
+	}
+
+
+	public void ShowHighscores(){
+
 	}
 
 
