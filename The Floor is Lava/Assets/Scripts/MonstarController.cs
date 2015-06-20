@@ -30,10 +30,8 @@ public class MonstarController : MonoBehaviour {
 			gameIsEnded = true;
 		}
 		if (backing && transform.position.z < backPoint) {
-			print("backingoff");
 			transform.Translate (0, 0, diff * Time.deltaTime);
 		} else if (backing) {
-			print ("backing end");
 			backing = false;
 		}
 	}
@@ -42,6 +40,5 @@ public class MonstarController : MonoBehaviour {
 		backPoint = (transform.position.z + startingZ) / 2.0f;
 		diff = backPoint - transform.position.z;
 		backing = true;
-		print ("FUkmyl8f3");
 	}
 }

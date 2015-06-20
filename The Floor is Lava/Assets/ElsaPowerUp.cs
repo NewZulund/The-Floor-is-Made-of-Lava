@@ -13,7 +13,6 @@ public class ElsaPowerUp : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.tag == "Player") {
-			print ("Hit the player");
 			controller.BackOff();
 			Destroy(gameObject);
 		}

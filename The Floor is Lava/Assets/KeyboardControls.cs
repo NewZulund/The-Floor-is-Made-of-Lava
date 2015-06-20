@@ -4,12 +4,11 @@ using System.Collections;
 public class KeyboardControls : MonoBehaviour {
 
 	EndlessCharacterController controller;
-	MonstarController meow;
+	MonstarController monsterController;
 
 	void Awake()
 	{
-		meow = GameObject.Find("Monstar").GetComponent<MonstarController>();
-		controller = GetComponent<EndlessCharacterController>();
+		monsterController = EndlessController.controller.monstarController;
 	}
 
 	public static float DEADZONE_HORIZONTAL = 0.05f;

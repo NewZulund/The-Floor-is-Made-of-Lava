@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ElsaPowerUp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/KeyboardControls.cs">
     <Files>
-      <File FileName="Assets/Scripts/EndlessController.cs" Line="20" Column="46" />
-      <File FileName="Assets/KeyboardControls.cs" Line="26" Column="43" />
+      <File FileName="Assets/Scripts/EndlessController.cs" Line="8" Column="32" />
+      <File FileName="Assets/KeyboardControls.cs" Line="11" Column="2" />
       <File FileName="Assets/CollectableSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EndlessCharacterController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EndlessCharacterController.cs" Line="18" Column="31" />
       <File FileName="Assets/Scripts/MonstarController.cs" Line="1" Column="1" />
-      <File FileName="Assets/ElsaPowerUp.cs" Line="17" Column="4" />
+      <File FileName="Assets/ElsaPowerUp.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EndlessCharacterFailController.cs" Line="1" Column="1" />
       <File FileName="Assets/Standard Assets/Utility/AutoMoveAndRotate.cs" Line="1" Column="1" />
     </Files>
@@ -16,7 +16,7 @@
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True" />
-            <Node name="ElsaPowerUp.cs" selected="True" />
+            <Node name="KeyboardControls.cs" selected="True" />
           </Node>
           <Node name="Assembly-CSharp-firstpass" expanded="True">
             <Node name="Standard Assets" expanded="True">
