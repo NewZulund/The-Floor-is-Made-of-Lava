@@ -3,7 +3,7 @@ using System.Collections;
 
 public class KeyboardControls : MonoBehaviour {
 
-	EndlessCharacterController controller;
+	public EndlessCharacterController controller;
 	MonstarController monsterController;
 
 	void Awake()
