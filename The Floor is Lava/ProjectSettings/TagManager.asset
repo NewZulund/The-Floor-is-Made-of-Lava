@@ -16,6 +16,7 @@ TagManager:
   - HighscoreNumber
   - HighscoreScore
   - HighscoreDate
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - 
   - Player
   - Pickups
-  - 
+  - Backdrop
   - 
   - 
   - 
