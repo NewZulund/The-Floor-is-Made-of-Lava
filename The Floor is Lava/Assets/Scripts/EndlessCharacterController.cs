@@ -89,12 +89,10 @@ public class EndlessCharacterController : MonoBehaviour {
 					yVelocity = lavaHitYVelocity;
 					EndlessController.controller.SlowPlayer(0.4f);
 					audio.PlayOneShot(lavaburn);
-					Debug.Log("Lavaburn");
 				}
 			}
 			else
 			{
-				Debug.Log ("This should really happen");
 				yVelocity = 0;
 				AdjustStandingHeight(); 
 			}
@@ -103,22 +101,12 @@ public class EndlessCharacterController : MonoBehaviour {
 			{
 				animator.SetBool("IsJumping", false);
 				AdjustStandingHeight();
-				Debug.Log ("Stop fucking jumping");
 				isJumping = false;
 				yVelocity = 0;
 			}
 
 		}
 
-		//Override vertical if the player is going to hit something
-//		if(FrontHit())
-//		{
-//			if(yVelocity <= 0)
-//			{
-//				Debug.Log ("Is this the fucking problem.jpg");
-//				yVelocity = frontHitVelocity;
-//			}
-//		}
 
 		//Apply movememnt
 		float xMovement = xPosition - transform.position.x;
@@ -158,11 +146,14 @@ public class EndlessCharacterController : MonoBehaviour {
 		{
 			grounded = false;
 			yVelocity = jumpVelocity;
-			Debug.Log ("I'm jumping");
 			animator.SetBool("IsJumping", true);
 			isJumping = true;
 			audio.PlayOneShot(jump);
 		}
+	}
+
+	public void Slide(){
+
 	}
 
 	IEnumerator Pause(){
@@ -213,7 +204,6 @@ public class EndlessCharacterController : MonoBehaviour {
 	{
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGround + 0.1f)){
-			//Debug.Log(hit.transform.tag);
 			if(hit.transform.tag == "Lava" || hit.transform.tag == "LavaCollider")
 			{
 				return true;
@@ -233,7 +223,7 @@ public class EndlessCharacterController : MonoBehaviour {
 		if(Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGround + 0.1f)){
 			if(hit.transform.tag != "Lava" && hit.transform.tag != "LavaCollider")
 			{
-				transform.Translate(transform.position.x + distanceToGround - hit.distance ,0,0);
+				transform.Translate( 0,-transform.position.y + 2.2f,0);
 			}
 		}
 	}
