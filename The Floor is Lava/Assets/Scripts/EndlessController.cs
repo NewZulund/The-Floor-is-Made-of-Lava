@@ -17,6 +17,8 @@ public class EndlessController : MonoBehaviour {
 	public bool audioActive = true;
 	public AudioListener audioListener;
 
+	public MonstarController monstarController; 
+
 	void Awake () 
 	{
 		if(controller != null)

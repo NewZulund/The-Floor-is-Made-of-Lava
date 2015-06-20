@@ -8,7 +8,8 @@ public class CollectableSpawner : MonoBehaviour {
 	public GameObject[] coinLayoutPrefabs;
 	LayoutSpawner spawner;
 
-
+	public ElsaPowerUp snowprefab;
+	
 	public float yOffset = 1.0f;
 	public float zOffset = -20.0f;
 	public float startZOffset = -10.0f;
@@ -20,6 +21,17 @@ public class CollectableSpawner : MonoBehaviour {
 		prefab.transform.Translate(0,yOffset,startZOffset);
 		Invoke ("SpawnCollectablePrefab", Random.Range(minimumDelay, maximumDelay));
 	}
+
+	void Update()
+	{
+		if (Input.GetKeyDown (KeyCode.T)) {
+			Debug.Log("Roarwojwarojawr");
+
+			Instantiate(snowprefab, Vector3.forward * -10 + Vector3.up, Quaternion.identity);			
+
+		}
+	}
+
 
 	void SpawnCollectablePrefab()
 	{

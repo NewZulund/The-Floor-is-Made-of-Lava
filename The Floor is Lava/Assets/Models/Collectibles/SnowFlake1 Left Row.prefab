@@ -163,7 +163,7 @@ GameObject:
   - 114: {fileID: 11406782}
   m_Layer: 0
   m_Name: SnowFlake1 Left Row
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -657,6 +657,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!114 &11425410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -675,6 +676,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!114 &11437534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -693,6 +695,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!114 &11446158
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -711,6 +714,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!114 &11459074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -729,6 +733,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!114 &11460054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -747,6 +752,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!114 &11463072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -765,6 +771,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!114 &11465114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -783,6 +790,7 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
+  monstar: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
