@@ -23,7 +23,7 @@ public class PauseManagerScript : MonoBehaviour {
 		GetHighscoresPanel ();
 		CloseHighscores ();
 
-		PlayerPrefs.DeleteAll ();
+		//PlayerPrefs.DeleteAll ();
 
 		//Time.timeScale = 1;reset time
 
@@ -81,6 +81,7 @@ public class PauseManagerScript : MonoBehaviour {
 	
 
 	public void GameOver(){
+		print ("called gameover");
 		Time.timeScale = 0;
 		int score = (int) gameController.GetComponent<EndlessController> ().score;
 		gameOverMenu.SetActive(true);
@@ -91,6 +92,7 @@ public class PauseManagerScript : MonoBehaviour {
 	}
 
 	private void SetHighscore(int highscore){
+		print ("called set highscore");
 		for(int i = 0; i<10; i++){
 
 			string key = highscoreKey + i;
@@ -133,8 +135,9 @@ public class PauseManagerScript : MonoBehaviour {
 						i++;
 						key = highscoreKey+i;
 						stringKey = key+"string";
+						print("while i = " + i);
 					}
-
+					print("finished");
 
 
 					return;
