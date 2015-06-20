@@ -5,6 +5,7 @@ public class MonstarController : MonoBehaviour {
 
 	private EndlessController controller;
 	private float startingZ;
+	private bool gameIsEnded = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -18,9 +19,12 @@ public class MonstarController : MonoBehaviour {
 		if (transform.position.z > startingZ) {
 			transform.Translate(0.0f, 0.0f, startingZ - transform.position.z);
 		}
-		if (transform.position.z < 0) {
+		if (transform.position.z < 0 && !gameIsEnded) {
+
 			PauseManagerScript pause = GameObject.Find ("PauseManager").GetComponent<PauseManagerScript> ();
 			pause.GameOver();
+
+			gameIsEnded = true;
 		}
 	}
 }

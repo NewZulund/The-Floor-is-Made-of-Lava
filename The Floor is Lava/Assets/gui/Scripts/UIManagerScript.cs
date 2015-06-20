@@ -4,6 +4,6 @@ using System.Collections;
 public class UIManagerScript : MonoBehaviour {
 
 	public void StartGame(){
-		Application.LoadLevel ("EndlessRunningDark");
+		Application.LoadLevel (1);
 	}
 }
