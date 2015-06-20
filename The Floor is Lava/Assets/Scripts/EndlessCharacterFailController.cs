@@ -17,9 +17,9 @@ public class EndlessCharacterFailController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision)
 	{
-		if(collision.gameObject.tag == "LavaCollider")
-		{
-			controller.SlowPlayer(0.4f);
-		}
+//		if(collision.gameObject.tag == "LavaCollider")
+//		{
+//			controller.SlowPlayer(0.4f);
+//		}
 	}
 }

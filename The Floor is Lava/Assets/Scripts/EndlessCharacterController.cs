@@ -21,6 +21,8 @@ public class EndlessCharacterController : MonoBehaviour {
 	public float jumpRaycastLength = 1.0f;
 	public float distanceToGround = 0.0f;
 	public float lavaHitYVelocity = 40.0f;
+	public float startingY = 0.0f;
+	public bool grounded = true;
 
 	//Oncoming hit 
 	public float frontHitDistance = 1.0f;
@@ -40,6 +42,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	void Start()
 	{
 		distanceToGround = GetComponent<CapsuleCollider>().bounds.extents.y;
+		startingY = transform.position.y;
 	}
 
 	void Update () 
@@ -76,8 +79,9 @@ public class EndlessCharacterController : MonoBehaviour {
 		}
 		else
 		{
+			grounded = true;
 			//Bounce off lava if grounded on lava
-			if(IsGroundedLava() )
+			if(IsGroundedLava())
 			{
 				//Don't stack the velocity increases if it is already positive. 
 				if(yVelocity <= 0)
@@ -85,30 +89,36 @@ public class EndlessCharacterController : MonoBehaviour {
 					yVelocity = lavaHitYVelocity;
 					EndlessController.controller.SlowPlayer(0.4f);
 					audio.PlayOneShot(lavaburn);
+					Debug.Log("Lavaburn");
 				}
 			}
 			else
 			{
+				Debug.Log ("This should really happen");
 				yVelocity = 0;
 				AdjustStandingHeight(); 
 			}
 
-			if(isJumping && isGrounded ())
+			if(isJumping && grounded)
 			{
 				animator.SetBool("IsJumping", false);
+				AdjustStandingHeight();
+				Debug.Log ("Stop fucking jumping");
 				isJumping = false;
+				yVelocity = 0;
 			}
 
 		}
 
 		//Override vertical if the player is going to hit something
-		if(FrontHit())
-		{
-			if(yVelocity <= 0)
-			{
-				yVelocity = frontHitVelocity;
-			}
-		}
+//		if(FrontHit())
+//		{
+//			if(yVelocity <= 0)
+//			{
+//				Debug.Log ("Is this the fucking problem.jpg");
+//				yVelocity = frontHitVelocity;
+//			}
+//		}
 
 		//Apply movememnt
 		float xMovement = xPosition - transform.position.x;
@@ -144,13 +154,14 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public void Jump()
 	{
-		if(isGrounded() && !isJumping)
+		if(grounded && !isJumping)
 		{
+			grounded = false;
 			yVelocity = jumpVelocity;
+			Debug.Log ("I'm jumping");
 			animator.SetBool("IsJumping", true);
 			isJumping = true;
 			audio.PlayOneShot(jump);
-			StartCoroutine (Pause());
 		}
 	}
 
@@ -159,7 +170,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	}
 
 	public void CheckFail (){
-		if (!isGrounded ()) {
+		if (!isGrounded()) {
 			yVelocity += fallVelocity * Time.deltaTime;
 		}
 	}
@@ -188,7 +199,7 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public bool isGrounded()
 	{
-		return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f);
+		return Physics.Raycast(transform.position, Vector3.down, distanceToGround + 0.1f) && yVelocity < 0;
 	}
 
 	void OnDrawGizmos()
