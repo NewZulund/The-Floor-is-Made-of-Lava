@@ -12,6 +12,10 @@ TagManager:
   - BackgroundMask
   - Notification
   - LavaSurrounds
+  - HighscoresPanel
+  - HighscoreNumber
+  - HighscoreScore
+  - HighscoreDate
   layers:
   - Default
   - TransparentFX
