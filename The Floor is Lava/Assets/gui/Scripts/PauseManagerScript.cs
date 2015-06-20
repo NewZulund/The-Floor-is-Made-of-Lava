@@ -115,19 +115,13 @@ public class PauseManagerScript : MonoBehaviour {
 					key = highscoreKey+i;
 					stringKey = key+"string";
 
-					while(i<9 && PlayerPrefs.HasKey(key)){
-						print ("round " + i);
-						print ("key: " + key);
+					while(i<10 && PlayerPrefs.HasKey(key)){
 
 						currentScore = nextScore;
 						currentDate = nextDate;
-						print ("current score 1: " + currentScore);
-						print ("next score 1: " + nextScore);
 
 						nextScore = PlayerPrefs.GetInt(key);
 						nextDate = PlayerPrefs.GetString (stringKey);
-						print ("current score 2: " + currentScore);
-						print ("next score 2: " + nextScore);
 
 						PlayerPrefs.SetInt (key, currentScore);
 						PlayerPrefs.SetString (stringKey, currentDate);
@@ -135,10 +129,12 @@ public class PauseManagerScript : MonoBehaviour {
 						i++;
 						key = highscoreKey+i;
 						stringKey = key+"string";
-						print("while i = " + i);
 					}
-					print("finished");
 
+					if(i<10 && !PlayerPrefs.HasKey (key)){
+						PlayerPrefs.SetInt (key, nextScore);
+						PlayerPrefs.SetString (stringKey, nextDate);
+					}
 
 					return;
 				}
