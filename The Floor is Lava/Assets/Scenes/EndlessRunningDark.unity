@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bIsDisabled: 0
-  _V_CW_X_Bend_Size_GLOBAL: .600000024
+  _V_CW_X_Bend_Size_GLOBAL: -.280000001
   _V_CW_Y_Bend_Size_GLOBAL: .99000001
   _V_CW_Z_Bend_Size_GLOBAL: 1.19000006
   _V_CW_Z_Bend_Bias_GLOBAL: 0
@@ -2350,6 +2350,8 @@ MonoBehaviour:
   jumpRaycastLength: 1
   distanceToGround: 0
   lavaHitYVelocity: 11
+  startingY: 0
+  grounded: 1
   frontHitDistance: 1
   frontHitVelocity: 10
   audio: {fileID: 170858066}
