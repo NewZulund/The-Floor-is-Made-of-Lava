@@ -9,11 +9,12 @@ namespace UnityStandardAssets.Utility
         public Vector3andSpace rotateDegreesPerSecond;
         public bool ignoreTimescale;
         private float m_LastRealTime;
+		public GameObject monstar;
 
 
         private void Start()
         {
-            m_LastRealTime = Time.realtimeSinceStartup;
+			m_LastRealTime = Time.realtimeSinceStartup;
         }
 
 
@@ -37,5 +38,6 @@ namespace UnityStandardAssets.Utility
             public Vector3 value;
             public Space space = Space.Self;
         }
+
     }
 }

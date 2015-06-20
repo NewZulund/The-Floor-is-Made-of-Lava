@@ -4,9 +4,11 @@ using System.Collections;
 public class KeyboardControls : MonoBehaviour {
 
 	EndlessCharacterController controller;
+	MonstarController meow;
 
 	void Awake()
 	{
+		meow = GameObject.Find("Monstar").GetComponent<MonstarController>();
 		controller = GetComponent<EndlessCharacterController>();
 	}
 
@@ -20,12 +22,16 @@ public class KeyboardControls : MonoBehaviour {
 			Application.LoadLevel(0);
 		}
 
+
 		float vertical = Input.GetAxis("Vertical");
 		if(vertical > DEADZONE_VERTICAL)
 		{
 			controller.Jump();
 		}
-		
+//		if (vertical < -DEADZONE_VERTICAL) {
+//			controller.Slide();
+//		}
+
 		float horizontal = Input.GetAxis("Horizontal");
 		if( horizontal > DEADZONE_HORIZONTAL)
 		{

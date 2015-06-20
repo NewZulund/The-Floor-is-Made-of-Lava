@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CollectableSpawner.cs" />
+     <Compile Include="Assets\ElsaPowerUp.cs" />
      <Compile Include="Assets\KeyboardControls.cs" />
      <Compile Include="Assets\PlayerCollection.cs" />
      <Compile Include="Assets\PlayerMoveHit.cs" />
