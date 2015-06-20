@@ -25,10 +25,8 @@ public class PauseManagerScript : MonoBehaviour {
 
 		//PlayerPrefs.DeleteAll ();
 
-		//Time.timeScale = 1;reset time
-
 		//Countdown at the beginning of the game
-		Time.timeScale = 0;//PauseGame (); use pauseGame instead if we want the mask at the beginning
+		PauseGame ();//use pauseGame instead if we want the mask at the beginning//Time.timeScale = 0;
 		StartCoroutine ("Continue");
 	}
 
