@@ -15,7 +15,7 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	//Vertical Movement Variables
 	public float fallVelocity = -9.8f;
-	public float jumpVelocity = 200.0f;
+	public float jumpVelocity = 100.0f;
 	public float yVelocity = 0.0f;
 	public bool isJumping = false;
 	public float jumpRaycastLength = 1.0f;

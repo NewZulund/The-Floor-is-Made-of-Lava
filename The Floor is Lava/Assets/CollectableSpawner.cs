@@ -25,8 +25,6 @@ public class CollectableSpawner : MonoBehaviour {
 	void Update()
 	{
 		if (Input.GetKeyDown (KeyCode.T)) {
-			Debug.Log("Roarwojwarojawr");
-
 			Instantiate(snowprefab, Vector3.forward * -10 + Vector3.up, Quaternion.identity);			
 
 		}
