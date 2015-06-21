@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: all_to_left
   startRails: 012
-  endRails: 0
+  endRails: 2
   length: 12
   prefab: {fileID: 193172}
 --- !u!1001 &100100000
