@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CollectableSpawner : MonoBehaviour {
-
+	/*
 	public float minimumDelay = 2.0f;
 	public float maximumDelay = 5.0f;
 	public GameObject[] coinLayoutPrefabs;
@@ -37,8 +37,8 @@ public class CollectableSpawner : MonoBehaviour {
 		GameObject prefab = Instantiate(coinLayoutPrefabs[index],  Vector2.zero, Quaternion.identity) as GameObject;
 
 		int rail = Random.Range(-1,2);
-		prefab.transform.Translate(rail * spawner.PLATFORM_ITEM_WIDTH ,yOffset,zOffset);
+		//prefab.transform.Translate(rail * spawner.PLATFORM_ITEM_WIDTH ,yOffset,zOffset);
 		Invoke ("SpawnCollectablePrefab", Random.Range(minimumDelay, maximumDelay));
 	}
-
+	*/
 }

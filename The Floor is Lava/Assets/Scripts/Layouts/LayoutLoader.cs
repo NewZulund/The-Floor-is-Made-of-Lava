@@ -4,7 +4,8 @@ using System.IO;
 using System.Text; 
 
 public class LayoutLoader : MonoBehaviour {
-	
+
+	/*
 	public List<PlatformLayout> Load(string fileName)
 	{
 
@@ -121,6 +122,8 @@ public class LayoutLoader : MonoBehaviour {
 		return platformLayouts;
 	}
 
+
+
 	//Produce a string of the integers of either incoming or outgoing rails to be used in picking platforms
 	string getRailString (int[] rails)
 	{
@@ -130,5 +133,8 @@ public class LayoutLoader : MonoBehaviour {
 			railName = railName + rails[i].ToString();
 		}
 		return railName;
+		
 	}
+		*/
+
 }
