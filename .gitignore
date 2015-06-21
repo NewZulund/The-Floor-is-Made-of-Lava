@@ -35,3 +35,4 @@ ehthumbs.db
 [Bb]uild/
 
 >>>>>>> origin/levelSpawning-Isaac
+*.csproj
