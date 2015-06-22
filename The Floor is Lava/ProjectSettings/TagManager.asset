@@ -17,6 +17,8 @@ TagManager:
   - HighscoreScore
   - HighscoreDate
   - Fire
+  - IceOverlay
+  - IceCombo
   layers:
   - Default
   - TransparentFX
