@@ -76,6 +76,7 @@ public class EndlessCharacterController : MonoBehaviour {
 		if(!isGrounded())
 		{
 			yVelocity += fallVelocity * Time.deltaTime;
+			animator.SetBool("LavaHit", false);
 		}
 		else
 		{
@@ -89,6 +90,7 @@ public class EndlessCharacterController : MonoBehaviour {
 					yVelocity = lavaHitYVelocity;
 					EndlessController.controller.SlowPlayer(0.4f);
 					audio.PlayOneShot(lavaburn);
+					animator.SetBool("LavaHit", true);
 				}
 			}
 			else
