@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4ff64114be0a54f6db8fe593a944ce97
-timeCreated: 1434949494
+guid: 88ed5d644e3b8a34eb8e345f2ce2bec8
+timeCreated: 1434966869
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -93,24 +93,25 @@ ModelImporter:
     100170: Character2_Spine2
     100172: //RootNode
     100174: group
-    100176: iceCube
-    100178: IcecubeCharRigged:ambientLight1
-    100180: IcecubeCharRigged:bottom
-    100182: IcecubeCharRigged:nurbsCircle2
-    100184: joint1
-    100186: joint2
-    100188: joint3
-    100190: leftArm
-    100192: leftGlove
-    100194: leftLeg
-    100196: leftShoe
-    100198: pCube1
-    100200: playerRig
-    100202: rightArm
-    100204: rightGlove
-    100206: rightLeg
-    100208: rightShoe
-    100210: Sunnies
+    100176: group1
+    100178: iceCube
+    100180: IcecubeCharRigged:ambientLight1
+    100182: IcecubeCharRigged:bottom
+    100184: IcecubeCharRigged:nurbsCircle2
+    100186: joint1
+    100188: joint2
+    100190: joint3
+    100192: leftArm
+    100194: leftGlove
+    100196: leftLeg
+    100198: leftShoe
+    100200: pCube1
+    100202: playerRig
+    100204: rightArm
+    100206: rightGlove
+    100208: rightLeg
+    100210: rightShoe
+    100212: Sunnies
     400000: Character2_Ctrl_ChestEndEffector
     400002: Character2_Ctrl_ChestOriginEffector
     400004: Character2_Ctrl_Head
@@ -199,24 +200,25 @@ ModelImporter:
     400170: Character2_Spine2
     400172: //RootNode
     400174: group
-    400176: iceCube
-    400178: IcecubeCharRigged:ambientLight1
-    400180: IcecubeCharRigged:bottom
-    400182: IcecubeCharRigged:nurbsCircle2
-    400184: joint1
-    400186: joint2
-    400188: joint3
-    400190: leftArm
-    400192: leftGlove
-    400194: leftLeg
-    400196: leftShoe
-    400198: pCube1
-    400200: playerRig
-    400202: rightArm
-    400204: rightGlove
-    400206: rightLeg
-    400208: rightShoe
-    400210: Sunnies
+    400176: group1
+    400178: iceCube
+    400180: IcecubeCharRigged:ambientLight1
+    400182: IcecubeCharRigged:bottom
+    400184: IcecubeCharRigged:nurbsCircle2
+    400186: joint1
+    400188: joint2
+    400190: joint3
+    400192: leftArm
+    400194: leftGlove
+    400196: leftLeg
+    400198: leftShoe
+    400200: pCube1
+    400202: playerRig
+    400204: rightArm
+    400206: rightGlove
+    400208: rightLeg
+    400210: rightShoe
+    400212: Sunnies
     2300000: pCube1
     2300002: Sunnies
     3300000: pCube1
@@ -232,14 +234,12 @@ ModelImporter:
     4300016: leftLeg
     4300018: rightGlove
     4300020: leftGlove
-    7400000: Jump
-    7400002: Run
+    7400000: Run
+    7400002: Jump
     7400004: TripOver
     7400006: FallingBurn
-    7400008: SlideStart
-    7400010: SlideEnd
+    7400008: Slide
     9500000: //RootNode
-    11100000: //RootNode
     13700000: iceCube
     13700002: leftArm
     13700004: leftGlove
@@ -258,7 +258,7 @@ ModelImporter:
     bakeSimulation: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -266,16 +266,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jump
+      name: Run
       takeName: Take 001
-      firstFrame: 70
-      lastFrame: 140
+      firstFrame: 1
+      lastFrame: 70
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -294,6 +294,8 @@ ModelImporter:
       - path: group
         weight: 1
       - path: group/leftGlove
+        weight: 1
+      - path: group1
         weight: 1
       - path: iceCube
         weight: 1
@@ -504,16 +506,16 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Run
+      name: Jump
       takeName: Take 001
-      firstFrame: 2
-      lastFrame: 70
+      firstFrame: 70
+      lastFrame: 140
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -532,6 +534,8 @@ ModelImporter:
       - path: group
         weight: 1
       - path: group/leftGlove
+        weight: 1
+      - path: group1
         weight: 1
       - path: iceCube
         weight: 1
@@ -771,6 +775,8 @@ ModelImporter:
         weight: 1
       - path: group/leftGlove
         weight: 1
+      - path: group1
+        weight: 1
       - path: iceCube
         weight: 1
       - path: IcecubeCharRigged:ambientLight1
@@ -1009,6 +1015,8 @@ ModelImporter:
         weight: 1
       - path: group/leftGlove
         weight: 1
+      - path: group1
+        weight: 1
       - path: iceCube
         weight: 1
       - path: IcecubeCharRigged:ambientLight1
@@ -1218,7 +1226,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: SlideStart
+      name: Slide
       takeName: Take 001
       firstFrame: 340
       lastFrame: 420
@@ -1246,6 +1254,8 @@ ModelImporter:
       - path: group
         weight: 1
       - path: group/leftGlove
+        weight: 1
+      - path: group1
         weight: 1
       - path: iceCube
         weight: 1
