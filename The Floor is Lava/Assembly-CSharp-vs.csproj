@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CollectableSpawner.cs" />
+     <Compile Include="Assets\ComboManager.cs" />
      <Compile Include="Assets\ElsaPowerUp.cs" />
      <Compile Include="Assets\KeyboardControls.cs" />
      <Compile Include="Assets\LavaSpawner.cs" />
@@ -229,7 +230,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="VacuumShaders.CurvedWorld">
- <HintPath>/Users/Guest/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/VacuumShaders/Curved World/Scripts/VacuumShaders.CurvedWorld.dll</HintPath>
+ <HintPath>/Users/Guest/Desktop/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/VacuumShaders/Curved World/Scripts/VacuumShaders.CurvedWorld.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
