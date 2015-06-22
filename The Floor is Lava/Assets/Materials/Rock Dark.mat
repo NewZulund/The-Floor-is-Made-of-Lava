@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GreenishRock
+  m_Name: Rock Dark
   m_Shader: {fileID: 4800000, guid: 5d674850bc933694994cf2c3f6dbb7b7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -115,7 +115,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .300000012
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -204,10 +204,6 @@ Material:
         first:
           name: _V_CW_Emission_Strength
         second: 1
-      data:
-        first:
-          name: V_CW_MV_MAT
-        second: 1
     m_Colors:
       data:
         first:
@@ -216,7 +212,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .264705896, g: .235496983, b: 0, a: 1}
+        second: {r: .20588237, g: .20588237, b: .20588237, a: 1}
       data:
         first:
           name: _EmissionColorUI
