@@ -5,7 +5,7 @@ public class TouchControls : MonoBehaviour {
 
 	//Controller variables
 	public static float TOUCH_DEADZONE_HORIZONTAL_PERCENTAGE = 0.015f;
-	public static float TOUCH_DEADZONE_VERTICAL_PERCENTAGE = 0.0005f;
+	public static float TOUCH_DEADZONE_VERTICAL_PERCENTAGE = 0.015f;
 	public static float TOUCH_VERTICAL_JUMP_LENGTH = 1.0f;
 	public static float TOUCH_WIDTH_TOTAL_MOVEMENT_PERCENTAGE = 0.75f; //TODO Rename
 
