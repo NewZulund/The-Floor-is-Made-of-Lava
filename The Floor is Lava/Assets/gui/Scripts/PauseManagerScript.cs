@@ -9,7 +9,7 @@ public class PauseManagerScript : MonoBehaviour {
 	public GameObject backgroundMask;//The mask that greys out the background
 	public GameObject countdown;//A ui text object that is used as a countdown
 	public GameObject gameController;
-	public Text gameOverScore;
+	public Text gameOverScoreText;
 	public Text highscoreText;
 	public GameObject highscoresDialog;
 	public GameObject highscoreEntryPrefab;
@@ -84,7 +84,7 @@ public class PauseManagerScript : MonoBehaviour {
 		int score = (int) gameController.GetComponent<EndlessController> ().score;
 		gameOverMenu.SetActive(true);
 		backgroundMask.SetActive (true);
-		gameOverScore.text = string.Format("{0:n0}", score);//score.ToString("0");
+		gameOverScoreText.text = string.Format("{0:n0}", score);//score.ToString("0");
 		SetHighscore (score);
 		highscoreText.text = string.Format ("{0:n0}", PlayerPrefs.GetInt (highscoreKey+0));
 	}
