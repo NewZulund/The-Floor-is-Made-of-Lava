@@ -23,6 +23,7 @@ public class EndlessCharacterController : MonoBehaviour {
 	public float lavaHitYVelocity = 40.0f;
 	public float startingY = 0.0f;
 	public bool grounded = true;
+	public bool isSliding = false;
 
 	//Oncoming hit 
 	public float frontHitDistance = 1.0f;
@@ -95,6 +96,7 @@ public class EndlessCharacterController : MonoBehaviour {
 			}
 			else
 			{
+				animator.SetBool ("IsSliding", false);
 				yVelocity = 0;
 				AdjustStandingHeight(); 
 			}
@@ -118,7 +120,7 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public void MoveLeft()
 	{
-		if(movementStatus == PlayerMovementStatus.NotMoving)
+		if(movementStatus == PlayerMovementStatus.NotMoving && !isSliding)
 		{
 			//Start movememt
 			targetRail = currentRail.leftRail;
@@ -131,7 +133,7 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public void MoveRight()
 	{
-		if(movementStatus == PlayerMovementStatus.NotMoving)
+		if(movementStatus == PlayerMovementStatus.NotMoving && !isSliding)
 		{
 			//Start movement
 			targetRail = currentRail.rightRail;
@@ -144,7 +146,7 @@ public class EndlessCharacterController : MonoBehaviour {
 
 	public void Jump()
 	{
-		if(grounded && !isJumping)
+		if(grounded && !isJumping && !isSliding)
 		{
 			grounded = false;
 			yVelocity = jumpVelocity;
@@ -155,11 +157,19 @@ public class EndlessCharacterController : MonoBehaviour {
 	}
 
 	public void Slide(){
-
+		if (grounded && !isJumping) {
+			animator.SetBool ("IsSliding", true);
+			StartCoroutine(Pause(1));
+		}
 	}
 
-	IEnumerator Pause(){
-		yield return new WaitForSeconds (0.1f);
+	private IEnumerator Pause(int secs){
+		isSliding = true;
+		BoxCollider box = GetComponent<BoxCollider>();
+		box.size.Set(1.17f, 0.8f, 1f);
+		yield return new WaitForSeconds(secs);
+		box.size.Set (1.17f, 1.65f, 1f);
+		isSliding = false;
 	}
 
 	public void CheckFail (){

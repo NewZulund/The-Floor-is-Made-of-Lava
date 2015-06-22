@@ -27,9 +27,9 @@ public class KeyboardControls : MonoBehaviour {
 		{
 			controller.Jump();
 		}
-//		if (vertical < -DEADZONE_VERTICAL) {
-//			controller.Slide();
-//		}
+		if (vertical < -DEADZONE_VERTICAL) {
+			controller.Slide();
+		}
 
 		float horizontal = Input.GetAxis("Horizontal");
 		if( horizontal > DEADZONE_HORIZONTAL)
