@@ -50,6 +50,7 @@
      <Compile Include="Assets\ElsaPowerUp.cs" />
      <Compile Include="Assets\KeyboardControls.cs" />
      <Compile Include="Assets\LavaSpawner.cs" />
+     <Compile Include="Assets\PlatformLayout.cs" />
      <Compile Include="Assets\PlayerCollection.cs" />
      <Compile Include="Assets\PlayerMoveHit.cs" />
      <Compile Include="Assets\RailOffsetter.cs" />
@@ -57,9 +58,9 @@
      <Compile Include="Assets\Scripts\EndlessCharacterController.cs" />
      <Compile Include="Assets\Scripts\EndlessCharacterFailController.cs" />
      <Compile Include="Assets\Scripts\EndlessController.cs" />
+     <Compile Include="Assets\Scripts\LayoutPrefabSpawner.cs" />
      <Compile Include="Assets\Scripts\Layouts\LayoutLoader.cs" />
      <Compile Include="Assets\Scripts\Layouts\LayoutSpawner.cs" />
-     <Compile Include="Assets\Scripts\Layouts\PlatformLayout.cs" />
      <Compile Include="Assets\Scripts\MonstarController.cs" />
      <Compile Include="Assets\Scripts\MoveNotification.cs" />
      <Compile Include="Assets\Scripts\NotificationConverter.cs" />
@@ -228,7 +229,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="VacuumShaders.CurvedWorld">
- <HintPath>/Users/Guest/Desktop/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/VacuumShaders/Curved World/Scripts/VacuumShaders.CurvedWorld.dll</HintPath>
+ <HintPath>/Users/Guest/The-Floor-is-Made-of-Lava/The Floor is Lava/Assets/VacuumShaders/Curved World/Scripts/VacuumShaders.CurvedWorld.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
