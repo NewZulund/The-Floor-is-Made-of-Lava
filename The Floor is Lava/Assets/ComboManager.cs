@@ -8,6 +8,18 @@ public class ComboManager : MonoBehaviour {
 
 	public GameObject comboOverlay;
 
+	
+	public Material iceSky;
+	public Material standardSky;
+
+	public GameObject lavaModel;
+	public Material lavaNormalMaterial;
+	public Material lavaIceMaterial;
+
+	public GameObject wave;
+	public Material normalWaveMaterial;
+	public Material iceWaveMaterial;
+
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "IceCombo") {
@@ -19,6 +31,9 @@ public class ComboManager : MonoBehaviour {
 				inComboMode = true;
 				countdown = 5;//combo ends once Time.deltaTime catches up to 'countdown' 
 				comboOverlay.SetActive(true);
+				wave.Material = iceWaveMaterial;
+				lavaModel.Material = lavaIceMaterial;
+				RenderSettings.skybox = iceSky;
 			}
 
 			Destroy (other.gameObject);
@@ -34,6 +49,12 @@ public class ComboManager : MonoBehaviour {
 				inComboMode = false;
 				countdown = 0;
 				comboOverlay.SetActive(false);
+
+				wave.Material = normalWaveMaterial;
+				lavaModel.Material = lavaNormalMaterial;
+				RenderSettings.skybox = standardSky;
+
+
 			}
 		}
 	}
