@@ -26,7 +26,9 @@ public class PauseManagerScript : MonoBehaviour {
 		//PlayerPrefs.DeleteAll ();
 
 		//Countdown at the beginning of the game
-		PauseGame ();//use pauseGame instead if we want the mask at the beginning//Time.timeScale = 0;
+		//PauseGame ();//use pauseGame instead if we want the mask at the beginning//Time.timeScale = 0;
+		Time.timeScale = 1;
+		backgroundMask.SetActive (true);
 		StartCoroutine ("Continue");
 	}
 
@@ -43,9 +45,10 @@ public class PauseManagerScript : MonoBehaviour {
 	void Update(){
 		float time = targetTime - Time.realtimeSinceStartup;
 		if (countingDown) {
+			EndlessController.controller.score = 0;
 			string txt = time.ToString ("0");
 			if (txt.Equals ("0")) {
-				txt = "Go!";
+				txt = "R u n !";
 			}
 			countdown.GetComponent<Text> ().text = txt;
 
@@ -58,7 +61,7 @@ public class PauseManagerScript : MonoBehaviour {
 	public void PauseGame(){
 		countdown.SetActive (false);//prevent the countdown text from showing when you pause the game whiole the word "Go!" is shown. Another idea could be to simply put the countdown text behind the pausemenu in the gui hierachy
 		pauseMenu.SetActive(true);
-		backgroundMask.SetActive (true);
+		//backgroundMask.SetActive (true);
 		Time.timeScale = 0;
 	}
 
@@ -83,7 +86,7 @@ public class PauseManagerScript : MonoBehaviour {
 		Time.timeScale = 0;
 		int score = (int) gameController.GetComponent<EndlessController> ().score;
 		gameOverMenu.SetActive(true);
-		backgroundMask.SetActive (true);
+		//backgroundMask.SetActive (true);
 		gameOverScore.text = string.Format("{0:n0}", score);//score.ToString("0");
 		SetHighscore (score);
 		highscoreText.text = string.Format ("{0:n0}", PlayerPrefs.GetInt (highscoreKey+0));
