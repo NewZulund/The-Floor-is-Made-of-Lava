@@ -37,6 +37,10 @@ public class TouchControls : MonoBehaviour {
 				{
 					controller.Jump();
 				}
+				else if (touch.deltaPosition.y / (Screen.width * 0.1f) < -TOUCH_DEADZONE_VERTICAL_PERCENTAGE)
+				{
+					controller.Slide();
+				}
 			}
 		}
 	}
