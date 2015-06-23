@@ -31,8 +31,8 @@ public class ComboManager : MonoBehaviour {
 				inComboMode = true;
 				countdown = 5;//combo ends once Time.deltaTime catches up to 'countdown' 
 				comboOverlay.SetActive(true);
-				wave.Material = iceWaveMaterial;
-				lavaModel.Material = lavaIceMaterial;
+				wave.GetComponent<Renderer>().material = iceWaveMaterial;
+				lavaModel.GetComponent<Renderer>().material = lavaIceMaterial;
 				RenderSettings.skybox = iceSky;
 			}
 
@@ -50,8 +50,8 @@ public class ComboManager : MonoBehaviour {
 				countdown = 0;
 				comboOverlay.SetActive(false);
 
-				wave.Material = normalWaveMaterial;
-				lavaModel.Material = lavaNormalMaterial;
+				wave.GetComponent<Renderer>().material = normalWaveMaterial;
+				lavaModel.GetComponent<Renderer>().material = lavaNormalMaterial;
 				RenderSettings.skybox = standardSky;
 
 
