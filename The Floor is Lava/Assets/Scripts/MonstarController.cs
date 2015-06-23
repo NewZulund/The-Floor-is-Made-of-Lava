@@ -22,6 +22,10 @@ public class MonstarController : MonoBehaviour {
 		rotAngle = 450f;
 		height = 0;
 	}
+
+	public float mPercentage(){
+		return (transform.position.z / startingZ) * 100;
+	}
 	
 	// Update is called once per frame
 	void Update () {
