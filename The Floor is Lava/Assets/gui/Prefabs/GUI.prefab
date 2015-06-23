@@ -1370,6 +1370,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 22413618}
   - 114: {fileID: 11475520}
+  - 114: {fileID: 11496510}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -3317,7 +3318,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 11494862}
   m_FillRect: {fileID: 22462442}
   m_HandleRect: {fileID: 22437936}
@@ -3325,7 +3326,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: .0710000023
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3785,6 +3786,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11496510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 195486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40088e9950a1d7c48a7ff10d2994dfca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11496578
 MonoBehaviour:
   m_ObjectHideFlags: 1
