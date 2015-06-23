@@ -19,6 +19,7 @@ public class PauseManagerScript : MonoBehaviour {
 	private float targetTime = 0;//used for countdown after continuing from the pause menu
 	private bool countingDown;
 	private string highscoreKey = "highscore";//key used when accessing 'highscore' value in PlayerPrefs
+	private bool isStart = true;
 
 	void Awake(){
 		//GetHighscoresPanel ();
@@ -46,10 +47,14 @@ public class PauseManagerScript : MonoBehaviour {
 	void Update(){
 		float time = targetTime - Time.realtimeSinceStartup;
 		if (countingDown) {
-			EndlessController.controller.score = 0;
+
+			if(isStart){
+				EndlessController.controller.score = 0;
+			}
 			string txt = time.ToString ("0");
 			if (txt.Equals ("0")) {
 				txt = "R u n !";
+				isStart = false;
 			}
 			countdown.GetComponent<Text> ().text = txt;
 
