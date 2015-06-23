@@ -13,14 +13,15 @@ public class PauseManagerScript : MonoBehaviour {
 	public Text highscoreText;
 	public GameObject highscoresDialog;
 	public GameObject highscoreEntryPrefab;
+	public GameObject highscoresPanel;
 
-	private GameObject highscoresPanel;
+
 	private float targetTime = 0;//used for countdown after continuing from the pause menu
 	private bool countingDown;
 	private string highscoreKey = "highscore";//key used when accessing 'highscore' value in PlayerPrefs
 
 	void Awake(){
-		GetHighscoresPanel ();
+		//GetHighscoresPanel ();
 		CloseHighscores ();
 
 		//PlayerPrefs.DeleteAll ();
