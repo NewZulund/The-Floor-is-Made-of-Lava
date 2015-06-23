@@ -9,11 +9,15 @@ public class MonstarController : MonoBehaviour {
 	private float backPoint;
 	private float diff;
 	private bool backing = false;
+	private int rotAngle;
+	private float increment;
 
 	// Use this for initialization
 	void Awake () {
 		controller = GameObject.Find ("EndlessController").GetComponent<EndlessController> ();
 		startingZ = transform.position.z;
+		increment = startingZ / 90f;
+		rotAngle = 90;
 	}
 	
 	// Update is called once per frame
@@ -22,18 +26,23 @@ public class MonstarController : MonoBehaviour {
 		if (transform.position.z > startingZ) {
 			transform.Translate(0.0f, 0.0f, startingZ - transform.position.z);
 		}
-		if (transform.position.z < 0 && !gameIsEnded) {
+		if (transform.position.z < 8 && !gameIsEnded) {
 
 			PauseManagerScript pause = GameObject.Find ("PauseManager").GetComponent<PauseManagerScript> ();
 			pause.GameOver();
 
 			gameIsEnded = true;
 		}
+		int currAngle = (int) (transform.position.z / increment);
 		if (backing && transform.position.z < backPoint) {
 			transform.Translate (0, 0, diff * Time.deltaTime);
+			transform.Rotate(new Vector3(-(rotAngle - currAngle), 0, 0));
 		} else if (backing) {
 			backing = false;
+		} else {
+			transform.Rotate(new Vector3(-(rotAngle - currAngle), 0, 0));
 		}
+		rotAngle = currAngle;
 	}
 
 	public void BackOff (){
