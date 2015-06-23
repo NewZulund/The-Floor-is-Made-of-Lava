@@ -14,7 +14,7 @@ public class EndlessController : MonoBehaviour {
 
 	public float speedIncreaseRate = 0.2f;
 
-	public bool audioActive = true;
+	public bool audioActive = false;
 	public AudioListener audioListener;
 
 	public MonstarController monstarController; 
