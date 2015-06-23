@@ -34,10 +34,23 @@ public class ComboManager : MonoBehaviour {
 				wave.GetComponent<Renderer>().material = iceWaveMaterial;
 				lavaModel.GetComponent<Renderer>().material = lavaIceMaterial;
 				RenderSettings.skybox = iceSky;
+				EndlessController.controller.currentRunSpeed = EndlessController.controller.currentRunSpeed * 1.5f;
+
 			}
 
 			Destroy (other.gameObject);
 		}
+	}
+
+	public void Toggle()
+	{
+		inComboMode = true;
+				countdown = 5;//combo ends once Time.deltaTime catches up to 'countdown' 
+				comboOverlay.SetActive(true);
+				wave.GetComponent<Renderer>().material = iceWaveMaterial;
+				lavaModel.GetComponent<Renderer>().material = lavaIceMaterial;
+				RenderSettings.skybox = iceSky;
+				EndlessController.controller.currentRunSpeed = EndlessController.controller.currentRunSpeed * 1.5f;
 	}
 
 	// Update is called once per frame
@@ -53,6 +66,7 @@ public class ComboManager : MonoBehaviour {
 				wave.GetComponent<Renderer>().material = normalWaveMaterial;
 				lavaModel.GetComponent<Renderer>().material = lavaNormalMaterial;
 				RenderSettings.skybox = standardSky;
+				EndlessController.controller.currentRunSpeed = EndlessController.controller.runSpeed;
 
 
 			}
