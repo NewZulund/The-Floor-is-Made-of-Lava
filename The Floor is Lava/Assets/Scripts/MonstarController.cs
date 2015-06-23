@@ -16,8 +16,8 @@ public class MonstarController : MonoBehaviour {
 	void Awake () {
 		controller = GameObject.Find ("EndlessController").GetComponent<EndlessController> ();
 		startingZ = transform.position.z;
-		increment = startingZ / 90f;
-		rotAngle = 90;
+		increment = startingZ / 45f;
+		rotAngle = 45;
 	}
 	
 	// Update is called once per frame
