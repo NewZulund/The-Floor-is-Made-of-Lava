@@ -67,6 +67,7 @@ public class PauseManagerScript : MonoBehaviour {
 	}
 
 	public void ContinueGame(){
+		backgroundMask.SetActive (true);
 		StartCoroutine ("Continue");
 	}
 
