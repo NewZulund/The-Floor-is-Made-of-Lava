@@ -30,7 +30,7 @@ public class CollectableSpawner : MonoBehaviour {
 		GameObject prefab = Instantiate(coinLayoutPrefabs[index]) as GameObject;
 
 		int rail = Random.Range(-1,2);
-		prefab.transform.position = new Vector3(rail,yOffset,zOffset);
+		prefab.transform.position = new Vector3(rail * 2,yOffset,zOffset);
 		Invoke ("SpawnCollectablePrefab", Random.Range(minimumDelay, maximumDelay));
 	}
 }
