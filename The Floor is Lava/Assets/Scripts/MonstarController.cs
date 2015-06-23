@@ -9,15 +9,18 @@ public class MonstarController : MonoBehaviour {
 	private float backPoint;
 	private float diff;
 	private bool backing = false;
-	private int rotAngle;
+	private float rotAngle;
 	private float increment;
+	private float height;
+	public int endPoint;
 
 	// Use this for initialization
 	void Awake () {
 		controller = GameObject.Find ("EndlessController").GetComponent<EndlessController> ();
 		startingZ = transform.position.z;
-		increment = startingZ / 45f;
-		rotAngle = 45;
+		increment = startingZ / 450f;
+		rotAngle = 450f;
+		height = 0;
 	}
 	
 	// Update is called once per frame
@@ -26,21 +29,22 @@ public class MonstarController : MonoBehaviour {
 		if (transform.position.z > startingZ) {
 			transform.Translate(0.0f, 0.0f, startingZ - transform.position.z);
 		}
-		if (transform.position.z < 8 && !gameIsEnded) {
+		if (transform.position.z < endPoint && !gameIsEnded) {
 
 			PauseManagerScript pause = GameObject.Find ("PauseManager").GetComponent<PauseManagerScript> ();
 			pause.GameOver();
 
 			gameIsEnded = true;
 		}
-		int currAngle = (int) (transform.position.z / increment);
+		float currAngle = (transform.position.z / increment);
 		if (backing && transform.position.z < backPoint) {
-			transform.Translate (0, 0, diff * Time.deltaTime);
-			transform.Rotate(new Vector3(-(rotAngle - currAngle), 0, 0));
+			transform.Translate (0, 0, diff * Time.deltaTime); //(rotAngle - currAngle)/(rotAngle/2 + 1)
+			transform.Rotate(new Vector3(-(rotAngle - currAngle)/7, 0, 0));
 		} else if (backing) {
 			backing = false;
 		} else {
-			transform.Rotate(new Vector3(-(rotAngle - currAngle), 0, 0));
+			//transform.Translate (0, (rotAngle - currAngle)/(rotAngle/2 + 1), 0);
+			transform.Rotate(new Vector3(-(rotAngle - currAngle)/7, 0, 0));
 		}
 		rotAngle = currAngle;
 	}
