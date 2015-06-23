@@ -12,6 +12,8 @@ GameObject:
   - 23: {fileID: 2344746}
   - 65: {fileID: 6592874}
   - 114: {fileID: 11470336}
+  - 122: {fileID: 12289886}
+  - 123: {fileID: 12380300}
   m_Layer: 0
   m_Name: snowflake
   m_TagString: Collectable
@@ -92,7 +94,32 @@ MonoBehaviour:
     value: {x: 0, y: 90, z: 0}
     space: 1
   ignoreTimescale: 0
-  monstar: {fileID: 0}
+--- !u!122 &12289886
+Halo:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177408}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278688713
+  m_Size: 1
+--- !u!123 &12380300
+LensFlare:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177408}
+  m_Enabled: 1
+  m_Flare: {fileID: 0}
+  m_Color: {r: .764705896, g: .528779387, b: .10683392, a: 0}
+  m_Brightness: 1
+  m_FadeSpeed: 3
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
