@@ -13,8 +13,6 @@ public class SliderManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print(slider.value);
-		print(EndlessController.controller.monstarController.mPercentage());
 		slider.value = (EndlessController.controller.monstarController.mPercentage())/100f;
 	}
 }
