@@ -19,6 +19,9 @@ TagManager:
   - Fire
   - IceOverlay
   - IceCombo
+  - Glow
+  - Top
+  - Bottom
   layers:
   - Default
   - TransparentFX

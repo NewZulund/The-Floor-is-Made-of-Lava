@@ -89,7 +89,6 @@ public class PauseManagerScript : MonoBehaviour {
 	
 
 	public void GameOver(){
-		print ("called gameover");
 		Time.timeScale = 0;
 		int score = (int) gameController.GetComponent<EndlessController> ().score;
 		gameOverMenu.SetActive(true);
@@ -100,7 +99,6 @@ public class PauseManagerScript : MonoBehaviour {
 	}
 
 	private void SetHighscore(int highscore){
-		print ("called set highscore");
 		for(int i = 0; i<10; i++){
 
 			string key = highscoreKey + i;
