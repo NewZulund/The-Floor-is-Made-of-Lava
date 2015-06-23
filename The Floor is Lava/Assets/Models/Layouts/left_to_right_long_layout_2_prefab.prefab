@@ -38,7 +38,7 @@ GameObject:
   - 65: {fileID: 6591078}
   - 65: {fileID: 6571378}
   m_Layer: 0
-  m_Name: right_long_layout_2_prefab
+  m_Name: left_to_right_long_layout_2_prefab
   m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

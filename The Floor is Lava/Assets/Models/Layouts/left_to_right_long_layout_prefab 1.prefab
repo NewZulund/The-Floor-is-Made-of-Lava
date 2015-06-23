@@ -627,8 +627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: center_to_all
-  startRails: 2
-  endRails: 0
+  startRails: 0
+  endRails: 2
   length: 36
   prefab: {fileID: 191992}
 --- !u!1001 &100100000
